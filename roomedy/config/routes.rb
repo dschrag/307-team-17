@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
   root 'pages#home'
 
+  get "inventory" => 'pages#inventory'
+  get "financial" => 'pages#financial'
+  get "notes" => 'pages#notes'
+  get "schedule" => 'pages#schedule'
+  get "account" => 'pages#account'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
