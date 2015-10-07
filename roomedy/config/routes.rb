@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get "notes" => 'pages#notes'
   get "schedule" => 'pages#schedule'
   get "account" => 'pages#account'
+  get "register" => 'pages#signup'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
