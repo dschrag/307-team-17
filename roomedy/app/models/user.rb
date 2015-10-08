@@ -7,4 +7,8 @@ class User < ActiveRecord::Base
                 uniqueness: { case_sensitive: false } #database max string size
   has_secure_password
   validates :password, presence: true, length: { minimum: 6 }
+
+  def addNote
+    Note.create(message: "Hello World\n", createdByUser: id);
+  end
 end
