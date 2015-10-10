@@ -1,0 +1,12 @@
+<% if @house.errors.any? %>
+	<div>
+		<div>
+			The form contains <%= pluralize(@house.errors.count, "error") %>.
+		</div>
+		<ul>
+		<% @house.errors.full_messages.each do |msg| %>
+			<li><%= msg %></li>
+		<% end %>
+		</ul>
+	</div>
+<% end %>
