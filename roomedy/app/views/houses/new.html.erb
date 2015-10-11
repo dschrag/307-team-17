@@ -2,12 +2,13 @@
 <h1>Create a House</h1>
 <div class="row">
 	<%= form_for(@house) do |f| %>
+		<%= render 'shared/error_messages' %>
 		<%= f.label :name %>
-		<%= f.text_field :name %>
+		<%= f.text_field :name, class: 'form_control' %>
 
-  	<%= f.label :address %>
-		<%= f.text_area :address, size: "60x12" %>
+  		<%= f.label :address %>
+		<%= f.text_area :address, size: "60x12", class: 'form_control' %>
 
-		<%= f.submit "Create a House", class: "btn" %>
+		<%= f.submit "Create a House", class: "btn btn-primary" %>
 	<% end %>
 </div>
