@@ -9,19 +9,19 @@ class User < ActiveRecord::Base
   has_secure_password
   validates :password, presence: true, length: { minimum: 6 }
 
+  def User.digest(string)
+    cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST : BCrypt::Engine.cost
+    BCrypt::Password.create(String, cost: cost)
+  end
+
+  
+  def User.new_token
+    SecureRandom.urlsafe_base64
+  end
+
   def remember
     self.remember_token = User.new_token
     update_attribute(:remember_digest, User.digest(remember_token))
-  end
-
-  def User.digest(string)
-  	cost = ActiveModel::SecurePassword.min_cost ? BCRYPT::Engine::MIN_COST:
-  												  BCRYPT::Engine.cost
-  	BCRYPT::Password.create(String, cost: cost)
-  end
-
-  def User.new_token
-    SecureRandom.urlsafe_base64
   end
 
   def authenticated?(remember_token)
