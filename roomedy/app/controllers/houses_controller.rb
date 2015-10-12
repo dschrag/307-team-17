@@ -1,10 +1,10 @@
 class HousesController < ApplicationController
-  def show
+ 	def show
 		@house = House.find(params[:id])
 	end
 	def new
 		@house = House.new
-  end
+  	end
 	def create
 		@house = House.new(house_params)
 		if @house.save

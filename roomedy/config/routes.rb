@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   resources :houses
-
-  get 'users/new'
+  resources :users
 
   root 'pages#home'
 
