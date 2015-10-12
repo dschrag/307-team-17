@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
   has_secure_password
   validates :password, presence: true, length: { minimum: 6 }
 
+<<<<<<< HEAD
   def User.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST : BCrypt::Engine.cost
     BCrypt::Password.create(String, cost: cost)
@@ -32,4 +33,7 @@ class User < ActiveRecord::Base
   def forget
     update_attribute(:remember_digest, nil)
   end
+=======
+  has_many :notes, dependent: :destroy
+>>>>>>> ce9716e29af008e6ebbe476b20371b4613899eea
 end
