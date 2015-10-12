@@ -8,7 +8,5 @@ class User < ActiveRecord::Base
   has_secure_password
   validates :password, presence: true, length: { minimum: 6 }
 
-  def addNote
-    Note.create(message: "Hello World\n", createdByUser: id);
-  end
+  has_many :notes, dependent: :destroy
 end
