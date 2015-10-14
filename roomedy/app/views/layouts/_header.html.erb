@@ -12,7 +12,7 @@
       </button>
 
           <%= link_to "Roomedy", root_path, class: 'navbar_brand' %>
-
+          
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -27,6 +27,7 @@
 
           <li><%= link_to "Profile", current_user%></li>
           <li><%= link_to "Log out", logout_path, method: "delete" %>
+        <% end %>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
