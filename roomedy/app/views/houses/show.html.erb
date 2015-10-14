@@ -3,3 +3,5 @@
 <div class="center"><%= @house.city %></div>
 <div class="center"><%= @house.state %></div>
 <div class="center"><%= @house.zip %></div>
+<!-- Only shows the first user of the house using this syntax -->
+<div class="center"><%= User.find_by(@house.relationships.first.user_id).name %></div>
