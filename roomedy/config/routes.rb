@@ -1,5 +1,6 @@
+require File.expand_path("../../lib/authenticated_user", __FILE__)
+
 Rails.application.routes.draw do
-<<<<<<< HEAD
   get 'sessions/new'
 
   resources :houses
@@ -7,13 +8,12 @@ Rails.application.routes.draw do
 	get				'login' => 'sessions#new'
 	post			'login' => 'sessions#create'
 	delete		'logout' => 'sessions#destroy'
-=======
+ 
   get 'notes/new'
 
   get 'users/new'
->>>>>>> ce9716e29af008e6ebbe476b20371b4613899eea
 
-  root 'pages#home'
+  root :to => 'pages#home'
 
   get "inventory" => 'pages#inventory'
   get "financial" => 'pages#financial'
