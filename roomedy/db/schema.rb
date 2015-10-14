@@ -23,6 +23,13 @@ ActiveRecord::Schema.define(version: 20151014160311) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "notes", force: :cascade do |t|
+    t.string   "message"
+    t.integer  "createdByUser"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
   create_table "relationships", force: :cascade do |t|
     t.integer  "house_id"
     t.integer  "user_id"
@@ -36,6 +43,7 @@ ActiveRecord::Schema.define(version: 20151014160311) do
   create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
+    t.integer  "houseID"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.string   "password_digest"
