@@ -7,8 +7,15 @@ class HousesController < ApplicationController
   	end
 	def create
 		@house = House.new(house_params)
+		@relationship = Relationship.create()
+		current_user.relationship = @relationship
+		@house.relationships << @relationship
 		if @house.save
-			flash[:success] = "Welcome to your new Home!"
+			if current_user.save(validate: false)
+				flash[:success] = "Welcome to your new Home, #{current_user.name}"
+			else
+				flash[:notice] = "Unable to save user"
+			end
 			redirect_to @house
 		else
 			render 'new'

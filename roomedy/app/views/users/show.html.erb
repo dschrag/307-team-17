@@ -1,2 +1,3 @@
 <h1 class="center"><%= @user.name %></h1>
 <div class="center"><%= @user.email %></div>
+<div class="center"><%= House.find_by(@user.relationship.house_id).name %></div>
