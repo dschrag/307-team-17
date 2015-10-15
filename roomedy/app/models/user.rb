@@ -7,10 +7,11 @@ class User < ActiveRecord::Base
                 format: { with: VALID_EMAIL_REGEX },
                 uniqueness: { case_sensitive: false } #database max string size
   has_secure_password
-  validates :password, presence: true, length: { minimum: 6 }
+  validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
   has_one :relationship
   has_one :house, :through => :relationship
   has_many :notes, dependent: :destroy
+  has_many :items
 
   def User.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST : BCrypt::Engine.cost
