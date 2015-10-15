@@ -4,7 +4,7 @@ class NoteTest < ActiveSupport::TestCase
 
   def setup
     @user = users(:derek)
-    @note = Note.new(content: "This is a note message", user_id: @user.id)
+    @note = @user.notes.build(content: "This is a note.")
   end
 
   test "should be valid" do
@@ -15,4 +15,14 @@ class NoteTest < ActiveSupport::TestCase
     @note.user_id = nil
     assert_not @note.valid?
   end
+
+  test "notes need to have content" do
+    @note.content = ""
+    assert_not @note.valid?
+  end
+
+  test "notes are retreived with most recent notes first" do
+    assert_equal notes(:most_recent), Note.first
+  end
+
 end
