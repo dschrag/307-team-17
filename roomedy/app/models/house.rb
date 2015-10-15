@@ -6,4 +6,5 @@ class House < ActiveRecord::Base
 	validates :zip, presence: true, numericality: { only_integer: true }
 	has_many :relationships
 	has_many :users, :through => :relationships
+	has_many :items
 end

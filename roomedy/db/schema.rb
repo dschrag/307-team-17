@@ -25,10 +25,13 @@ ActiveRecord::Schema.define(version: 20151014160311) do
 
   create_table "notes", force: :cascade do |t|
     t.string   "message"
-    t.integer  "createdByUser"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.integer  "user_id"
+    t.integer  "usersCanSee"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
+
+  add_index "notes", ["user_id"], name: "index_notes_on_user_id"
 
   create_table "relationships", force: :cascade do |t|
     t.integer  "house_id"
@@ -44,6 +47,7 @@ ActiveRecord::Schema.define(version: 20151014160311) do
     t.string   "name"
     t.string   "email"
     t.integer  "houseID"
+    t.integer  "noteArray"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.string   "password_digest"
