@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'sessions/new'
 
   resources :houses
+  post      'users/:id/edit' => 'users#edit'
   resources :users
 	get				'login' => 'sessions#new'
 	post			'login' => 'sessions#create'
