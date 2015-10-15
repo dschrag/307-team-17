@@ -2,12 +2,14 @@
 
 one:
   name: MyString
-  address: MyString
-  num_tenants: 1
-  administratorID: MyString
+  street: MyString
+  city: MyString
+  state: MyString
+  zip: integer
 
 two:
   name: MyString
-  address: MyString
-  num_tenants: 1
-  administratorID: MyString
+  street: MyString
+  city: MyString
+  state: MyString
+  zip: integer

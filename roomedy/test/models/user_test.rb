@@ -4,7 +4,7 @@ class UserTest < ActiveSupport::TestCase
 
   def setup
     @user = User.new(name: "Derek Schrag", email: "dschrag@purdue.edu",
-                                          houseID: 3, password: "testpasss",
+                                          password: "testpasss",
                                           password_confirmation: "testpasss")
   end
 
