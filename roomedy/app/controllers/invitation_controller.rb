@@ -9,8 +9,6 @@ class InvitationController < ApplicationController
           current_user.relationship.destroy
         end
         
-        puts "HOUSES COUNT" + @house.relationships.count.to_s
-        
         @relationship = Relationship.create()
         current_user.relationship = @relationship
         @house.relationships << @relationship
