@@ -1,0 +1,32 @@
+<title>Roomedy Invitation!</title>
+
+<div class="jumbotron">
+  <h1>Roomedy</h1>
+  <h2>You've been invited to join a house!</h2>
+  <h3>Name: <%= @house.name%> <br/>
+    Owned by: 
+    <%=
+      begin
+        @user = User.find_by_id(@house.relationships.first.user_id)
+        @user.name
+      rescue => ex
+        "House is not currently owned."
+      end
+    %>
+  </h3>
+<% if logged_in? %>
+    Confirming this will join you to the new house, and if you are already
+    part of an house this is make you leave from your current house.
+    <%= form_tag("", method: "get") do %>
+      <%= hidden_field_tag(:accept, "true") %>
+      <%= submit_tag("Accept Invitation") %>
+    <% end %>
+<% else %>
+    Create a account! You'll automatically be added to your invitee's house 
+    using the link below.
+    <%= form_tag("/users/new", method: "get") do %>
+      <%= hidden_field_tag(:invite, @house.id.to_s) %>
+      <%= submit_tag("Create Account and Accept Invitation") %>
+    <% end %>
+<% end %>
+</div>
