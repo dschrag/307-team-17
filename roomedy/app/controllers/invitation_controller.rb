@@ -5,6 +5,16 @@ class InvitationController < ApplicationController
       render 'error'
     end
     if logged_in? && params[:accept] == "true"
+        unless current_user.relationship.nil?
+          current_user.relationship.destroy
+        end
+        
+        puts "HOUSES COUNT" + @house.relationships.count.to_s
+        
+        @relationship = Relationship.create()
+        current_user.relationship = @relationship
+        @house.relationships << @relationship
+      
         redirect_to @house
     end
   end
