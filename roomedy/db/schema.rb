@@ -27,7 +27,6 @@ ActiveRecord::Schema.define(version: 20151015233216) do
     t.integer  "item_price"
     t.integer  "item_amount"
     t.string   "item_name"
-    t.boolean  "visibility"
     t.integer  "user_id"
     t.integer  "house_id"
     t.datetime "created_at",  null: false
@@ -70,8 +69,6 @@ ActiveRecord::Schema.define(version: 20151015233216) do
   create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
-    t.integer  "houseID"
-    t.integer  "noteArray"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.string   "password_digest"

@@ -24,7 +24,7 @@ class UsersController < ApplicationController
         end
       end
 	    
-	    redirect_to @user
+	    redirect_to root_path
 	  else
 	    render 'new'
 	  end
@@ -38,7 +38,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     if @user.update_attributes(user_params)
       flash[:success] = "Profile updated"
-      redirect_to root_path
+      redirect_to @user
     else
       render 'edit'
     end
