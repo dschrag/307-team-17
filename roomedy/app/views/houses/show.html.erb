@@ -12,3 +12,12 @@
 <br/>
 <h2>Invite other users!</h2>
 <h3><%= request.base_url + "/invitation/"+ @house.id.to_s %></div></h3>
+
+<%= form_for(@house) do |f| %>
+	<%= render 'shared/error_messages', object: f.object %>
+
+	<%= f.label :email %>
+	<%= f.email_field :email, class: 'form-control' %>
+
+	<%= f.submit "Send Invite Email", class: "btn btn-primary" %>
+<% end %>
