@@ -24,5 +24,9 @@
 <% else %>
     Create a account! You'll automatically be added to your invitee's house 
     using the link below.
+    <%= form_tag("/users/new", method: "get") do %>
+      <%= hidden_field_tag(:invite, @house.id.to_s) %>
+      <%= submit_tag("Create Account and Accept Invitation") %>
+    <% end %>
 <% end %>
 </div>
