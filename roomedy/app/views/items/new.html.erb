@@ -1,0 +1,19 @@
+<% provide(:title, 'Create Item') %>
+<h1>Create Item</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@item) do |f| %>
+      <%= f.label :item_name %>
+      <%= f.text_field :item_name, class: 'form-control' %>
+
+      <%= f.label :item_amount %>
+      <%= f.number_field :item_amount, class: 'form-control' %>
+
+      <%= f.label :item_price %>
+      <%= f.number_field :item_price, class: 'form-control' %>
+
+      <%= f.submit "Create Item", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

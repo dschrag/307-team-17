@@ -3,6 +3,7 @@ require File.expand_path("../../lib/authenticated_user", __FILE__)
 Rails.application.routes.draw do
   get 'sessions/new'
 
+  resources :items
   resources :houses
   post      'users/:id/edit' => 'users#edit'
   resources :users
@@ -16,15 +17,19 @@ Rails.application.routes.draw do
   # get 'notes/new'
 
   get 'users/new'
+  
+  get 'items/new'
 
   root :to => 'pages#home'
 
-  get "inventory" => 'pages#inventory'
+  get "inventory" => 'pages#items'
   get "financial" => 'pages#financial'
   # get "notes" => 'pages#notes'
   get "schedule" => 'pages#schedule'
   get "account" => 'pages#account'
   get "register" => 'pages#signup'
+
+  get 'invitation/:id' => 'invitation#show'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

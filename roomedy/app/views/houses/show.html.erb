@@ -4,4 +4,11 @@
 <div class="center"><%= @house.state %></div>
 <div class="center"><%= @house.zip %></div>
 <!-- Only shows the first user of the house using this syntax -->
-<div class="center"><%= User.find_by(@house.relationships.first.user_id).name %></div>
+<br/>
+<% @house.users.each do |user| %>
+    <div class="center"><%= user.name %></div>
+<% end %>
+
+<br/>
+<h2>Invite other users!</h2>
+<h3><%= request.base_url + "/invitation/"+ @house.id.to_s %></div></h3>
