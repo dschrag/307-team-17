@@ -9,6 +9,8 @@
 <% else %>
     <div class="jumbotron">
       <h1>Welcome to Roomedy, <%= current_user.name %>!</h1>
-      <%= link_to "Create a House", new_house_path, class: "btn btn-primary btn-lg" %>
+      <% if current_user.relationship.nil? %>
+      	<%= link_to "Create a House", new_house_path, class: "btn btn-primary btn-lg" %>
+      <% end %>
     </div>
 <% end %>
