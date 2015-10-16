@@ -8,3 +8,7 @@
 <% @house.users.each do |user| %>
     <div class="center"><%= user.name %></div>
 <% end %>
+
+<br/>
+<h2>Invite other users!</h2>
+<h3><%= request.base_url + "/invitation/"+ @house.id.to_s %></div></h3>
