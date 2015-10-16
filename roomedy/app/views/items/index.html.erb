@@ -1,0 +1,15 @@
+<% provide(:title, 'Inventory') %>
+<h1>Inventory</h1>
+
+<%= will_paginate %>
+	<ul class="items">
+	  <% House.find(current_user.relationship.house_id).items.each do |item| %>
+	    <li>
+	      <%= item.item_name %>
+	      <div align="right">Created by: <%= User.find(item.user_id).name %></div>
+	    </li>
+	  <% end %>
+	</ul>
+<%= will_paginate %>
+
+<%= button_to "Add an Item", new_item_path, class: "btn btn-primary" %>
