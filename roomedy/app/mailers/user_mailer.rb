@@ -10,7 +10,15 @@ class UserMailer < ApplicationMailer
   def invite_email(user, recipient_email)
     @user = user
     @recipient_email = recipient_email
-    @invitation_url = "roomedy.com/create?invitation=" + @user.houseID.to_s
+    
+    if @user.relationship.nil?
+			puts "Sent your invite to " + recipient_email
+		else
+			puts "Unable to send invite without a house!"
+			return 
+    end
+    
+    @invitation_url = "roomedy.com/invitation/" + @user.relationship.house.id.to_s
     mail(to: @recipient_email, subject: @user.name + " has invited you to Roomedy!")
   end
 end
