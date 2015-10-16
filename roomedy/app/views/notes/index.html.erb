@@ -6,9 +6,11 @@
 	  <% House.find(current_user.relationship.house_id).notes.each do |note| %>
 	    <li>
 	      <%= note.content %>
-	      <div align="right">Created by: <%= User.find(note.user_id).name %></div>
-	      <% if note.user_id == current_user.id %>
+	      <div align="right">
+	      	<% if note.user_id == current_user.id %>
+	      	<%= link_to "delete", note, method: :delete, data: { confirm: "You sure?" } %>
 	      	<%= button_to "Edit", edit_note_path(note), class: "glyphicon glyphicon-pencil" %>
+	      	Created by: <%= User.find(note.user_id).name %></div>
 	      <% end %>
 	    </li>
 	  <% end %>

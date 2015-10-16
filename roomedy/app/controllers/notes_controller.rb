@@ -1,5 +1,6 @@
 class NotesController < ApplicationController
   before_action :logged_in_user
+  before_action :correct_user, only: :destroy
 
   def new
   	@note = Note.new
@@ -16,6 +17,9 @@ class NotesController < ApplicationController
   end
 
   def destroy
+    @note.destroy
+    flash[:success] = "Note deleted"
+    redirect_to notes_path
   end
 
   def index
@@ -40,5 +44,10 @@ class NotesController < ApplicationController
 
     def note_params
       params.require(:note).permit(:content)
+    end
+
+    def correct_user
+      @note = current_user.notes.find_by(id: params[:id])
+      redirect_to root_url if @note.nil?
     end
 end
