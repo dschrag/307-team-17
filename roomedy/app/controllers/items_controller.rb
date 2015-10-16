@@ -1,24 +1,21 @@
 class ItemsController < ApplicationController
-    def show
-        @item = Item.find(params[:id])
-    end
     
     def new
         @item = Item.new
     end
     
     def create
-        @item = Item.new(item_params)
+        @item = current_user.items.build(item_params)
         if @item.save
-            if current_user.save(validate: false)
-               flash[:success] = "Item created!"
-            else
-               flash[:notice] = "Unable to create item"
-            end
+            flash[:success] = "Item Created."
             redirect_to items_path
         else
             render 'new'
         end
+    end
+
+    def index
+        @items = Item.paginate(page: params[:page])
     end
     private
     	def item_params

@@ -3,6 +3,7 @@ require File.expand_path("../../lib/authenticated_user", __FILE__)
 Rails.application.routes.draw do
   get 'sessions/new'
 
+  post      'items/new' => 'items#new'
   resources :items
   resources :houses
   post      'users/:id/edit' => 'users#edit'
@@ -22,7 +23,7 @@ Rails.application.routes.draw do
 
   root :to => 'pages#home'
 
-  get "inventory" => 'pages#items'
+  # get "inventory" => 'pages#items'
   get "financial" => 'pages#financial'
   # get "notes" => 'pages#notes'
   get "schedule" => 'pages#schedule'

@@ -4,7 +4,7 @@ class CreateItems < ActiveRecord::Migration
       t.integer :item_price
       t.integer :item_amount
       t.string  :item_name
-      t.boolean :visibility
+      # t.boolean :visibility
     
       t.references :user, index: true
       t.references :house, index: true
