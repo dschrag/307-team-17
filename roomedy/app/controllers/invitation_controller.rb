@@ -4,5 +4,8 @@ class InvitationController < ApplicationController
     if @house.nil?
       render 'error'
     end
+    if logged_in? && params[:accept] == "true"
+        redirect_to @house
+    end
   end
 end

@@ -9,7 +9,12 @@
 <% if logged_in? %>
     Confirming this will join you to the new house, and if you are already
     part of an house this is make you leave from your current house.
+    <%= form_tag("", method: "get") do %>
+      <%= hidden_field_tag(:accept, "true") %>
+      <%= submit_tag("Accept Invitation") %>
+    <% end %>
 <% else %>
-    Create a account! You'll automatically be added to your invitee's house.
+    Create a account! You'll automatically be added to your invitee's house 
+    using the link below.
 <% end %>
 </div>
