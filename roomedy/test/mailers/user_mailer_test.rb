@@ -19,4 +19,15 @@ class UserMailerTest < ActionMailer::TestCase
 
     #Unclear on how to test body of email.
   end
+
+  test "invitation" do
+    email = UserMailer.invite_email(@user, "smithsps@gmail.com")
+    email.deliver_now
+
+    assert_not ActionMailer::Base.deliveries.empty?
+
+    assert_equal ['smithsp@purdue.edu'], email.from
+    assert_equal ['smithsps@gmail.com'], email.to
+    assert_equal 'Derek Schrag has invited you to Roomedy!', email.subject
+  end
 end
