@@ -10,7 +10,10 @@ Rails.application.routes.draw do
 	post			'login' => 'sessions#create'
 	delete		'logout' => 'sessions#destroy'
  
-  get 'notes/new'
+  post  'notes/new' => 'notes#new'
+  resources :notes
+
+  # get 'notes/new'
 
   get 'users/new'
 
@@ -18,7 +21,7 @@ Rails.application.routes.draw do
 
   get "inventory" => 'pages#inventory'
   get "financial" => 'pages#financial'
-  get "notes" => 'pages#notes'
+  # get "notes" => 'pages#notes'
   get "schedule" => 'pages#schedule'
   get "account" => 'pages#account'
   get "register" => 'pages#signup'

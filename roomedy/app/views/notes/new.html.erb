@@ -1,2 +1,10 @@
-<h1>Notes#new</h1>
-<p>Find me in app/views/notes/new.html.erb</p>
+<% provide(:title, 'Create a Note') %>
+<h1>Noteboard</h1>
+
+<%= form_for(@note) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="field">
+    <%= f.text_area :content, placeholder: "Compose new Note..." %>
+  </div>
+  <%= f.submit "Post", class: "btn btn-primary" %>
+<% end %>

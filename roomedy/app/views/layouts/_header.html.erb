@@ -1,3 +1,4 @@
+<% if !current_user.relationship.nil? %>
 <body>
   <nav class="header">
     <div class="container-fluid">
@@ -20,6 +21,7 @@
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
           <% if logged_in? %>
+            <li><%= link_to "House", House.find_by(current_user.relationship.house_id) %></li>
             <li><%= link_to "Inventory", inventory_path %></li>
             <li><%= link_to "Financial", financial_path %></li>
             <li><%= link_to "Noteboard", notes_path %></li>
@@ -32,3 +34,4 @@
     </div><!-- /.container-fluid -->
   </nav>
 </body>
+<% end %>

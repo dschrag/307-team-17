@@ -1,0 +1,14 @@
+<% provide(:title, 'Noteboard') %>
+<h1>Noteboard</h1>
+
+<%= will_paginate %>
+	<ul class="notes">
+	  <% House.find_by(current_user.relationship.house_id).notes.each do |note| %>
+	    <li>
+	      <%= note.content %>
+	    </li>
+	  <% end %>
+	</ul>
+<%= will_paginate %>
+
+<%= button_to "Create a Note", new_note_path, class: "btn btn-primary" %>
