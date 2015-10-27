@@ -4,17 +4,25 @@
 <%= will_paginate %>
 	<ul class="notes">
 	  <% House.find(current_user.relationship.house_id).notes.each do |note| %>
-	    <li>
-	      <%= note.content %>
-	      <div align="right">
-	      	<% if note.user_id == current_user.id %>
-	      		<%= link_to "Edit", edit_note_path(note) %>
-	      		<%= link_to "Delete", note, method: :delete, data: { confirm: "You sure?" } %>
-	      	<% end %>
-	      	Created by: <%= User.find(note.user_id).name %>
-	      </div>
-	    </li>
-	  <% end %>
+			<% if note.permissions.find_by user_id: current_user.id %>
+			<% perm = note.permissions.find_by user_id: current_user.id %>
+			<% else %>
+			<% perm = note.permissions.first %>
+			<% end %>
+
+			<% if perm.level < 4 %>
+				<li>
+		      <%= note.content %>
+		      <div align="right">
+		      	<% if note.user_id == current_user.id %>
+		      		<%= link_to "Edit", edit_note_path(note) %>
+		      		<%= link_to "Delete", note, method: :delete, data: { confirm: "You sure?" } %>
+		      	<% end %>
+		      	Created by: <%= User.find(note.user_id).name %>
+		      </div>
+		    </li>
+			<% end %>
+		<% end %>
 	</ul>
 <%= will_paginate %>
 
