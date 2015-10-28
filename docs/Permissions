@@ -1,0 +1,66 @@
+Permissions
+-----------
+Parameters
+-----------
+user_id - Reference to a user who is given a specific permission. If 0, this is default permission for users without specific permission.
+Level - Integer that indicates level of power.
+        0 - Creator Permissions, given by default to user who created the object
+        1 - Read, Edit, Destroy permissions
+        2 - Read, Edit permissions
+        3 - Read only
+        4 - No access
+permissable_type - String with the name of the model of the type of Permission, created when permission is created from other model.
+        e.g. perm.permissable_type == "Note"
+permissable_id - Reference to the object that owns the permission.
+        e.g. The id of the Note that the permission is referencing
+
+----------
+Setting up Model to be permissable
+----------
+in model
+/app/models/note.rb
+  has_many :permissions, as: :permissable, dependent: :destroy
+Sets up a Note to have many permissions with permissable_type and id
+
+in model_controller:
+/app/controllers/notes_controller.rb - Lines 13-14
+@perm_default = @note.permissions.create(user_id: 0, level: 3)
+@perm_user = @note.permissions.create(user_id: current_user.id, level: 0)
+
+Create the default permissions first (for notes, default behavior should be all users can see, but not edit or delete)
+Then create the permission for user who is creating the note
+
+in model_view
+/app/views/notes/index.html.erb
+<% if note.permissions.find_by user_id: current_user.id %>
+<% perm = note.permissions.find_by user_id: current_user.id %>
+<% else %>
+<% perm = note.permissions.first %>
+<% end %>
+
+If, then else logic to detmien if the current user has a prespecified permission to accessing a note.
+If the user has permission,
+  then new permission is equal to his permission.
+else
+  new permission is equal to the default permission (the first permission for each model)
+end
+
+And then, we only display the note if the user has the permission to read it. We only display the edit button if
+the user permission allows them to edit, and we only display the delete button if the user has the ability to delete it.
+
+
+----------
+Examples
+----------
+
+From app/views/notes/index.html:
+<% House.find(current_user.relationship.house_id).notes.each do |note| %>
+  <% if note.permissions.find(current_user).level < 4 %>
+
+First we find all the notes in the house.
+  If the note has a specific permission for that user, and that specifc permission is less than 4 (Contains Read access)
+  OR if the default permission is less than 4
+    then show the note.
+  else
+    display nothing
+  end
