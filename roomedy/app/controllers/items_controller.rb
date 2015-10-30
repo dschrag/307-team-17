@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
-    before_action :correct_user, only: :destroy
+    before_action :logged_in_user
+    before_action :correct_user
     
     def new
         @item = Item.new

@@ -1,4 +1,6 @@
 class HousesController < ApplicationController
+ 	before_action :logged_in_user
+
  	def show
 		@house = House.find(params[:id])
 	end
