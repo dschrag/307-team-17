@@ -1,10 +1,27 @@
 <% provide(:title, 'Edit Note') %>
 <h1>Edit Note</h1>
 
-<%= form_for(@note) do |f| %>
+<%= form_for(@note, @permissions) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
   <div class="field">
     <%= f.text_area :content %>
   </div>
+  <% House.find(current_user.relationship.house_id).users.each do |user| %>
+      <div class="center"><%= user.name %></div>
+      <div class="dropdown center">
+        <button class="btn btn-default dropdown-toggle" type="button"
+        id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true"
+        aria-expanded="false">
+        User permissions
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu center" aria-labelledby="dropdownMenu1">
+        <li><a href="#">Can Read</a></li>
+        <li><a href="#">Can Read and Edit</a></li>
+        <li><a href="#">Can Read, Edit, and Delete</a></li>
+        <li><a href="#">Cannot Read</a></li>
+      </ul>
+    </div>
+  <% end %>
   <%= f.submit "Post", class: "btn btn-primary" %>
 <% end %>

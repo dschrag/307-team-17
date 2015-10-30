@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: 
+  level: 1
+  permissable_id: 
+  permissable_type: Permissable
+
+two:
+  user: 
+  level: 1
+  permissable_id: 
+  permissable_type: Permissable
