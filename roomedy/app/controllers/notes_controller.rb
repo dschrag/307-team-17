@@ -4,6 +4,7 @@ class NotesController < ApplicationController
 
   def new
   	@note = Note.new
+    @note.permissions.build
   end
 
   def create
