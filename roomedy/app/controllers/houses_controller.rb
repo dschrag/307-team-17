@@ -10,14 +10,17 @@ class HousesController < ApplicationController
   	end
 	def create
 		@house = House.new(house_params)
+		@house.permissions.build
 		@relationship = Relationship.create()
 		current_user.relationship = @relationship
 		@house.relationships << @relationship
+		# @house.permissions << @perm_default
+		# @house.permissions << @perm_user
 		if @house.save
+			@house.permissions.create(user_id: 0, level: 1)
+			@house.permissions.create(user_id: current_user.id, level: 0)
 			if current_user.save(validate: false)
 				flash[:success] = "Welcome to your new Home, #{current_user.name}"
-				@perm_default = @house.permissions.create(user_id: 0, level: 1)
-				@perm_user = @house.permissions.create(user_id: current_user.id, level: 0)
 			else
 				flash[:notice] = "Unable to save user"
 			end
@@ -47,16 +50,16 @@ class HousesController < ApplicationController
 		end
 
 		def is_admin
+			@house = House.find(params[:id])
 			if @house.permissions.find_by user_id: current_user.id
 				perm = @house.permissions.find_by user_id: current_user.id
 			else
 				perm = @house.permissions.first
 			end
 
-			unless perm == 0
-				flash[:danger] = "You must be the house administrator to view this page"
-				redirect_to root_path
+			unless perm.level == 0
+				flash[:danger] = "#{perm.level}. You must be the house administrator to view this page"
+				redirect_to @house
 			end
 		end
-
 end
