@@ -8,4 +8,5 @@ class House < ActiveRecord::Base
 	has_many :users, :through => :relationships
 	has_many :items, :through => :users
 	has_many :notes, :through => :users
+	has_many :permissions, as: :permissable, dependent: :destroy
 end

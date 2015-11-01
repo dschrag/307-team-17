@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   post      'items/new' => 'items#new'
   resources :items
+  post      'houses/:id/edit' => 'houses#edit'
   resources :houses
   post      'users/:id/edit' => 'users#edit'
   resources :users

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151027152805) do
+ActiveRecord::Schema.define(version: 20151015233216) do
 
   create_table "houses", force: :cascade do |t|
     t.string   "name"
@@ -45,17 +45,6 @@ ActiveRecord::Schema.define(version: 20151027152805) do
 
   add_index "notes", ["user_id", "created_at"], name: "index_notes_on_user_id_and_created_at"
   add_index "notes", ["user_id"], name: "index_notes_on_user_id"
-
-  create_table "permissions", force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "level"
-    t.integer  "permissable_id"
-    t.string   "permissable_type"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
-  end
-
-  add_index "permissions", ["permissable_type", "permissable_id"], name: "index_permissions_on_permissable_type_and_permissable_id"
 
   create_table "relationships", force: :cascade do |t|
     t.integer  "house_id"
