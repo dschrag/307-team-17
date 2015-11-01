@@ -11,5 +11,14 @@
 
       <%= f.submit "Save changes", class: "btn btn-primary" %>
     <% end %>
+    <ul>  
+      <% @house.users.each do |user| %>
+	    <% if user.id != current_user.id %>
+	      <li>  
+	        <%= user.name %>
+	        <%= link_to "Remove", remove_house_path(:user_id => user.id), method: :post, data: {confirm: "Are you sure?"} %>
+	      </li>
+	    <% end %>
+      <% end %>
   </div>
 </div>

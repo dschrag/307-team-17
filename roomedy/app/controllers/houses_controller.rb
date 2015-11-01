@@ -1,6 +1,6 @@
 class HousesController < ApplicationController
  	before_action :logged_in_user
- 	before_action :is_admin, only: [:edit, :update]
+ 	before_action :is_admin, only: [:edit, :update, :remove]
 
  	def show
 		@house = House.find(params[:id])
@@ -42,6 +42,13 @@ class HousesController < ApplicationController
 		else
 			render 'edit'
 		end
+	end
+
+	def remove
+		@house = House.find(params[:id])
+		@house.relationships.find_by(user_id: params[:user_id]).destroy
+		flash[:success] = "User Removed"
+		redirect_to @house
 	end
 
 	private
