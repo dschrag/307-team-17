@@ -1,5 +1,6 @@
 class HousesController < ApplicationController
  	before_action :logged_in_user
+ 	before_action :member_of_house, except: [:new, :create]
  	before_action :is_admin, only: [:edit, :update, :remove]
 
  	def show
@@ -14,8 +15,6 @@ class HousesController < ApplicationController
 		@relationship = Relationship.create()
 		current_user.relationship = @relationship
 		@house.relationships << @relationship
-		# @house.permissions << @perm_default
-		# @house.permissions << @perm_user
 		if @house.save
 			@house.permissions.create(user_id: 0, level: 1)
 			@house.permissions.create(user_id: current_user.id, level: 0)
@@ -73,8 +72,16 @@ class HousesController < ApplicationController
 			end
 
 			unless perm.level == 0
-				flash[:danger] = "#{perm.level}. You must be the house administrator to view this page"
+				flash[:danger] = "You must be the house administrator to view this page"
 				redirect_to @house
+			end
+		end
+
+		def member_of_house
+			@house = House.find(params[:id])
+			unless @house.relationships.find_by(user_id: current_user.id)
+				flash[:danger] = "You are not a member of that house and may not perform that task"
+				redirect_to root_path
 			end
 		end
 end
