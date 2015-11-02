@@ -5,4 +5,6 @@ class Note < ActiveRecord::Base
   default_scope -> { order(created_at: :desc) }
   validates :user_id, presence: true
   validates :content, presence: true
+  accepts_nested_attributes_for :permissions
+
 end
