@@ -12,4 +12,11 @@ class ApplicationController < ActionController::Base
   			redirect_to new_session_path
   		end
   	end
+
+    def has_house
+      unless !current_user.relationship.nil?
+        flash[:danger] = "You must have a house to access that feature"
+        redirect_to root_path
+      end
+    end
 end
