@@ -17,6 +17,7 @@
 	      <li>  
 	        <%= user.name %>
 	        <%= link_to "Remove", remove_house_path(:user_id => user.id), method: :post, data: {confirm: "Are you sure?"} %>
+	        <%= link_to "Make Admin", promote_house_path(:user_id => user.id), method: :post, data: {confirm: "This will remove your admin priveleges. Are you sure?"} %>
 	      </li>
 	    <% end %>
       <% end %>

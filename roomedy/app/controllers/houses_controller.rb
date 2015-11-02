@@ -51,6 +51,14 @@ class HousesController < ApplicationController
 		redirect_to @house
 	end
 
+	def promote
+		@house = House.find(params[:id])
+		@house.permissions.find_by(user_id: current_user.id).destroy
+		@house.permissions.create(user_id: params[:user_id], level: 0)
+		flash[:success] = "User promoted to Admin"
+		redirect_to @house
+	end
+
 	private
 		def house_params
 			params.require(:house).permit(:name, :street, :city, :state, :zip)
