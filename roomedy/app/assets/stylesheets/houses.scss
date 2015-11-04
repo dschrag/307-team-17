@@ -12,6 +12,8 @@
 
 body {
 	padding-top: 0px;
+	min-height: 100%;
+	min-width: 100%;
 }
 
 section {
@@ -33,6 +35,12 @@ section {
 }
 article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
     display: block;
+}
+
+.container {
+	min-width: 100%;
+	min-height: 100%;
+	//background-image: url(background_pic.jpg);
 }
 
 .list-wrapper:first-child {
@@ -87,7 +95,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
 
 img {
     vertical-align: middle;
-    height: 150px;
+    height: 250px;
 }
 
 .center {

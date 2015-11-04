@@ -14,14 +14,14 @@ Rails.application.routes.draw do
 	get				'login' => 'sessions#new'
 	post			'login' => 'sessions#create'
 	delete		'logout' => 'sessions#destroy'
- 
+
   post  'notes/new' => 'notes#new'
   resources :notes
 
   # get 'notes/new'
 
   get 'users/new'
-  
+
   get 'items/new'
 
   root :to => 'pages#home'

@@ -8,25 +8,6 @@
 
 </head>
 
-<div class="header1">
-  <div class="flex-container">
-    <%= link_to "Roomedy", root_path, class: "navbar_brand" %>
-    <div class="login_links">
-      <%= link_to "Login",  login_path, class: "btn btn-log" %>
-
-                or
-
-      <%= link_to "Sign Up",  new_user_path, class: "btn btn-sig" %>
-    </div>
-  </div>
-</div>
-
-<section data-track-prefix="Header Section">
-  <div class="section-wrapper text-center">
-    <%= image_tag("logo.gif") %>
-  </div>
-</section>
-
 <body>
   <% if logged_in? %>
 	 <%= render 'layouts/header' %>
