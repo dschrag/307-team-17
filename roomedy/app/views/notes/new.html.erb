@@ -1,22 +1,4 @@
 <% provide(:title, 'Create a Note') %>
 <h1>Noteboard</h1>
 
-<%= form_for(@note) do |f| %>
-  <%= render 'shared/error_messages', object: f.object %>
-  <div class="field">
-    <%= f.text_area :content, placeholder: "Compose new Note..." %>
-  </div>
-  <% House.find(current_user.relationship.house_id).users.each do |user| %>
-  <% if user != current_user %>
-    <%= f.fields_for :permissions do |perm| %>
-      <div class="center">
-      <%= user.name %>
-      <%= perm.hidden_field :user_id, value: user.id %><br />
-      <%= perm.select :level, [["Use default", 100], ["Read, Edit, and Delete", 1],
-        ["Read and Edit", 2], ["Read Only", 3], ["Can't Read", 4]] %>
-      </div>
-    <% end %>
-    <% end %>
-  <% end %>
-  <%= f.submit "Post", class: "btn btn-primary" %>
-<% end %>
+<%= render 'form' %>

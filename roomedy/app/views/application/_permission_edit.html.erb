@@ -1,0 +1,6 @@
+
+<%= f.fields_for :permissions do |perm| %>
+  <% User.find(perm.user_id) do |user| %>
+    <%= render 'permission', perm: perm, user: user %>
+<% end %>
+<% end %>

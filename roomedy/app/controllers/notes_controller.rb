@@ -2,7 +2,6 @@ class NotesController < ApplicationController
   before_action :logged_in_user
   before_action :correct_user, only: :destroy
 
-
   def new
   	@note = Note.new
     @note.permissions.build
@@ -11,7 +10,6 @@ class NotesController < ApplicationController
   def create
   	@note = current_user.notes.build(note_params)
   	if @note.save
-      @perm_default = @note.permissions.create(user_id: 0, level: 3)
       @perm_user = @note.permissions.create(user_id: current_user.id, level: 0)
   	  flash[:success] = "Note Created"
       redirect_to notes_path
@@ -47,11 +45,13 @@ class NotesController < ApplicationController
   private
 
     def note_params
-      params.require(:note).permit(:content, permissions_attributes: [:user_id, :level])
+      params.require(:note).permit(:content, permissions_attributes: [:id, :user_id, :level])
     end
 
     def correct_user
       @note = current_user.notes.find_by(id: params[:id])
       redirect_to root_url if @note.nil?
     end
+
+
 end
