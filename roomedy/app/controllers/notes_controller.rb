@@ -1,6 +1,6 @@
 class NotesController < ApplicationController
   before_action :logged_in_user
-  before_action :correct_user
+  before_action :correct_user, only: [:edit, :update, :destroy]
 
   def new
   	@note = Note.new
@@ -51,6 +51,9 @@ class NotesController < ApplicationController
 
     def correct_user
       @note = current_user.notes.find_by(id: params[:id])
-      redirect_to root_url if @note.nil?
+      if @note.nil?
+        flash[:danger] = "You are not allowed to perform that task on that note."
+        redirect_to notes_path
+      end
     end
 end
