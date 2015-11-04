@@ -8,6 +8,16 @@
 
 </head>
 
+<% if logged_in? %>
+
+<% else %>
+<section data-track-prefix="Header Section">
+  <div class="section-wrapper text-center">
+    <%= image_tag("logo.gif") %>
+  </div>
+</section>
+<% end %>
+
 <body>
   <% if logged_in? %>
 	 <%= render 'layouts/header' %>
