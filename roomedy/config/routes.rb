@@ -26,9 +26,9 @@ Rails.application.routes.draw do
 
   root :to => 'pages#home'
 
-  # get "inventory" => 'pages#items'
+  #get "inventory" => 'pages#items'
   get "financial" => 'pages#financial'
-  # get "notes" => 'pages#notes'
+  #get "notes" => 'pages#notes'
   get "schedule" => 'pages#schedule'
   get "account" => 'pages#account'
   get "register" => 'pages#signup'
