@@ -1,13 +1,11 @@
-<% provide(:title, 'Edit Note') %>
-<h1>Edit Note</h1>
-
 <%= form_for(@note) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
   <div class="field">
-    <%= f.text_area :content %>
+    <%= f.text_area :content, placeholder: "Compose new Note..." %>
   </div>
-  <% @note.permissions.each do |perm| %>
-    <%= perm.id %>
+  <%= f.fields_for :permissions do |perm| %>
+    <%= render 'permission_new', :f => perm %>
   <% end %>
+
   <%= f.submit "Post", class: "btn btn-primary" %>
 <% end %>
