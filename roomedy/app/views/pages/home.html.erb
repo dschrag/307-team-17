@@ -1,45 +1,16 @@
 <title> Roomedy </title>
 
 <% if !logged_in? %>
-
-  <section data-track-prefix="Header Section">
-    <div class="section-wrapper text-center">
-      <%= image_tag("logo.gif") %>
-    </div>
-  </section>
-
-  <div class="header1">
-    <div class="flex-container">
-      <%= link_to "Roomedy", root_path, class: "navbar_brand" %>
-      <div class="login_links">
-        <%= link_to "Login",  login_path, class: "btn btn-log" %>
-
-                or
-
-        <%= link_to "Sign Up",  new_user_path, class: "btn btn-sig" %>
-      </div>
-    </div>
-  </div>
+    <div class="jumbotron", align="center">
+        <h1>Roomedy</h1>
+        <h2>This is the homepage for Roomedy, CS 307 Team 17's Project!</h2>
+        <%= link_to "Create Account", new_user_path, class: "btn btn-primary btn-lg" %>
+        <%= link_to "Login",  login_path, class: "btn btn-primary btn-lg" %>
 <% else %>
-
-  <section data-track-prefix="Header Section">
-    <div class="section-wrapper text-center">
-      <%= image_tag("logo.gif") %>
+    <div class="jumbotron">
+      <h1>Welcome to Roomedy, <%= current_user.name %>!</h1>
+      <% if current_user.relationship.nil? %>
+      	<%= link_to "Create a House", new_house_path, class: "btn btn-primary btn-lg" %>
+      <% end %>
     </div>
-  </section>
-
-  <div class="header1">
-    <div class="flex-container">
-      <%= link_to "Roomedy", root_path, class: "navbar_brand" %>
-      <div class="login_links">
-        <%= link_to "Create a House", new_house_path, class: "btn btn-sig" %>
-        <%= link_to "Join House", current_user, class: "btn btn-sig" %>
-        <%= link_to "Log out", logout_path, class: "btn btn-log", method: "delete" %>
-      </div>
-    </div>
-  </div>
-<% end %>
-
-<% if !logged_in? %>
-  
 <% end %>
