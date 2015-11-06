@@ -28,6 +28,8 @@ gem 'bootstrap-sass'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
+#gem 'coffee-script-source', '1.8.0'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
@@ -36,6 +38,13 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
+gem 'sunspot_rails'
+gem 'sunspot_solr'
+gem "tzinfo-data"
+
+gem 'paperclip', '~> 4.1'
+
+gem 'gritter', '~> 1.2'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

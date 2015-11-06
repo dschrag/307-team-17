@@ -34,6 +34,23 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
     display: block;
 }
 
+.dropdown-font {
+	color: #fff;
+}
+
+.round-image-50 {
+    background-color: white;
+    border: 1px solid #d9d9d9;
+    border-radius: 25px;
+    -moz-border-radius: 25px;
+    -webkit-border-radius: 25px;
+    height: 20px;
+    width: 20px;
+    overflow: hidden;
+    text-align: center;
+    img { width: 100% }
+}
+
 .list-wrapper:first-child {
     margin-left: 10px;
 }
@@ -144,12 +161,17 @@ input {
 }
 
 .navbar_brand {
-    float: center;
-    padding: 50px 50px;
+		position: relative;
+		top: 20px;
+		left: 50px;
+    padding: 18px 18px;
     font-size: 30px;
-    line-height: 20px;
-    height: 50px;
     color: #fff;
+}
+
+.navbar_brand:hover {
+	color: #fff;
+	text-decoration: none;
 }
 
 .navbar-nav > li > a {
@@ -159,16 +181,73 @@ input {
 
 .header {
     position: fixed;
+		height: 80px;
     top: 0;
     left: 0;
     width: 100%;
-		padding: 30px 0px 30px;
-    background: #7D1935;
+    background: #3B5998;
     z-index: 99;
-    border-bottom: 1px solid #48be9d;
+    border-bottom: 1px solid #4C5798;
     color: #fff;
     text-shadow: 0 -1px 0 #39a385;
-    box-shadow: 0 0 3px rgba(0,0,0,0.5);
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+}
+
+.login_links {
+    position: absolute;
+    top: 20px;
+    right: 70px;
+}
+
+.btn-login {
+	background: #1BB33F;
+	color: #fff;
+}
+
+.btn-sigout {
+	background: #ff652f;
+	color: #fff;
+}
+
+.btn-house {
+	background: #3B5998;
+	color: #fff;
+}
+
+.btn-inventory {
+	background: #3B5998;
+	color: #fff;
+}
+.btn-financial {
+	background: #3B5998;
+	color: #fff;
+}
+
+.btn-noteboard {
+	background: #3B5998;
+	color: #fff;
+}
+
+.btn-schedule {
+	background: #3B5998;
+	color: #fff;
+}
+
+.btn-profile {
+	background: #3B5998;
+	color: #fff;
+}
+
+.btn:hover {
+	background: #3B5998;
+	text-decoration: none;
+	color: #fff;
+}
+
+.btn-sigout:hover {
+	background: #ff5216;
+	text-decoration: none;
+	color: #fff;
 }
 
 .field_with_errors {

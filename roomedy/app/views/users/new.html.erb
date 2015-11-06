@@ -16,7 +16,12 @@
 
 			<%= f.label :password_confirmation, "Confirmation" %>
 			<%= f.password_field :password_confirmation, class: 'form-control' %>
-			
+
+			<div class="field">
+				<%= f.label :avatar %><br>
+				<%= f.file_field :avatar, html: { class: 'form-control'} %>
+			</div>
+
 			<%= f.hidden_field :invite, :value => params[:invite] %>
 
 			<%= f.submit "Create my account", class: "btn btn-primary" %>
