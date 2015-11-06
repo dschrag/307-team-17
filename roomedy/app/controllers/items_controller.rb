@@ -1,6 +1,8 @@
 class ItemsController < ApplicationController
+
     #before_action :logged_in_user
     #before_action :correct_user
+
     
     def new
         @item = Item.new
@@ -47,6 +49,9 @@ class ItemsController < ApplicationController
 		
 		def correct_user
 		    @item = current_user.items.find_by(id: params[:id])
-		    redirect_to root_url if @item.nil?
+		    if @item.nil?
+              flash[:danger] = "You are not allowed to perform that task on that item."
+              redirect_to items_path
+            end
 	    end
 end
