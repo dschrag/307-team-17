@@ -24,14 +24,15 @@ ActiveRecord::Schema.define(version: 20151027152805) do
   end
 
   create_table "items", force: :cascade do |t|
-    t.integer  "item_price"
+    t.decimal  "item_price",  precision: 8, scale: 2
     t.integer  "item_amount"
     t.string   "item_name"
     t.boolean  "visibility"
+    t.integer  "frequency"
     t.integer  "user_id"
     t.integer  "house_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
   end
 
   add_index "items", ["house_id"], name: "index_items_on_house_id"
@@ -81,8 +82,6 @@ ActiveRecord::Schema.define(version: 20151027152805) do
   create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
-    t.integer  "houseID"
-    t.integer  "noteArray"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.string   "password_digest"
