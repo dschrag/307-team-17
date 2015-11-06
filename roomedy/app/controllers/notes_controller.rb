@@ -30,6 +30,7 @@ class NotesController < ApplicationController
 
   def edit
     @note = Note.find(params[:id])
+    @permissions = @note.permissions
   end
 
   def update

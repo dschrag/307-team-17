@@ -3,9 +3,10 @@
   <div class="field">
     <%= f.text_area :content, placeholder: "Compose new Note..." %>
   </div>
-  <%= f.fields_for :permissions do |perm| %>
-    <%= render 'permission_new', :f => perm %>
+  <% if u == 0 %>
+    <%= render 'permission_new', f: f %>
+  <% else %>
+    <%= render 'permission_edit', f: f, note: @note %>
   <% end %>
-
   <%= f.submit "Post", class: "btn btn-primary" %>
 <% end %>

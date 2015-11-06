@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151027152805) do
+ActiveRecord::Schema.define(version: 20151105154537) do
 
   create_table "houses", force: :cascade do |t|
     t.string   "name"
@@ -39,10 +39,12 @@ ActiveRecord::Schema.define(version: 20151027152805) do
   create_table "notes", force: :cascade do |t|
     t.text     "content"
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.integer  "permissions_id"
   end
 
+  add_index "notes", ["permissions_id"], name: "index_notes_on_permissions_id"
   add_index "notes", ["user_id", "created_at"], name: "index_notes_on_user_id_and_created_at"
   add_index "notes", ["user_id"], name: "index_notes_on_user_id"
 
