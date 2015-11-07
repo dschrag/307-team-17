@@ -2,7 +2,15 @@ class ItemsController < ApplicationController
 
     #before_action :logged_in_user
     #before_action :correct_user
-
+    
+    ##
+    # Here is where I will be doing frequency tracking
+    # I'm going to have to change the setup of adding items, for one
+    # Because right now adding two items with the same name puts two different entries in the table
+    # I will check for uniqueness of the name, and if the name is different then I will create a new one
+    # Otherwise, I will add the amount to the existin gitem
+    # What is here is stupid basic, and will require a lot of change
+    # NOTE: Another option is to have a list of created items to choose from, and then to create a new item if necessary
     
     def new
         @item = Item.new
@@ -19,7 +27,7 @@ class ItemsController < ApplicationController
     end
 
     def index
-        @items = Item.paginate(page: params[:page])
+        @items = Item.paginate(page: params[:page)]
     end
     
     def edit
