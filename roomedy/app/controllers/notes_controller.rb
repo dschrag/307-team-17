@@ -58,7 +58,7 @@ class NotesController < ApplicationController
     end
 
     def correct_user
-      @note = current_user.notes.find_by(id: params[:id])
+      @note = Note.find_by(id: params[:id])
       if @note.nil?
         flash[:danger] = "You are not allowed to perform that task on that note."
         redirect_to notes_path
