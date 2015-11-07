@@ -1,6 +1,13 @@
-
-<%= f.fields_for :permissions do |perm| %>
-  <% User.find(perm.user_id) do |user| %>
-    <%= render 'permission', perm: perm, user: user %>
-<% end %>
+<% @note.permissions.each do |perm| %>
+  <% next if perm.level == 0 %>
+  <%= f.fields_for perm, index: perm.id do |perm_form| %>
+    <% if perm.user_id != 0 %>
+      <% @permuser = User.find(perm.user_id)   %>
+      <%= render 'permission', f: perm_form, user: @permuser %>
+    <% else %>
+    <% User.new(id: 0) do |user| %>
+      <%= render 'permission', f: perm_form, user: user %>
+      <% end %>
+    <% end %>
+  <% end %>
 <% end %>
