@@ -30,10 +30,18 @@ class NotesController < ApplicationController
 
   def edit
     @note = Note.find(params[:id])
+
   end
 
   def update
     @note = Note.find(params[:id])
+    permparams = (params[:note][:permission].permit!)
+    permparams.each_key do |key|
+      perm = Permission.find(key)
+      perm.level = permparams[key][:level]
+      perm.save
+    end
+
     if @note.update_attributes(note_params)
       flash[:success] = "Note updated"
       redirect_to notes_path
@@ -45,7 +53,8 @@ class NotesController < ApplicationController
   private
 
     def note_params
-      params.require(:note).permit(:content, permissions_attributes: [:id, :user_id, :level])
+      params.require(:note).permit(:id, :content,
+      permissions_attributes: [:id, :user_id, :level])
     end
 
     def correct_user
