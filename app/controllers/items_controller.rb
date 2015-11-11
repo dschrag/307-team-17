@@ -27,7 +27,7 @@ class ItemsController < ApplicationController
     end
 
     def index
-        @items = Item.paginate(page: params[:page)]
+        @items = Item.paginate(page: params[:page])
     end
     
     def edit
