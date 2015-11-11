@@ -1,10 +1,11 @@
 class CreateItems < ActiveRecord::Migration
   def change
     create_table :items do |t|
-      t.integer :item_price
+      t.decimal :item_price, :precision => 8, :scale => 2
       t.integer :item_amount
       t.string  :item_name
-      # t.boolean :visibility
+      t.boolean :visibility
+      t.integer :frequency
     
       t.references :user, index: true
       t.references :house, index: true

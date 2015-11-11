@@ -1,6 +1,7 @@
-class NotesController < ApplicationController
-  before_action :logged_in_user
-  before_action :correct_user, only: [:edit, :update, :destroy]
+class NotesController < ApplicationC
+  #before_action :logged_in_user
+  #before_action :correct_user
+
 
   def new
   	@note = Note.new
@@ -30,11 +31,18 @@ class NotesController < ApplicationController
 
   def edit
     @note = Note.find(params[:id])
-    @permissions = @note.permissions
+
   end
 
   def update
     @note = Note.find(params[:id])
+    permparams = (params[:note][:permission].permit!)
+    permparams.each_key do |key|
+      perm = Permission.find(key)
+      perm.level = permparams[key][:level]
+      perm.save
+    end
+
     if @note.update_attributes(note_params)
       flash[:success] = "Note updated"
       redirect_to notes_path
@@ -46,11 +54,12 @@ class NotesController < ApplicationController
   private
 
     def note_params
-      params.require(:note).permit(:content, permissions_attributes: [:id, :user_id, :level])
+      params.require(:note).permit(:id, :content,
+      permissions_attributes: [:id, :user_id, :level])
     end
 
     def correct_user
-      @note = current_user.notes.find_by(id: params[:id])
+      @note = Note.find_by(id: params[:id])
       if @note.nil?
         flash[:danger] = "You are not allowed to perform that task on that note."
         redirect_to notes_path
