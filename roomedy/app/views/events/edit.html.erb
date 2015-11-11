@@ -1,0 +1,22 @@
+<% provide(:title, 'Edit Event') %>
+<h1>Edit Event</h1>
+<h2><%= @event.name %></h2>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@event) do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+      
+      <%= f.label :description %>
+      <%= f.text_area :description, class: 'form-control' %>
+
+      <%= f.label :start_time %>
+      <%= f.datetime_select :start_time, class: 'form-control' %>
+
+      <%= f.label :end_time %>
+      <%= f.datetime_select :end_time, class: 'form-control' %>
+
+      <%= f.submit "Create Event", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

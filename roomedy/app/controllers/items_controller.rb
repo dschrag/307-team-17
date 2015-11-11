@@ -27,7 +27,7 @@ class ItemsController < ApplicationController
     end
 
     def index
-        @items = Item.paginate(page: params[:page)]
+        @items = Item.paginate(page: params[:page])
     end
     
     def edit
@@ -45,6 +45,7 @@ class ItemsController < ApplicationController
     end
     
     def destroy
+        @item = Item.find(params[:id])
         @item.destroy
         flash[:success] = "Item Deleted"
         redirect_to items_path

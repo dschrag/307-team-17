@@ -12,6 +12,7 @@ class User < ActiveRecord::Base
   has_one :house, :through => :relationship
   has_many :notes, dependent: :destroy
   has_many :items
+  has_many :events
   has_many :permissions
 
   def User.digest(string)
