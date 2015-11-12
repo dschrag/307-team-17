@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta context="text/html; charset=UTF-8" http-equiv='Context-Type' />
+  </head>
+  <body>
+    <h2><%= @notification_header %>, <%= @user.name %>!</h2>
+    <p>
+      <%= @notification_body %><br/>
+    </p>
+    <p>
+      To view this
+      click <a href="<%= @return_url %>">here!</a>
+    </p>
+  </body>
+</html>
