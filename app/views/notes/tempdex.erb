@@ -1,0 +1,21 @@
+<% provide(:title, 'Noteboard') %>
+<h1>Noteboard</h1>
+
+<%= will_paginate %>
+	<ul class="notes">
+	  <% House.find(current_user.relationship.house_id).notes.each do |note| %>
+	    <li>
+	      <%= note.content %>
+	      <div align="right">
+	      	<% if note.user_id == current_user.id %>
+	      		<%= link_to "Edit", edit_note_path(note) %>
+	      		<%= link_to "Delete", note, method: :delete, data: { confirm: "You sure?" } %>
+	      	<% end %>
+	      	Created by: <%= User.find(note.user_id).name %>
+	      </div>
+	    </li>
+	  <% end %>
+	</ul>
+<%= will_paginate %>
+
+<%= button_to "Create a Note", new_note_path, class: "btn btn-primary" %>

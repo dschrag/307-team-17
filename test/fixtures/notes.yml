@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  content: MyText
+  user_id:
+  created_at: <%= 2.seconds.ago %>
+
+two:
+  content: MyText
+  user_id:
+  created_at: <%= 5.minutes.ago %>
+
+most_recent:
+  content: "This should be the latest message in the tests"
+  created_at: <%= Time.zone.now %>

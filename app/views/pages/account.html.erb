@@ -1,0 +1,42 @@
+<title> Roomedy </title>
+
+<h1> Account Page </h1>
+<p> This will be the page for account creation/editing </p>
+
+<br/>
+<h1>Login</h1>
+<form name="login_form">
+
+<FORM METHOD="POST">
+<TABLE BORDER="0">
+
+<TR>
+<TD>Username:	</TD>
+<TD><INPUT TYPE="text" NAME="username"></TD>
+</TR>
+
+<TR>
+<TD><font size="1">Forgot Username?</font></TD>
+</TR>
+
+<TR>
+<TD>Password:	</TD>
+<TD><INPUT TYPE="password" NAME="password"></TD>
+</TR>
+
+<TR>
+<TD><font size="1">Forgot Password?</font></TD>
+</TR>
+
+</TABLE>
+
+<br/>
+
+<P><INPUT TYPE="submit" VALUE="Submit" NAME="submit"></P>
+</FORM>
+
+<br/>
+
+Dont Have an account?
+<%= link_to "Register", register_path %>
+

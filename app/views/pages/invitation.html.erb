@@ -1,0 +1,14 @@
+<title>Roomedy Invitation!</title>
+
+<div class="jumbotron", align="center">
+  <h1>Roomedy</h1>
+  <h2>You've been invited to join a house!</h2>
+  <h3>House Details: <br/> 
+    <%= @house.name%> 
+    Owned by:<%= User.find_by(@house.relationships.first.user_id).name%>
+  </h3>
+<% if !logged_in? %>
+    Confirming this will leave your old house.
+<% else %>
+    Create a account! You'll automatically be added to your invitee's house.
+<% end %>
