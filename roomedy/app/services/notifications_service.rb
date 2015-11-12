@@ -1,9 +1,12 @@
-class NotificationsController < ApplicationController
+class NotificationsService
 
 
 
 
 
+
+
+  private
   def send_sms_message(number_to_send_to, message)
     twilio_client = Twilio::REST::Client.new Rails.application.secrets.twilio_account_sid, Rails.application.secrets.twilio_auth_token
 
