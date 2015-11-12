@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151105154537) do
+ActiveRecord::Schema.define(version: 20151112021331) do
 
   create_table "houses", force: :cascade do |t|
     t.string   "name"
@@ -71,15 +71,21 @@ ActiveRecord::Schema.define(version: 20151105154537) do
   add_index "relationships", ["house_id"], name: "index_relationships_on_house_id"
   add_index "relationships", ["user_id"], name: "index_relationships_on_user_id"
 
-  create_table "share_notes", force: :cascade do |t|
-    t.integer  "note_id"
+  create_table "transactions", force: :cascade do |t|
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "buyer"
+    t.string   "seller"
+    t.integer  "price_cents",    default: 0,     null: false
+    t.string   "price_currency", default: "USD", null: false
+    t.boolean  "recurring"
+    t.text     "reason"
+    t.date     "date_due"
+    t.date     "date_paid"
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
   end
 
-  add_index "share_notes", ["note_id"], name: "index_share_notes_on_note_id"
-  add_index "share_notes", ["user_id"], name: "index_share_notes_on_user_id"
+  add_index "transactions", ["user_id"], name: "index_transactions_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
