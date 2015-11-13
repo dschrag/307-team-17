@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Roomedy</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag "http://yandex.st/bootstrap/3.0.2/css/bootstrap.min.css", media: "all" %>
+  <%= javascript_include_tag "http://yandex.st/bootstrap/3.0.2/js/bootstrap.min.js" %>
+  <%= csrf_meta_tags %>
+
+</head>
+
+<% if logged_in? %>
+
+<% else %>
+<section data-track-prefix="Header Section">
+  <div class="section-wrapper text-center">
+    <%= image_tag("logo.gif") %>
+  </div>
+</section>
+<% end %>
+
+<body>
+  <% if logged_in? %>
+	 <%= render 'layouts/header' %>
+  <% end %>
+	<div class="container">
+		<% flash.each do |message_type, message| %>
+			<div class="alert alert-<%= message_type %>"><%= message %></div>
+		<% end %>
+		<%= yield %>
+	</div>
+</body>
+
+</html>
