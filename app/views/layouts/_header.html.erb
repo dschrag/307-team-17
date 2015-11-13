@@ -13,7 +13,7 @@
             <%= link_to "Inventory", items_path, class: "btn btn-inventory" %>
             <%= link_to "Financial", financial_path, class: "btn btn-financial" %>
             <%= link_to "Noteboard", notes_path, class: "btn btn-noteboard" %>
-            <%= link_to "Schedule", schedule_path, class: "btn btn-schedule" %>
+            <%= link_to "Schedule", events_path, class: "btn btn-schedule" %>
             <!--<%= image_tag current_user.avatar.url(:medium), class: "round-image-50" %>
             <%= link_to current_user.name, current_user, class: "btn btn-profile"%>-->
             <button class="btn btn-profile dropdown-toggle" type="button" data-toggle="dropdown"><%= link_to current_user.name, current_user, class: "dropdown-font"%>
@@ -31,7 +31,7 @@
             <button class="btn btn-profile dropdown-toggle" type="button" data-toggle="dropdown"><%= link_to current_user.name, current_user, class: "dropdown-font"%>
               <%= image_tag current_user.avatar.url(:medium), class: "round-image-50" %>
               <span class="caret"></span></button>
-              <ul class="dropdown-menu dropdown-menu-nohouse">
+              <ul class="dropdown-menu">
                 <li><%= link_to "Profile", current_user %></li>
                 <li><%= link_to "Log out", logout_path, method: "delete" %></li>
               </ul>

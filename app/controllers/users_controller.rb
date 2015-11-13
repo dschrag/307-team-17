@@ -15,16 +15,16 @@ class UsersController < ApplicationController
 	  if @user.save
       log_in @user
 	    flash[:success] = "Welcome!"
-	    
+
 	    unless params[:user][:invite].nil?
         @house = House.find_by_id(params[:user][:invite])
-        unless @house.nil? 
+        unless @house.nil?
           @relationship = Relationship.create()
           @user.relationship = @relationship
           @house.relationships << @relationship
         end
       end
-	    
+
 	    redirect_to root_path
 	  else
 	    render 'new'
