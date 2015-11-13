@@ -1,10 +1,12 @@
 class NotificationsService
 
-
-
-
-
-
+  def notify(id, user, notification_header, notification_body)
+  	if user.phone_number != nil
+  		#Check if correct permission
+  		send_sms_message(user.phone_number, notification_body)
+  	if user.email != nil
+  		notification_email(user, notification_header, notification_body, "roomedy.com/notify")
+  end
 
   private
   def send_sms_message(number_to_send_to, message)

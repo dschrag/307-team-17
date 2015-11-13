@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
                 uniqueness: { case_sensitive: false } #database max string size
   has_secure_password
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
+  validates :phone_number, length: { minimum: 10 }, allow_nil: true
   has_one :relationship
   has_one :house, :through => :relationship
   has_many :notes, dependent: :destroy
