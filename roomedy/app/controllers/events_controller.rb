@@ -16,7 +16,8 @@ class EventsController < ApplicationController
 	end
 
 	def index
-		@events = Event.paginate(page: params[:page])
+		@events = Event.all
+		@date = params[:date] ? Date.parse(params[:date]) : Date.today
 	end
 
 	def edit

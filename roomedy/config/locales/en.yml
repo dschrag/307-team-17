@@ -20,3 +20,5 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  datepicker:
+    pformat: 'YYYY-MM-DD'
