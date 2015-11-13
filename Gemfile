@@ -37,6 +37,11 @@ gem 'will_paginate'
 gem 'bootstrap-will_paginate'
 gem 'money-rails'
 
+# Gems for datetimepicker
+gem 'simple_form'
+gem 'momentjs-rails'
+gem 'datetimepicker-rails', github: 'zpaulovics/datetimepicker-rails', branch: 'master', submodules: true
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

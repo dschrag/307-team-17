@@ -6,18 +6,25 @@ Rails.application.routes.draw do
 
   post      'items/new' => 'items#new'
   resources :items
+
   post      'houses/:id/edit' => 'houses#edit'
   post      'houses/:id/remove/:user_id' => 'houses#remove', as: :remove_house
   post      'houses/:id/promote/:user_id' => 'houses#promote', as: :promote_house
   resources :houses
+
   post      'users/:id/edit' => 'users#edit'
   resources :users
+
 	get				'login' => 'sessions#new'
 	post			'login' => 'sessions#create'
 	delete		'logout' => 'sessions#destroy'
 
+  post  'events/new' => 'events#new'
+  resources :events
+
   post  'notes/new' => 'notes#new'
   resources :notes
+
   resources :permissions
   resources :transactions
 
@@ -32,7 +39,7 @@ Rails.application.routes.draw do
   #get "inventory" => 'pages#items'
   get "financial" => 'transactions#index'
   #get "notes" => 'pages#notes'
-  get "schedule" => 'pages#schedule'
+  #get "schedule" => 'pages#schedule'
   get "account" => 'pages#account'
   get "register" => 'pages#signup'
 
