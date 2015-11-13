@@ -1,8 +1,8 @@
 class ItemsController < ApplicationController
 
-    #before_action :logged_in_user
-    #before_action :correct_user
-    
+    before_action :logged_in_user
+    before_action :correct_user, only: [:edit, :update, :destroy]
+
     ##
     # Here is where I will be doing frequency tracking
     # I'm going to have to change the setup of adding items, for one
@@ -11,11 +11,11 @@ class ItemsController < ApplicationController
     # Otherwise, I will add the amount to the existin gitem
     # What is here is stupid basic, and will require a lot of change
     # NOTE: Another option is to have a list of created items to choose from, and then to create a new item if necessary
-    
+
     def new
         @item = Item.new
     end
-    
+
     def create
         @item = current_user.items.build(item_params)
         if @item.save
@@ -32,8 +32,9 @@ class ItemsController < ApplicationController
         @items = Item.paginate(page: params[:page])
         @sorteditems = @items.sort_by { |i| i.frequency }
         @top5 = @sorteditems.first(5)
+        @activities = PublicActivity::Activity.order("created_at desc")
     end
-    
+
     def edit
         @item = Item.find(params[:id])
     end
@@ -51,7 +52,7 @@ class ItemsController < ApplicationController
             render 'edit'
          end
     end
-    
+
     def destroy
         @item = Item.find(params[:id])
         @item.destroy
@@ -61,9 +62,9 @@ class ItemsController < ApplicationController
 
     private
     	def item_params
-			params.require(:item).permit(:item_amount, :item_price, :item_name, :visibility)
+		  params.require(:item).permit(:item_amount, :item_price, :item_name)
 		end
-		
+
 		def correct_user
 		    @item = current_user.items.find_by(id: params[:id])
 		    if @item.nil?

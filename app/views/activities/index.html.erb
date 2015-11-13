@@ -1,0 +1,10 @@
+
+<div class="home-activity">
+	<h1>Notifications</h1>
+	<% @activities.each do |activities| %>
+	<div class="activity ">
+		<%= link_to activities.owner.name, activities.owner if activities.owner %>
+		<%= render_activities activities %>
+	</div>
+	<% end %>
+</div>

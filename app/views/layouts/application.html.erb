@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+
+  <!DOCTYPE html>
 <html>
 <head>
   <title>Roomedy</title>
@@ -19,15 +20,14 @@
 <% end %>
 
 <body>
-  <% if logged_in? %>
-	 <%= render 'layouts/header' %>
-  <% end %>
-	<div class="container">
-		<% flash.each do |message_type, message| %>
-			<div class="alert alert-<%= message_type %>"><%= message %></div>
-		<% end %>
-		<%= yield %>
-	</div>
+  <%= render 'layouts/header' %>
+
+  <div class="container">
+    <% flash.each do |message_type, message| %>
+      <div class="alert alert-<%= message_type %>"><%= message %></div>
+    <% end %>
+    <%= yield %>
+  </div>
 </body>
 
 </html>

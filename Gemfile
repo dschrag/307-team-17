@@ -35,6 +35,25 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
+gem 'sunspot_rails'
+gem 'sunspot_solr'
+gem "tzinfo-data"
+
+gem 'unread'
+
+gem 'autoprefixer-rails'
+gem 'public_activity'
+gem 'omniauth-facebook'
+
+gem 'paperclip', '~> 4.1'
+
+gem 'gritter', '~> 1.2'
+gem 'money-rails'
+
+# Gems for datetimepicker
+gem 'simple_form'
+gem 'momentjs-rails'
+gem 'datetimepicker-rails', github: 'zpaulovics/datetimepicker-rails', branch: 'master', submodules: true
 
 
 group :development, :test do
@@ -46,7 +65,7 @@ group :development, :test do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
-  
+
   gem 'sqlite3'
 
 end

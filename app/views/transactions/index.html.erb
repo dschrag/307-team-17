@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Transactions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Price</th>
+      <th>Buyer</th>
+      <th>Seller</th>
+      <th>Recurring</th>
+      <th>Reason</th>
+      <th>Date due</th>
+      <th>Date paid</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @transactions.each do |transaction| %>
+      <tr>
+        <td><%= transaction.price %></td>
+        <td><%= transaction.buyer %></td>
+        <td><%= transaction.seller %></td>
+        <td><%= transaction.recurring %></td>
+        <td><%= transaction.reason %></td>
+        <td><%= transaction.date_due %></td>
+        <td><%= transaction.date_paid %></td>
+        <td><%= link_to 'Show', transaction %></td>
+        <td><%= link_to 'Edit', edit_transaction_path(transaction) %></td>
+        <td><%= link_to 'Destroy', transaction, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+Balance (Negative means you have made more money than you have spent): <%= @balance %> <br>
+<%= link_to 'New Transaction', new_transaction_path, class: "btn btn-primary" %>
