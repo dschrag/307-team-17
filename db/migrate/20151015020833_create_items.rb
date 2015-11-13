@@ -6,6 +6,7 @@ class CreateItems < ActiveRecord::Migration
       t.string  :item_name
       t.boolean :visibility
       t.integer :frequency
+      t.integer :prev_amount
     
       t.references :user, index: true
       t.references :house, index: true

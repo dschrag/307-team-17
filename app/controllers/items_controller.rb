@@ -19,6 +19,8 @@ class ItemsController < ApplicationController
     def create
         @item = current_user.items.build(item_params)
         if @item.save
+            @item.prev_amount = @item.item_amount
+            @item.frequency = 1
             flash[:success] = "Item Created."
             redirect_to items_path
         else
@@ -28,6 +30,8 @@ class ItemsController < ApplicationController
 
     def index
         @items = Item.paginate(page: params[:page])
+        @sorteditems = @items.sort_by { |i| i.frequency }
+        @top5 = @sorteditems.first(5)
         @activities = PublicActivity::Activity.order("created_at desc")
     end
 
@@ -37,7 +41,11 @@ class ItemsController < ApplicationController
 
     def update
          @item = Item.find(params[:id])
+         @item.prev_amount = @item.item_amount
          if @item.update_attributes(item_params)
+            if @item.prev_amount < @item.item_amount
+                @item.frequency += 1
+            end
             flash[:success] = "Item successfully updated"
             redirect_to items_path
          else
@@ -54,8 +62,8 @@ class ItemsController < ApplicationController
 
     private
     	def item_params
-		      params.require(:item).permit(:item_amount, :item_price, :item_name)
-		  end
+		  params.require(:item).permit(:item_amount, :item_price, :item_name, :visibility)
+		end
 
 		def correct_user
 		    @item = current_user.items.find_by(id: params[:id])

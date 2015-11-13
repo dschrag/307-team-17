@@ -25,6 +25,7 @@ Rails.application.routes.draw do
   post  'events/new' => 'events#new'
   resources :events
 
+
   post  'notes/new' => 'notes#new'
   resources :notes
 
