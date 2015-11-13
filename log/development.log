@@ -6419,3 +6419,2181 @@ Started GET "/assets/bootstrap.self-6c92f650931beefe48977f272b7015d6b9b45da8b098
 
 
 Started GET "/assets/bootstrap/glyphicons-halflings-regular-fe185d11a49676890d47bb783312a0cda5a44c4039214094e7957b4c040ef11c.woff2" for ::1 at 2015-11-13 15:23:54 -0500
+
+
+Started GET "/items" for ::1 at 2015-11-13 15:36:14 -0500
+Processing by ItemsController#index as HTML
+  [1m[35mItem Load (0.7ms)[0m  SELECT  "items".* FROM "items" LIMIT 30 OFFSET 0
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mRelationship Load (0.3ms)[0m  SELECT  "relationships".* FROM "relationships" WHERE "relationships"."user_id" = ? LIMIT 1  [["user_id", 1]]
+  [1m[36mHouse Load (0.3ms)[0m  [1mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."user_id" WHERE "relationships"."house_id" = ?  [["house_id", 1]]
+  [1m[36mItem Load (0.3ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "items".* FROM "items" WHERE "items"."user_id" = ?  [["user_id", 1]]
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mItem Load (0.3ms)[0m  [1mSELECT "items".* FROM "items" INNER JOIN "users" ON "items"."user_id" = "users"."id" INNER JOIN "relationships" ON "users"."id" = "relationships"."user_id" WHERE "relationships"."house_id" = ?[0m  [["house_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "items".* FROM "items" INNER JOIN "users" ON "items"."user_id" = "users"."id" INNER JOIN "relationships" ON "users"."id" = "relationships"."user_id" WHERE "relationships"."house_id" = ?[0m  [["house_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered items/index.html.erb within layouts/application (83.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (2.6ms)
+Completed 200 OK in 424ms (Views: 403.8ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/assets/notes.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-13 15:36:15 -0500
+
+
+Started GET "/assets/bootstrap_and_customization.self-4e65a684ce3d650bfa8ae11552aef982c3a7d552b52b9b54d90edf9180fd69ca.css?body=1" for ::1 at 2015-11-13 15:36:15 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-11-13 15:36:15 -0500
+
+
+Started GET "/assets/permissions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-13 15:36:15 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-11-13 15:36:15 -0500
+
+
+Started GET "/assets/sessions.self-b1f9030bf2c6fc1caff90240dca649dc9c64e97d30a7f2f6102846241d6be2c3.css?body=1" for ::1 at 2015-11-13 15:36:15 -0500
+
+
+Started GET "/assets/pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-13 15:36:15 -0500
+
+
+Started GET "/assets/users.self-a1059d29cadd09c8f2b50db9acd93b6bae211a76bfcdad5a9c9f580d48d1df18.css?body=1" for ::1 at 2015-11-13 15:36:15 -0500
+
+
+Started GET "/assets/items.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-13 15:36:15 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-11-13 15:36:15 -0500
+
+
+Started GET "/assets/houses.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-13 15:36:15 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-11-13 15:36:15 -0500
+
+
+Started GET "/assets/houses.self-914c8a07ca6dd7d62c9dbe06298ab534228f7dc1ce543aba3d20fb66a5e55a4d.css?body=1" for ::1 at 2015-11-13 15:36:15 -0500
+
+
+Started GET "/assets/notes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-13 15:36:15 -0500
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-13 15:36:15 -0500
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-13 15:36:15 -0500
+
+
+Started GET "/assets/bootstrap.self-6c92f650931beefe48977f272b7015d6b9b45da8b09831ebf88e05193c12d355.js?body=1" for ::1 at 2015-11-13 15:36:15 -0500
+
+
+Started GET "/assets/permissions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-13 15:36:15 -0500
+
+
+Started GET "/assets/items.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-13 15:36:15 -0500
+
+
+Started GET "/assets/pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-13 15:36:15 -0500
+
+
+Started GET "/assets/application.self-f98a0dd27ad1c55b2b9cfe97296d4887e5d4a4535b3bbbf9130c1050771738b2.js?body=1" for ::1 at 2015-11-13 15:36:15 -0500
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-fe185d11a49676890d47bb783312a0cda5a44c4039214094e7957b4c040ef11c.woff2" for ::1 at 2015-11-13 15:36:15 -0500
+
+
+Started GET "/items" for ::1 at 2015-11-13 15:36:44 -0500
+Processing by ItemsController#index as HTML
+  [1m[36mItem Load (0.3ms)[0m  [1mSELECT  "items".* FROM "items" LIMIT 30 OFFSET 0[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mRelationship Load (0.3ms)[0m  [1mSELECT  "relationships".* FROM "relationships" WHERE "relationships"."user_id" = ? LIMIT 1[0m  [["user_id", 1]]
+  [1m[35mHouse Load (0.1ms)[0m  SELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."user_id" WHERE "relationships"."house_id" = ?[0m  [["house_id", 1]]
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items" WHERE "items"."user_id" = ?  [["user_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[35mItem Load (0.1ms)[0m  SELECT "items".* FROM "items" WHERE "items"."user_id" = ?  [["user_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items" INNER JOIN "users" ON "items"."user_id" = "users"."id" INNER JOIN "relationships" ON "users"."id" = "relationships"."user_id" WHERE "relationships"."house_id" = ?  [["house_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "items".* FROM "items" INNER JOIN "users" ON "items"."user_id" = "users"."id" INNER JOIN "relationships" ON "users"."id" = "relationships"."user_id" WHERE "relationships"."house_id" = ?  [["house_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered items/index.html.erb within layouts/application (22.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.6ms)
+Completed 200 OK in 233ms (Views: 229.7ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/assets/bootstrap_and_customization.self-4e65a684ce3d650bfa8ae11552aef982c3a7d552b52b9b54d90edf9180fd69ca.css?body=1" for ::1 at 2015-11-13 15:36:44 -0500
+
+
+Started GET "/assets/houses.self-914c8a07ca6dd7d62c9dbe06298ab534228f7dc1ce543aba3d20fb66a5e55a4d.css?body=1" for ::1 at 2015-11-13 15:36:44 -0500
+
+
+Started GET "/assets/permissions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-13 15:36:44 -0500
+
+
+Started GET "/assets/items.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-13 15:36:44 -0500
+
+
+Started GET "/assets/notes.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-13 15:36:44 -0500
+
+
+Started GET "/assets/pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-13 15:36:44 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-11-13 15:36:44 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-11-13 15:36:44 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-11-13 15:36:44 -0500
+
+
+Started GET "/assets/sessions.self-b1f9030bf2c6fc1caff90240dca649dc9c64e97d30a7f2f6102846241d6be2c3.css?body=1" for ::1 at 2015-11-13 15:36:44 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-11-13 15:36:44 -0500
+
+
+Started GET "/assets/users.self-a1059d29cadd09c8f2b50db9acd93b6bae211a76bfcdad5a9c9f580d48d1df18.css?body=1" for ::1 at 2015-11-13 15:36:44 -0500
+
+
+Started GET "/assets/houses.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-13 15:36:44 -0500
+
+
+Started GET "/assets/notes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-13 15:36:44 -0500
+
+
+Started GET "/assets/pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-13 15:36:44 -0500
+
+
+Started GET "/assets/permissions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-13 15:36:44 -0500
+
+
+Started GET "/assets/items.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-13 15:36:44 -0500
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-13 15:36:44 -0500
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-13 15:36:44 -0500
+
+
+Started GET "/assets/bootstrap.self-6c92f650931beefe48977f272b7015d6b9b45da8b09831ebf88e05193c12d355.js?body=1" for ::1 at 2015-11-13 15:36:44 -0500
+
+
+Started GET "/assets/application.self-f98a0dd27ad1c55b2b9cfe97296d4887e5d4a4535b3bbbf9130c1050771738b2.js?body=1" for ::1 at 2015-11-13 15:36:44 -0500
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-fe185d11a49676890d47bb783312a0cda5a44c4039214094e7957b4c040ef11c.woff2" for ::1 at 2015-11-13 15:36:45 -0500
+
+
+Started GET "/items" for ::1 at 2015-11-13 15:36:46 -0500
+Processing by ItemsController#index as HTML
+  [1m[35mItem Load (0.3ms)[0m  SELECT  "items".* FROM "items" LIMIT 30 OFFSET 0
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mRelationship Load (0.1ms)[0m  SELECT  "relationships".* FROM "relationships" WHERE "relationships"."user_id" = ? LIMIT 1  [["user_id", 1]]
+  [1m[36mHouse Load (0.1ms)[0m  [1mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."user_id" WHERE "relationships"."house_id" = ?  [["house_id", 1]]
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "items".* FROM "items" WHERE "items"."user_id" = ?  [["user_id", 1]]
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT "items".* FROM "items" INNER JOIN "users" ON "items"."user_id" = "users"."id" INNER JOIN "relationships" ON "users"."id" = "relationships"."user_id" WHERE "relationships"."house_id" = ?[0m  [["house_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "items".* FROM "items" INNER JOIN "users" ON "items"."user_id" = "users"."id" INNER JOIN "relationships" ON "users"."id" = "relationships"."user_id" WHERE "relationships"."house_id" = ?[0m  [["house_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered items/index.html.erb within layouts/application (16.8ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.7ms)
+Completed 200 OK in 243ms (Views: 240.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/houses.self-914c8a07ca6dd7d62c9dbe06298ab534228f7dc1ce543aba3d20fb66a5e55a4d.css?body=1" for ::1 at 2015-11-13 15:36:46 -0500
+
+
+Started GET "/assets/items.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-13 15:36:46 -0500
+
+
+Started GET "/assets/notes.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-13 15:36:46 -0500
+
+
+Started GET "/assets/pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-13 15:36:46 -0500
+
+
+Started GET "/assets/bootstrap_and_customization.self-4e65a684ce3d650bfa8ae11552aef982c3a7d552b52b9b54d90edf9180fd69ca.css?body=1" for ::1 at 2015-11-13 15:36:46 -0500
+
+
+Started GET "/assets/users.self-a1059d29cadd09c8f2b50db9acd93b6bae211a76bfcdad5a9c9f580d48d1df18.css?body=1" for ::1 at 2015-11-13 15:36:46 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-11-13 15:36:46 -0500
+
+
+Started GET "/assets/permissions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-13 15:36:46 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-11-13 15:36:46 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-11-13 15:36:46 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-11-13 15:36:46 -0500
+
+
+Started GET "/assets/sessions.self-b1f9030bf2c6fc1caff90240dca649dc9c64e97d30a7f2f6102846241d6be2c3.css?body=1" for ::1 at 2015-11-13 15:36:46 -0500
+
+
+Started GET "/assets/houses.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-13 15:36:46 -0500
+
+
+Started GET "/assets/items.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-13 15:36:46 -0500
+
+
+Started GET "/assets/notes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-13 15:36:47 -0500
+
+
+Started GET "/assets/pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-13 15:36:47 -0500
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-13 15:36:47 -0500
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-13 15:36:47 -0500
+
+
+Started GET "/assets/permissions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-13 15:36:47 -0500
+
+
+Started GET "/assets/bootstrap.self-6c92f650931beefe48977f272b7015d6b9b45da8b09831ebf88e05193c12d355.js?body=1" for ::1 at 2015-11-13 15:36:47 -0500
+
+
+Started GET "/assets/application.self-f98a0dd27ad1c55b2b9cfe97296d4887e5d4a4535b3bbbf9130c1050771738b2.js?body=1" for ::1 at 2015-11-13 15:36:47 -0500
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-fe185d11a49676890d47bb783312a0cda5a44c4039214094e7957b4c040ef11c.woff2" for ::1 at 2015-11-13 15:36:47 -0500
+
+
+Started GET "/items" for ::1 at 2015-11-13 15:37:03 -0500
+Processing by ItemsController#index as HTML
+  [1m[36mItem Load (0.3ms)[0m  [1mSELECT  "items".* FROM "items" LIMIT 30 OFFSET 0[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mRelationship Load (0.1ms)[0m  [1mSELECT  "relationships".* FROM "relationships" WHERE "relationships"."user_id" = ? LIMIT 1[0m  [["user_id", 1]]
+  [1m[35mHouse Load (0.1ms)[0m  SELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."user_id" WHERE "relationships"."house_id" = ?[0m  [["house_id", 1]]
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items" WHERE "items"."user_id" = ?  [["user_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[35mItem Load (0.1ms)[0m  SELECT "items".* FROM "items" WHERE "items"."user_id" = ?  [["user_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items" INNER JOIN "users" ON "items"."user_id" = "users"."id" INNER JOIN "relationships" ON "users"."id" = "relationships"."user_id" WHERE "relationships"."house_id" = ?  [["house_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "items".* FROM "items" INNER JOIN "users" ON "items"."user_id" = "users"."id" INNER JOIN "relationships" ON "users"."id" = "relationships"."user_id" WHERE "relationships"."house_id" = ?  [["house_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered items/index.html.erb within layouts/application (24.8ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.5ms)
+Completed 200 OK in 243ms (Views: 239.6ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/houses.self-914c8a07ca6dd7d62c9dbe06298ab534228f7dc1ce543aba3d20fb66a5e55a4d.css?body=1" for ::1 at 2015-11-13 15:37:03 -0500
+
+
+Started GET "/assets/items.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-13 15:37:03 -0500
+
+
+Started GET "/assets/notes.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-13 15:37:03 -0500
+
+
+Started GET "/assets/users.self-a1059d29cadd09c8f2b50db9acd93b6bae211a76bfcdad5a9c9f580d48d1df18.css?body=1" for ::1 at 2015-11-13 15:37:03 -0500
+
+
+Started GET "/assets/pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-13 15:37:03 -0500
+
+
+Started GET "/assets/permissions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-13 15:37:03 -0500
+
+
+Started GET "/assets/bootstrap_and_customization.self-4e65a684ce3d650bfa8ae11552aef982c3a7d552b52b9b54d90edf9180fd69ca.css?body=1" for ::1 at 2015-11-13 15:37:03 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-11-13 15:37:03 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-11-13 15:37:03 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-11-13 15:37:03 -0500
+
+
+Started GET "/assets/sessions.self-b1f9030bf2c6fc1caff90240dca649dc9c64e97d30a7f2f6102846241d6be2c3.css?body=1" for ::1 at 2015-11-13 15:37:03 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-11-13 15:37:03 -0500
+
+
+Started GET "/assets/items.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-13 15:37:03 -0500
+
+
+Started GET "/assets/notes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-13 15:37:03 -0500
+
+
+Started GET "/assets/pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-13 15:37:03 -0500
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-13 15:37:03 -0500
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-13 15:37:03 -0500
+
+
+Started GET "/assets/bootstrap.self-6c92f650931beefe48977f272b7015d6b9b45da8b09831ebf88e05193c12d355.js?body=1" for ::1 at 2015-11-13 15:37:03 -0500
+
+
+Started GET "/assets/permissions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-13 15:37:03 -0500
+
+
+Started GET "/assets/houses.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-13 15:37:03 -0500
+
+
+Started GET "/assets/application.self-f98a0dd27ad1c55b2b9cfe97296d4887e5d4a4535b3bbbf9130c1050771738b2.js?body=1" for ::1 at 2015-11-13 15:37:04 -0500
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-fe185d11a49676890d47bb783312a0cda5a44c4039214094e7957b4c040ef11c.woff2" for ::1 at 2015-11-13 15:37:04 -0500
+
+
+Started GET "/items" for ::1 at 2015-11-13 15:44:40 -0500
+
+SyntaxError (/Users/srypher/Desktop/307-team-17/app/controllers/items_controller.rb:71: syntax error, unexpected end-of-input, expecting keyword_end):
+  app/controllers/items_controller.rb:71: syntax error, unexpected end-of-input, expecting keyword_end
+
+
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.9ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (125.0ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (100.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (225.0ms)
+
+
+Started GET "/items" for ::1 at 2015-11-13 15:44:50 -0500
+Processing by ItemsController#index as HTML
+  [1m[35mItem Load (0.7ms)[0m  SELECT  "items".* FROM "items" LIMIT 30 OFFSET 0
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mRelationship Load (0.3ms)[0m  SELECT  "relationships".* FROM "relationships" WHERE "relationships"."user_id" = ? LIMIT 1  [["user_id", 1]]
+  [1m[36mHouse Load (0.2ms)[0m  [1mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."user_id" WHERE "relationships"."house_id" = ?  [["house_id", 1]]
+  [1m[36mItem Load (0.3ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "items".* FROM "items" WHERE "items"."user_id" = ?  [["user_id", 1]]
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mItem Load (0.3ms)[0m  [1mSELECT "items".* FROM "items" INNER JOIN "users" ON "items"."user_id" = "users"."id" INNER JOIN "relationships" ON "users"."id" = "relationships"."user_id" WHERE "relationships"."house_id" = ?[0m  [["house_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "items".* FROM "items" INNER JOIN "users" ON "items"."user_id" = "users"."id" INNER JOIN "relationships" ON "users"."id" = "relationships"."user_id" WHERE "relationships"."house_id" = ?[0m  [["house_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered items/index.html.erb within layouts/application (102.9ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (3.0ms)
+Completed 200 OK in 402ms (Views: 381.1ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/assets/houses.self-914c8a07ca6dd7d62c9dbe06298ab534228f7dc1ce543aba3d20fb66a5e55a4d.css?body=1" for ::1 at 2015-11-13 15:44:51 -0500
+
+
+Started GET "/assets/notes.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-13 15:44:51 -0500
+
+
+Started GET "/assets/pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-13 15:44:51 -0500
+
+
+Started GET "/assets/items.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-13 15:44:51 -0500
+
+
+Started GET "/assets/users.self-a1059d29cadd09c8f2b50db9acd93b6bae211a76bfcdad5a9c9f580d48d1df18.css?body=1" for ::1 at 2015-11-13 15:44:51 -0500
+
+
+Started GET "/assets/permissions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-13 15:44:51 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-11-13 15:44:51 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-11-13 15:44:51 -0500
+
+
+Started GET "/assets/bootstrap_and_customization.self-4e65a684ce3d650bfa8ae11552aef982c3a7d552b52b9b54d90edf9180fd69ca.css?body=1" for ::1 at 2015-11-13 15:44:51 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-11-13 15:44:51 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-11-13 15:44:51 -0500
+
+
+Started GET "/assets/sessions.self-b1f9030bf2c6fc1caff90240dca649dc9c64e97d30a7f2f6102846241d6be2c3.css?body=1" for ::1 at 2015-11-13 15:44:51 -0500
+
+
+Started GET "/assets/houses.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-13 15:44:51 -0500
+
+
+Started GET "/assets/notes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-13 15:44:51 -0500
+
+
+Started GET "/assets/items.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-13 15:44:51 -0500
+
+
+Started GET "/assets/pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-13 15:44:51 -0500
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-13 15:44:51 -0500
+
+
+Started GET "/assets/permissions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-13 15:44:51 -0500
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-13 15:44:51 -0500
+
+
+Started GET "/assets/application.self-f98a0dd27ad1c55b2b9cfe97296d4887e5d4a4535b3bbbf9130c1050771738b2.js?body=1" for ::1 at 2015-11-13 15:44:51 -0500
+
+
+Started GET "/assets/bootstrap.self-6c92f650931beefe48977f272b7015d6b9b45da8b09831ebf88e05193c12d355.js?body=1" for ::1 at 2015-11-13 15:44:51 -0500
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-fe185d11a49676890d47bb783312a0cda5a44c4039214094e7957b4c040ef11c.woff2" for ::1 at 2015-11-13 15:44:52 -0500
+
+
+Started GET "/items" for ::1 at 2015-11-13 15:45:02 -0500
+Processing by ItemsController#index as HTML
+  [1m[36mItem Load (0.3ms)[0m  [1mSELECT  "items".* FROM "items" LIMIT 30 OFFSET 0[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mRelationship Load (0.1ms)[0m  [1mSELECT  "relationships".* FROM "relationships" WHERE "relationships"."user_id" = ? LIMIT 1[0m  [["user_id", 1]]
+  [1m[35mHouse Load (0.1ms)[0m  SELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."user_id" WHERE "relationships"."house_id" = ?[0m  [["house_id", 1]]
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items" WHERE "items"."user_id" = ?  [["user_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[35mItem Load (0.1ms)[0m  SELECT "items".* FROM "items" WHERE "items"."user_id" = ?  [["user_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items" INNER JOIN "users" ON "items"."user_id" = "users"."id" INNER JOIN "relationships" ON "users"."id" = "relationships"."user_id" WHERE "relationships"."house_id" = ?  [["house_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "items".* FROM "items" INNER JOIN "users" ON "items"."user_id" = "users"."id" INNER JOIN "relationships" ON "users"."id" = "relationships"."user_id" WHERE "relationships"."house_id" = ?  [["house_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered items/index.html.erb within layouts/application (20.7ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.7ms)
+Completed 200 OK in 232ms (Views: 227.3ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/houses.self-914c8a07ca6dd7d62c9dbe06298ab534228f7dc1ce543aba3d20fb66a5e55a4d.css?body=1" for ::1 at 2015-11-13 15:45:02 -0500
+
+
+Started GET "/assets/items.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-13 15:45:02 -0500
+
+
+Started GET "/assets/permissions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-13 15:45:02 -0500
+
+
+Started GET "/assets/notes.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-13 15:45:02 -0500
+
+
+Started GET "/assets/pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-13 15:45:02 -0500
+
+
+Started GET "/assets/bootstrap_and_customization.self-4e65a684ce3d650bfa8ae11552aef982c3a7d552b52b9b54d90edf9180fd69ca.css?body=1" for ::1 at 2015-11-13 15:45:02 -0500
+
+
+Started GET "/assets/users.self-a1059d29cadd09c8f2b50db9acd93b6bae211a76bfcdad5a9c9f580d48d1df18.css?body=1" for ::1 at 2015-11-13 15:45:02 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-11-13 15:45:02 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-11-13 15:45:02 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-11-13 15:45:02 -0500
+
+
+Started GET "/assets/sessions.self-b1f9030bf2c6fc1caff90240dca649dc9c64e97d30a7f2f6102846241d6be2c3.css?body=1" for ::1 at 2015-11-13 15:45:02 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-11-13 15:45:02 -0500
+
+
+Started GET "/assets/notes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-13 15:45:02 -0500
+
+
+Started GET "/assets/items.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-13 15:45:03 -0500
+
+
+Started GET "/assets/pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-13 15:45:03 -0500
+
+
+Started GET "/assets/houses.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-13 15:45:03 -0500
+
+
+Started GET "/assets/application.self-f98a0dd27ad1c55b2b9cfe97296d4887e5d4a4535b3bbbf9130c1050771738b2.js?body=1" for ::1 at 2015-11-13 15:45:03 -0500
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-13 15:45:03 -0500
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-13 15:45:03 -0500
+
+
+Started GET "/assets/bootstrap.self-6c92f650931beefe48977f272b7015d6b9b45da8b09831ebf88e05193c12d355.js?body=1" for ::1 at 2015-11-13 15:45:03 -0500
+
+
+Started GET "/assets/permissions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-13 15:45:03 -0500
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-fe185d11a49676890d47bb783312a0cda5a44c4039214094e7957b4c040ef11c.woff2" for ::1 at 2015-11-13 15:45:03 -0500
+  [1m[36m (1.9ms)[0m  [1mCREATE TABLE "houses" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "street" varchar, "city" varchar, "state" varchar, "zip" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (1.4ms)[0m  CREATE TABLE "items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "item_price" decimal(8,2), "item_amount" integer, "item_name" varchar, "visibility" boolean, "frequency" integer, "user_id" integer, "house_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (1.6ms)[0m  CREATE  INDEX "index_items_on_house_id" ON "items" ("house_id")
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_items_on_house_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_items_on_house_id' AND type='index'
+[0m
+  [1m[35m (1.4ms)[0m  CREATE  INDEX "index_items_on_user_id" ON "items" ("user_id")
+  [1m[36m (1.8ms)[0m  [1mCREATE TABLE "notes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "content" text, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "permissions_id" integer) [0m
+  [1m[35m (1.4ms)[0m  CREATE  INDEX "index_notes_on_permissions_id" ON "notes" ("permissions_id")
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_notes_on_permissions_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_notes_on_permissions_id' AND type='index'
+[0m
+  [1m[35m (1.3ms)[0m  CREATE  INDEX "index_notes_on_user_id_and_created_at" ON "notes" ("user_id", "created_at")
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_notes_on_user_id_and_created_at' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_notes_on_user_id_and_created_at' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_notes_on_permissions_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_notes_on_permissions_id' AND type='index'
+
+  [1m[36m (1.4ms)[0m  [1mCREATE  INDEX "index_notes_on_user_id" ON "notes" ("user_id")[0m
+  [1m[35m (1.4ms)[0m  CREATE TABLE "permissions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "level" integer, "permissable_id" integer, "permissable_type" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (2.2ms)[0m  [1mCREATE  INDEX "index_permissions_on_permissable_type_and_permissable_id" ON "permissions" ("permissable_type", "permissable_id")[0m
+  [1m[35m (1.9ms)[0m  CREATE TABLE "relationships" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "house_id" integer, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (1.9ms)[0m  [1mCREATE  INDEX "index_relationships_on_house_id" ON "relationships" ("house_id")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_relationships_on_house_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_relationships_on_house_id' AND type='index'
+
+  [1m[36m (1.6ms)[0m  [1mCREATE  INDEX "index_relationships_on_user_id" ON "relationships" ("user_id")[0m
+  [1m[35m (1.4ms)[0m  CREATE TABLE "share_notes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "note_id" integer, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (1.7ms)[0m  [1mCREATE  INDEX "index_share_notes_on_note_id" ON "share_notes" ("note_id")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_share_notes_on_note_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_share_notes_on_note_id' AND type='index'
+
+  [1m[36m (1.4ms)[0m  [1mCREATE  INDEX "index_share_notes_on_user_id" ON "share_notes" ("user_id")[0m
+  [1m[35m (2.0ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "password_digest" varchar, "remember_digest" varchar) 
+  [1m[36m (1.4ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (1.6ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (1.4ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.3ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (1.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20151105154537')[0m
+  [1m[35m (2.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20151004040342')
+  [1m[36m (1.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20151005005131')[0m
+  [1m[35m (2.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20151005020659')
+  [1m[36m (2.2ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20151009155927')[0m
+  [1m[35m (2.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20151012184722')
+  [1m[36m (1.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20151014160311')[0m
+  [1m[35m (1.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20151015020833')
+  [1m[36m (2.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20151015032931')[0m
+  [1m[35m (1.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20151015233216')
+  [1m[36m (1.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20151027152805')[0m
+  [1m[35m (1.8ms)[0m  CREATE TABLE "houses" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "street" varchar, "city" varchar, "state" varchar, "zip" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (1.9ms)[0m  [1mCREATE TABLE "items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "item_price" decimal(8,2), "item_amount" integer, "item_name" varchar, "visibility" boolean, "frequency" integer, "user_id" integer, "house_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (1.5ms)[0m  [1mCREATE  INDEX "index_items_on_house_id" ON "items" ("house_id")[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_items_on_house_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_items_on_house_id' AND type='index'
+
+  [1m[36m (1.4ms)[0m  [1mCREATE  INDEX "index_items_on_user_id" ON "items" ("user_id")[0m
+  [1m[35m (1.3ms)[0m  CREATE TABLE "notes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "content" text, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "permissions_id" integer) 
+  [1m[36m (1.3ms)[0m  [1mCREATE  INDEX "index_notes_on_permissions_id" ON "notes" ("permissions_id")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_notes_on_permissions_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_notes_on_permissions_id' AND type='index'
+
+  [1m[36m (1.7ms)[0m  [1mCREATE  INDEX "index_notes_on_user_id_and_created_at" ON "notes" ("user_id", "created_at")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_notes_on_user_id_and_created_at' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_notes_on_user_id_and_created_at' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_notes_on_permissions_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_notes_on_permissions_id' AND type='index'
+[0m
+  [1m[35m (1.3ms)[0m  CREATE  INDEX "index_notes_on_user_id" ON "notes" ("user_id")
+  [1m[36m (1.4ms)[0m  [1mCREATE TABLE "permissions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "level" integer, "permissable_id" integer, "permissable_type" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (1.4ms)[0m  CREATE  INDEX "index_permissions_on_permissable_type_and_permissable_id" ON "permissions" ("permissable_type", "permissable_id")
+  [1m[36m (1.4ms)[0m  [1mCREATE TABLE "relationships" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "house_id" integer, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (1.6ms)[0m  CREATE  INDEX "index_relationships_on_house_id" ON "relationships" ("house_id")
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_relationships_on_house_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_relationships_on_house_id' AND type='index'
+[0m
+  [1m[35m (2.1ms)[0m  CREATE  INDEX "index_relationships_on_user_id" ON "relationships" ("user_id")
+  [1m[36m (1.4ms)[0m  [1mCREATE TABLE "share_notes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "note_id" integer, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (1.4ms)[0m  CREATE  INDEX "index_share_notes_on_note_id" ON "share_notes" ("note_id")
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_share_notes_on_note_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_share_notes_on_note_id' AND type='index'
+[0m
+  [1m[35m (2.1ms)[0m  CREATE  INDEX "index_share_notes_on_user_id" ON "share_notes" ("user_id")
+  [1m[36m (1.2ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "password_digest" varchar, "remember_digest" varchar) [0m
+  [1m[35m (2.2ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36m (1.8ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (1.4ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (2.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20151105154537')
+  [1m[36m (1.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20151004040342')[0m
+  [1m[35m (1.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20151005005131')
+  [1m[36m (1.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20151005020659')[0m
+  [1m[35m (1.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20151009155927')
+  [1m[36m (2.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20151012184722')[0m
+  [1m[35m (1.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20151014160311')
+  [1m[36m (1.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20151015020833')[0m
+  [1m[35m (1.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20151015032931')
+  [1m[36m (2.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20151015233216')[0m
+  [1m[35m (1.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20151027152805')
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_items_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_items_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_items_on_house_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_items_on_house_id' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_notes_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_notes_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_notes_on_user_id_and_created_at' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_notes_on_user_id_and_created_at' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_notes_on_permissions_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_notes_on_permissions_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_permissions_on_permissable_type_and_permissable_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_permissions_on_permissable_type_and_permissable_id' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_relationships_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_relationships_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_relationships_on_house_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_relationships_on_house_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_share_notes_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_share_notes_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_share_notes_on_note_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_share_notes_on_note_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+
+
+Started GET "/" for ::1 at 2015-11-13 15:51:13 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered pages/home.html.erb within layouts/application (105.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 1482ms (Views: 1446.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/logo-891ff48d7b3802ad3c04ed65b89b97e43b2455d2cc8f052a95b3dcfd99fbc6aa.gif" for ::1 at 2015-11-13 15:51:15 -0500
+
+
+Started GET "/users/new" for ::1 at 2015-11-13 15:51:17 -0500
+Processing by UsersController#new as HTML
+  Rendered shared/_error_messages.html.erb (21.5ms)
+  Rendered users/new.html.erb within layouts/application (173.4ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 393ms (Views: 380.6ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/users" for ::1 at 2015-11-13 15:51:27 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cvnKyk44Juk1QGl5S5G8yGH86FPevVm6SB67JPS3eF4M1ircLGCsCG3TWjDOt3QmkhsYAmJmXSiokCM6hTgmiQ==", "user"=>{"name"=>"Duffy", "email"=>"duffy10@purdue.edu", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "invite"=>""}, "commit"=>"Create my account"}
+Unpermitted parameter: invite
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('duffy10@purdue.edu') LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Duffy"], ["email", "duffy10@purdue.edu"], ["password_digest", "$2a$10$X9.i/zuz4wzQkqSkECVXNudA1sFqbUDS.qVAPfZC82Y89CP0WvMaa"], ["created_at", "2015-11-13 20:51:27.266326"], ["updated_at", "2015-11-13 20:51:27.266326"]]
+  [1m[35m (1.9ms)[0m  commit transaction
+  [1m[36mHouse Load (0.2ms)[0m  [1mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT 1[0m  [["id", nil]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 189ms (ActiveRecord: 3.4ms)
+
+
+Started GET "/" for ::1 at 2015-11-13 15:51:27 -0500
+Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mRelationship Load (0.2ms)[0m  [1mSELECT  "relationships".* FROM "relationships" WHERE "relationships"."user_id" = ? LIMIT 1[0m  [["user_id", 1]]
+  Rendered pages/home.html.erb within layouts/application (23.4ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+Completed 200 OK in 249ms (Views: 247.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/houses/new" for ::1 at 2015-11-13 15:51:29 -0500
+Processing by HousesController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered shared/_error_messages.html.erb (0.1ms)
+  Rendered houses/new.html.erb within layouts/application (9.4ms)
+  [1m[36mRelationship Load (0.2ms)[0m  [1mSELECT  "relationships".* FROM "relationships" WHERE "relationships"."user_id" = ? LIMIT 1[0m  [["user_id", 1]]
+  Rendered layouts/_header.html.erb (2.3ms)
+Completed 200 OK in 244ms (Views: 230.8ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/houses" for ::1 at 2015-11-13 15:51:53 -0500
+Processing by HousesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8Go0/VjFdqVysOX7BebXPofM7QiHMLDEb6/gOsJH4nqORdTrOp38RCoj1rKAwB/QdCsdWTvrtFaPIXgks8i8rQ==", "house"=>{"name"=>"Delta Sig", "street"=>"341 Northwestern Avenue", "city"=>"West Lafayette", "state"=>"IN", "zip"=>"47906"}, "commit"=>"Create a House"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "relationships" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2015-11-13 20:51:53.662962"], ["updated_at", "2015-11-13 20:51:53.662962"]]
+  [1m[36m (1.9ms)[0m  [1mcommit transaction[0m
+  [1m[35mRelationship Load (0.2ms)[0m  SELECT  "relationships".* FROM "relationships" WHERE "relationships"."user_id" = ? LIMIT 1  [["user_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE "relationships" SET "user_id" = ?, "updated_at" = ? WHERE "relationships"."id" = ?  [["user_id", 1], ["updated_at", "2015-11-13 20:51:53.692247"], ["id", 1]]
+  [1m[36m (2.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "houses" ("name", "street", "city", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Delta Sig"], ["street", "341 Northwestern Avenue"], ["city", "West Lafayette"], ["state", "IN"], ["zip", 47906], ["created_at", "2015-11-13 20:51:53.707229"], ["updated_at", "2015-11-13 20:51:53.707229"]]
+  [1m[35mSQL (0.3ms)[0m  UPDATE "relationships" SET "house_id" = ?, "updated_at" = ? WHERE "relationships"."id" = ?  [["house_id", 1], ["updated_at", "2015-11-13 20:51:53.710003"], ["id", 1]]
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "permissions" ("permissable_type", "permissable_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["permissable_type", "House"], ["permissable_id", 1], ["created_at", "2015-11-13 20:51:53.712404"], ["updated_at", "2015-11-13 20:51:53.712404"]]
+  [1m[35m (1.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "permissions" ("user_id", "level", "permissable_id", "permissable_type", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["user_id", 0], ["level", 1], ["permissable_id", 1], ["permissable_type", "House"], ["created_at", "2015-11-13 20:51:53.719652"], ["updated_at", "2015-11-13 20:51:53.719652"]]
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "permissions" ("user_id", "level", "permissable_id", "permissable_type", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["user_id", 1], ["level", 0], ["permissable_id", 1], ["permissable_type", "House"], ["created_at", "2015-11-13 20:51:53.726540"], ["updated_at", "2015-11-13 20:51:53.726540"]]
+  [1m[35m (2.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/houses/1
+Completed 302 Found in 342ms (ActiveRecord: 14.7ms)
+
+
+Started GET "/houses/1" for ::1 at 2015-11-13 15:51:53 -0500
+Processing by HousesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mHouse Load (0.1ms)[0m  SELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mRelationship Load (0.2ms)[0m  [1mSELECT  "relationships".* FROM "relationships" WHERE "relationships"."house_id" = ? AND "relationships"."user_id" = ? LIMIT 1[0m  [["house_id", 1], ["user_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."user_id" WHERE "relationships"."house_id" = ?[0m  [["house_id", 1]]
+  [1m[35mPermission Load (0.2ms)[0m  SELECT  "permissions".* FROM "permissions" WHERE "permissions"."permissable_id" = ? AND "permissions"."permissable_type" = ? AND "permissions"."user_id" = ? LIMIT 1  [["permissable_id", 1], ["permissable_type", "House"], ["user_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "permissions".* FROM "permissions" WHERE "permissions"."permissable_id" = ? AND "permissions"."permissable_type" = ? AND "permissions"."user_id" = ? LIMIT 1[0m  [["permissable_id", 1], ["permissable_type", "House"], ["user_id", 1]]
+  Rendered houses/show.html.erb within layouts/application (13.6ms)
+  [1m[35mRelationship Load (0.1ms)[0m  SELECT  "relationships".* FROM "relationships" WHERE "relationships"."user_id" = ? LIMIT 1  [["user_id", 1]]
+  [1m[36mHouse Load (0.1ms)[0m  [1mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (2.9ms)
+Completed 200 OK in 225ms (Views: 220.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/items" for ::1 at 2015-11-13 15:51:58 -0500
+Processing by ItemsController#index as HTML
+  [1m[35mItem Load (0.3ms)[0m  SELECT  "items".* FROM "items" LIMIT 30 OFFSET 0
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mRelationship Load (0.1ms)[0m  SELECT  "relationships".* FROM "relationships" WHERE "relationships"."user_id" = ? LIMIT 1  [["user_id", 1]]
+  [1m[36mHouse Load (0.2ms)[0m  [1mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."user_id" WHERE "relationships"."house_id" = ?  [["house_id", 1]]
+  [1m[36mItem Load (0.3ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mItem Load (0.3ms)[0m  [1mSELECT "items".* FROM "items" INNER JOIN "users" ON "items"."user_id" = "users"."id" INNER JOIN "relationships" ON "users"."id" = "relationships"."user_id" WHERE "relationships"."house_id" = ?[0m  [["house_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "items".* FROM "items" INNER JOIN "users" ON "items"."user_id" = "users"."id" INNER JOIN "relationships" ON "users"."id" = "relationships"."user_id" WHERE "relationships"."house_id" = ?[0m  [["house_id", 1]]
+  Rendered items/index.html.erb within layouts/application (26.7ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.6ms)
+Completed 200 OK in 261ms (Views: 251.5ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/items/new" for ::1 at 2015-11-13 15:51:59 -0500
+Processing by ItemsController#new as HTML
+  Parameters: {"authenticity_token"=>"Ok5cF4snzPhrVdqZ0o5/fJrZNnNu1H3/9QolzuOLkvJEYbwB6X9GGTPG6dBXqLeSaT7GItIPeW0VhL3QkgTMJQ=="}
+  Rendered shared/_error_messages.html.erb (0.6ms)
+  Rendered items/new.html.erb within layouts/application (95.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mRelationship Load (0.1ms)[0m  SELECT  "relationships".* FROM "relationships" WHERE "relationships"."user_id" = ? LIMIT 1  [["user_id", 1]]
+  [1m[36mHouse Load (0.1ms)[0m  [1mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (2.8ms)
+Completed 200 OK in 318ms (Views: 308.1ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/items" for ::1 at 2015-11-13 15:52:10 -0500
+Processing by ItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jmcaKyJRElshOUXYZcv5VfzNj8sBs6TfXSlLXSvZE2nwSPo9QAmYunmqdpHg7TG7Dyp/mr1ooE29p9NDWlZNvg==", "item"=>{"item_name"=>"Batteries", "item_amount"=>"8", "item_price"=>"10", "visibility"=>"true"}, "commit"=>"Create Item"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "items" ("item_amount", "item_price", "item_name", "visibility", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["item_amount", 8], ["item_price", 10.0], ["item_name", "Batteries"], ["visibility", "t"], ["user_id", 1], ["created_at", "2015-11-13 20:52:10.199880"], ["updated_at", "2015-11-13 20:52:10.199880"]]
+  [1m[36m (1.8ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/items
+Completed 302 Found in 39ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/items" for ::1 at 2015-11-13 15:52:10 -0500
+Processing by ItemsController#index as HTML
+  [1m[35mItem Load (0.5ms)[0m  SELECT  "items".* FROM "items" LIMIT 30 OFFSET 0
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mRelationship Load (0.1ms)[0m  SELECT  "relationships".* FROM "relationships" WHERE "relationships"."user_id" = ? LIMIT 1  [["user_id", 1]]
+  [1m[36mHouse Load (0.1ms)[0m  [1mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."user_id" WHERE "relationships"."house_id" = ?  [["house_id", 1]]
+  [1m[36mItem Load (0.4ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "items".* FROM "items" WHERE "items"."user_id" = ?  [["user_id", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items" INNER JOIN "users" ON "items"."user_id" = "users"."id" INNER JOIN "relationships" ON "users"."id" = "relationships"."user_id" WHERE "relationships"."house_id" = ?  [["house_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "items".* FROM "items" INNER JOIN "users" ON "items"."user_id" = "users"."id" INNER JOIN "relationships" ON "users"."id" = "relationships"."user_id" WHERE "relationships"."house_id" = ?  [["house_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered items/index.html.erb within layouts/application (23.0ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.7ms)
+Completed 200 OK in 233ms (Views: 229.4ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/items/1/edit" for ::1 at 2015-11-13 15:52:14 -0500
+Processing by ItemsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered shared/_error_messages.html.erb (0.1ms)
+  Rendered items/edit.html.erb within layouts/application (5.4ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mRelationship Load (0.3ms)[0m  [1mSELECT  "relationships".* FROM "relationships" WHERE "relationships"."user_id" = ? LIMIT 1[0m  [["user_id", 1]]
+  [1m[35mHouse Load (0.1ms)[0m  SELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (3.5ms)
+Completed 200 OK in 235ms (Views: 232.2ms | ActiveRecord: 0.9ms)
+
+
+Started PATCH "/items/1" for ::1 at 2015-11-13 15:52:17 -0500
+Processing by ItemsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WmMB8/k+VlDz+fCFJ/xB3zXPAvdAVQcNld/hothLHQAkTOHlm2bcsatqw8yi2okxxijypvyOA591UXm8qcRD1w==", "item"=>{"item_amount"=>"0", "item_price"=>"10"}, "commit"=>"Save changes", "id"=>"1"}
+  [1m[36mItem Load (0.3ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 500 Internal Server Error in 3ms
+
+NoMethodError (undefined method `last_item_amount=' for #<Item:0x007f8b16943268>):
+  app/controllers/items_controller.rb:42:in `update'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (11.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (133.1ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (107.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (240.4ms)
+
+
+Started PATCH "/items/1" for ::1 at 2015-11-13 15:54:59 -0500
+Processing by ItemsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"b2F+77f0tIUhJl10xUAKVycUBbnlYMBUTHRUwJF41K8RTp751aw+ZHm1bj1AZsK51PP16Fm7xMas+sze4PeKeA==", "item"=>{"item_amount"=>"0", "item_price"=>"10"}, "commit"=>"Save changes", "id"=>"1"}
+  [1m[35mItem Load (0.2ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT 1  [["id", 1]]
+Completed 500 Internal Server Error in 17ms
+
+NoMethodError (undefined method `last_item_amount=' for #<Item:0x007f8b16ac6158>):
+  app/controllers/items_controller.rb:42:in `update'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.1ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (122.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (100.0ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (227.6ms)
+
+
+Started PATCH "/items/1" for ::1 at 2015-11-13 15:55:49 -0500
+Processing by ItemsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"b2F+77f0tIUhJl10xUAKVycUBbnlYMBUTHRUwJF41K8RTp751aw+ZHm1bj1AZsK51PP16Fm7xMas+sze4PeKeA==", "item"=>{"item_amount"=>"0", "item_price"=>"10"}, "commit"=>"Save changes", "id"=>"1"}
+Completed 500 Internal Server Error in 4ms
+
+ArgumentError (You need to supply at least one validation):
+  app/models/item.rb:5:in `<class:Item>'
+  app/models/item.rb:1:in `<top (required)>'
+  app/controllers/items_controller.rb:41:in `update'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (11.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (123.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (122.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (245.8ms)
+
+
+Started PATCH "/items/1" for ::1 at 2015-11-13 15:56:03 -0500
+Processing by ItemsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"b2F+77f0tIUhJl10xUAKVycUBbnlYMBUTHRUwJF41K8RTp751aw+ZHm1bj1AZsK51PP16Fm7xMas+sze4PeKeA==", "item"=>{"item_amount"=>"0", "item_price"=>"10"}, "commit"=>"Save changes", "id"=>"1"}
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 500 Internal Server Error in 16ms
+
+NoMethodError (undefined method `last_item_amount=' for #<Item:0x007f8b182b0bd8>):
+  app/controllers/items_controller.rb:42:in `update'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.9ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.1ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (125.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (101.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (227.9ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_items_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_items_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_items_on_house_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_items_on_house_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_notes_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_notes_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_notes_on_user_id_and_created_at' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_notes_on_user_id_and_created_at' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_notes_on_permissions_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_notes_on_permissions_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_permissions_on_permissable_type_and_permissable_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_permissions_on_permissable_type_and_permissable_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_relationships_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_relationships_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_relationships_on_house_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_relationships_on_house_id' AND type='index'
+
+  [1m[36m (0.5ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_share_notes_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_share_notes_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_share_notes_on_note_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_share_notes_on_note_id' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[36m (3.1ms)[0m  [1mCREATE TABLE "houses" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "street" varchar, "city" varchar, "state" varchar, "zip" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (1.5ms)[0m  CREATE TABLE "items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "item_price" decimal(8,2), "item_amount" integer, "item_name" varchar, "visibility" boolean, "frequency" integer, "user_id" integer, "house_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (1.3ms)[0m  CREATE  INDEX "index_items_on_house_id" ON "items" ("house_id")
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_items_on_house_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_items_on_house_id' AND type='index'
+[0m
+  [1m[35m (1.4ms)[0m  CREATE  INDEX "index_items_on_user_id" ON "items" ("user_id")
+  [1m[36m (1.5ms)[0m  [1mCREATE TABLE "notes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "content" text, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "permissions_id" integer) [0m
+  [1m[35m (1.6ms)[0m  CREATE  INDEX "index_notes_on_permissions_id" ON "notes" ("permissions_id")
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_notes_on_permissions_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_notes_on_permissions_id' AND type='index'
+[0m
+  [1m[35m (1.4ms)[0m  CREATE  INDEX "index_notes_on_user_id_and_created_at" ON "notes" ("user_id", "created_at")
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_notes_on_user_id_and_created_at' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_notes_on_user_id_and_created_at' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_notes_on_permissions_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_notes_on_permissions_id' AND type='index'
+
+  [1m[36m (1.4ms)[0m  [1mCREATE  INDEX "index_notes_on_user_id" ON "notes" ("user_id")[0m
+  [1m[35m (2.4ms)[0m  CREATE TABLE "permissions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "level" integer, "permissable_id" integer, "permissable_type" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (1.4ms)[0m  [1mCREATE  INDEX "index_permissions_on_permissable_type_and_permissable_id" ON "permissions" ("permissable_type", "permissable_id")[0m
+  [1m[35m (1.9ms)[0m  CREATE TABLE "relationships" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "house_id" integer, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (2.0ms)[0m  [1mCREATE  INDEX "index_relationships_on_house_id" ON "relationships" ("house_id")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_relationships_on_house_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_relationships_on_house_id' AND type='index'
+
+  [1m[36m (1.5ms)[0m  [1mCREATE  INDEX "index_relationships_on_user_id" ON "relationships" ("user_id")[0m
+  [1m[35m (1.5ms)[0m  CREATE TABLE "share_notes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "note_id" integer, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (1.3ms)[0m  [1mCREATE  INDEX "index_share_notes_on_note_id" ON "share_notes" ("note_id")[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_share_notes_on_note_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_share_notes_on_note_id' AND type='index'
+
+  [1m[36m (2.2ms)[0m  [1mCREATE  INDEX "index_share_notes_on_user_id" ON "share_notes" ("user_id")[0m
+  [1m[35m (1.5ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "password_digest" varchar, "remember_digest" varchar) 
+  [1m[36m (1.5ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (1.5ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (1.6ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.2ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (1.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20151105154537')[0m
+  [1m[35m (18.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20151004040342')
+  [1m[36m (2.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20151005005131')[0m
+  [1m[35m (2.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20151005020659')
+  [1m[36m (2.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20151009155927')[0m
+  [1m[35m (2.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20151012184722')
+  [1m[36m (2.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20151014160311')[0m
+  [1m[35m (2.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20151015020833')
+  [1m[36m (1.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20151015032931')[0m
+  [1m[35m (2.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20151015233216')
+  [1m[36m (2.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20151027152805')[0m
+  [1m[35m (1.8ms)[0m  CREATE TABLE "houses" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "street" varchar, "city" varchar, "state" varchar, "zip" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (1.5ms)[0m  [1mCREATE TABLE "items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "item_price" decimal(8,2), "item_amount" integer, "item_name" varchar, "visibility" boolean, "frequency" integer, "user_id" integer, "house_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (1.8ms)[0m  [1mCREATE  INDEX "index_items_on_house_id" ON "items" ("house_id")[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_items_on_house_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_items_on_house_id' AND type='index'
+
+  [1m[36m (1.6ms)[0m  [1mCREATE  INDEX "index_items_on_user_id" ON "items" ("user_id")[0m
+  [1m[35m (1.3ms)[0m  CREATE TABLE "notes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "content" text, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "permissions_id" integer) 
+  [1m[36m (1.3ms)[0m  [1mCREATE  INDEX "index_notes_on_permissions_id" ON "notes" ("permissions_id")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_notes_on_permissions_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_notes_on_permissions_id' AND type='index'
+
+  [1m[36m (1.6ms)[0m  [1mCREATE  INDEX "index_notes_on_user_id_and_created_at" ON "notes" ("user_id", "created_at")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_notes_on_user_id_and_created_at' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_notes_on_user_id_and_created_at' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_notes_on_permissions_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_notes_on_permissions_id' AND type='index'
+[0m
+  [1m[35m (1.5ms)[0m  CREATE  INDEX "index_notes_on_user_id" ON "notes" ("user_id")
+  [1m[36m (3.1ms)[0m  [1mCREATE TABLE "permissions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "level" integer, "permissable_id" integer, "permissable_type" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (1.8ms)[0m  CREATE  INDEX "index_permissions_on_permissable_type_and_permissable_id" ON "permissions" ("permissable_type", "permissable_id")
+  [1m[36m (1.7ms)[0m  [1mCREATE TABLE "relationships" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "house_id" integer, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (1.8ms)[0m  CREATE  INDEX "index_relationships_on_house_id" ON "relationships" ("house_id")
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_relationships_on_house_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_relationships_on_house_id' AND type='index'
+[0m
+  [1m[35m (1.8ms)[0m  CREATE  INDEX "index_relationships_on_user_id" ON "relationships" ("user_id")
+  [1m[36m (1.6ms)[0m  [1mCREATE TABLE "share_notes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "note_id" integer, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (1.5ms)[0m  CREATE  INDEX "index_share_notes_on_note_id" ON "share_notes" ("note_id")
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_share_notes_on_note_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_share_notes_on_note_id' AND type='index'
+[0m
+  [1m[35m (1.8ms)[0m  CREATE  INDEX "index_share_notes_on_user_id" ON "share_notes" ("user_id")
+  [1m[36m (4.5ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "password_digest" varchar, "remember_digest" varchar) [0m
+  [1m[35m (1.6ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36m (2.4ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (1.4ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (2.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20151105154537')
+  [1m[36m (2.2ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20151004040342')[0m
+  [1m[35m (2.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20151005005131')
+  [1m[36m (2.2ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20151005020659')[0m
+  [1m[35m (1.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20151009155927')
+  [1m[36m (2.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20151012184722')[0m
+  [1m[35m (2.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20151014160311')
+  [1m[36m (2.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20151015020833')[0m
+  [1m[35m (2.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20151015032931')
+  [1m[36m (7.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20151015233216')[0m
+  [1m[35m (2.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20151027152805')
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/" for ::1 at 2015-11-13 15:57:02 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered pages/home.html.erb within layouts/application (31.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 640ms (Views: 623.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/new" for ::1 at 2015-11-13 15:57:05 -0500
+Processing by UsersController#new as HTML
+  Rendered shared/_error_messages.html.erb (5.4ms)
+  Rendered users/new.html.erb within layouts/application (48.7ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 281ms (Views: 267.3ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/users" for ::1 at 2015-11-13 15:57:14 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JS7mnwe7kjxqmDMIQ+FTgZVWqSZrZHQsKH2ljCapd7ZbAQaJZeMY3TILAEHGx5tvZrFZd9e/cL7I8z2SVyYpYQ==", "user"=>{"name"=>"Bryan Duffy", "email"=>"bduff245@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "invite"=>""}, "commit"=>"Create my account"}
+Unpermitted parameter: invite
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('bduff245@gmail.com') LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Bryan Duffy"], ["email", "bduff245@gmail.com"], ["password_digest", "$2a$10$M4/4HGNcERfsw.wNKbkacOV9s43NiGS8Myz2uuKjk8v.Cz6VDD4K6"], ["created_at", "2015-11-13 20:57:14.958128"], ["updated_at", "2015-11-13 20:57:14.958128"]]
+  [1m[35m (2.3ms)[0m  commit transaction
+  [1m[36mHouse Load (0.3ms)[0m  [1mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT 1[0m  [["id", nil]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 129ms (ActiveRecord: 3.6ms)
+
+
+Started GET "/" for ::1 at 2015-11-13 15:57:14 -0500
+Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mRelationship Load (0.2ms)[0m  [1mSELECT  "relationships".* FROM "relationships" WHERE "relationships"."user_id" = ? LIMIT 1[0m  [["user_id", 1]]
+  Rendered pages/home.html.erb within layouts/application (19.4ms)
+  Rendered layouts/_header.html.erb (1.3ms)
+Completed 200 OK in 245ms (Views: 243.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/houses/new" for ::1 at 2015-11-13 15:57:16 -0500
+Processing by HousesController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered shared/_error_messages.html.erb (0.1ms)
+  Rendered houses/new.html.erb within layouts/application (10.3ms)
+  [1m[36mRelationship Load (0.2ms)[0m  [1mSELECT  "relationships".* FROM "relationships" WHERE "relationships"."user_id" = ? LIMIT 1[0m  [["user_id", 1]]
+  Rendered layouts/_header.html.erb (3.6ms)
+Completed 200 OK in 237ms (Views: 228.4ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/houses" for ::1 at 2015-11-13 15:57:29 -0500
+Processing by HousesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HS/45BrmxUMQMCPeyECgkQ+cuXUxJ4DdvrO4e0y13l5jABjyeL5PokijEJdNZmh//HtJJI38hE9ePSBlPTqAiQ==", "house"=>{"name"=>"Delta Sig", "street"=>"341 Northwestern Ave", "city"=>"West Lafayette", "state"=>"IN", "zip"=>"47906"}, "commit"=>"Create a House"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "relationships" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2015-11-13 20:57:29.914822"], ["updated_at", "2015-11-13 20:57:29.914822"]]
+  [1m[36m (4.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mRelationship Load (0.2ms)[0m  SELECT  "relationships".* FROM "relationships" WHERE "relationships"."user_id" = ? LIMIT 1  [["user_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE "relationships" SET "user_id" = ?, "updated_at" = ? WHERE "relationships"."id" = ?  [["user_id", 1], ["updated_at", "2015-11-13 20:57:29.929979"], ["id", 1]]
+  [1m[36m (2.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "houses" ("name", "street", "city", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Delta Sig"], ["street", "341 Northwestern Ave"], ["city", "West Lafayette"], ["state", "IN"], ["zip", 47906], ["created_at", "2015-11-13 20:57:29.940552"], ["updated_at", "2015-11-13 20:57:29.940552"]]
+  [1m[35mSQL (0.3ms)[0m  UPDATE "relationships" SET "house_id" = ?, "updated_at" = ? WHERE "relationships"."id" = ?  [["house_id", 1], ["updated_at", "2015-11-13 20:57:29.943645"], ["id", 1]]
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "permissions" ("permissable_type", "permissable_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["permissable_type", "House"], ["permissable_id", 1], ["created_at", "2015-11-13 20:57:29.945975"], ["updated_at", "2015-11-13 20:57:29.945975"]]
+  [1m[35m (2.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "permissions" ("user_id", "level", "permissable_id", "permissable_type", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["user_id", 0], ["level", 1], ["permissable_id", 1], ["permissable_type", "House"], ["created_at", "2015-11-13 20:57:29.953467"], ["updated_at", "2015-11-13 20:57:29.953467"]]
+  [1m[36m (2.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "permissions" ("user_id", "level", "permissable_id", "permissable_type", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["user_id", 1], ["level", 0], ["permissable_id", 1], ["permissable_type", "House"], ["created_at", "2015-11-13 20:57:29.968317"], ["updated_at", "2015-11-13 20:57:29.968317"]]
+  [1m[35m (2.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/houses/1
+Completed 302 Found in 91ms (ActiveRecord: 18.5ms)
+
+
+Started GET "/houses/1" for ::1 at 2015-11-13 15:57:29 -0500
+Processing by HousesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mHouse Load (0.1ms)[0m  SELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mRelationship Load (0.2ms)[0m  [1mSELECT  "relationships".* FROM "relationships" WHERE "relationships"."house_id" = ? AND "relationships"."user_id" = ? LIMIT 1[0m  [["house_id", 1], ["user_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."user_id" WHERE "relationships"."house_id" = ?[0m  [["house_id", 1]]
+  [1m[35mPermission Load (0.2ms)[0m  SELECT  "permissions".* FROM "permissions" WHERE "permissions"."permissable_id" = ? AND "permissions"."permissable_type" = ? AND "permissions"."user_id" = ? LIMIT 1  [["permissable_id", 1], ["permissable_type", "House"], ["user_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "permissions".* FROM "permissions" WHERE "permissions"."permissable_id" = ? AND "permissions"."permissable_type" = ? AND "permissions"."user_id" = ? LIMIT 1[0m  [["permissable_id", 1], ["permissable_type", "House"], ["user_id", 1]]
+  Rendered houses/show.html.erb within layouts/application (13.5ms)
+  [1m[35mRelationship Load (0.1ms)[0m  SELECT  "relationships".* FROM "relationships" WHERE "relationships"."user_id" = ? LIMIT 1  [["user_id", 1]]
+  [1m[36mHouse Load (0.1ms)[0m  [1mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (2.8ms)
+Completed 200 OK in 261ms (Views: 256.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/items" for ::1 at 2015-11-13 15:57:32 -0500
+Processing by ItemsController#index as HTML
+  [1m[35mItem Load (0.3ms)[0m  SELECT  "items".* FROM "items" LIMIT 30 OFFSET 0
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mRelationship Load (0.2ms)[0m  SELECT  "relationships".* FROM "relationships" WHERE "relationships"."user_id" = ? LIMIT 1  [["user_id", 1]]
+  [1m[36mHouse Load (0.2ms)[0m  [1mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."user_id" WHERE "relationships"."house_id" = ?  [["house_id", 1]]
+  [1m[36mItem Load (0.3ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mItem Load (0.3ms)[0m  [1mSELECT "items".* FROM "items" INNER JOIN "users" ON "items"."user_id" = "users"."id" INNER JOIN "relationships" ON "users"."id" = "relationships"."user_id" WHERE "relationships"."house_id" = ?[0m  [["house_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "items".* FROM "items" INNER JOIN "users" ON "items"."user_id" = "users"."id" INNER JOIN "relationships" ON "users"."id" = "relationships"."user_id" WHERE "relationships"."house_id" = ?[0m  [["house_id", 1]]
+  Rendered items/index.html.erb within layouts/application (26.2ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.6ms)
+Completed 200 OK in 245ms (Views: 234.1ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/items/new" for ::1 at 2015-11-13 15:57:34 -0500
+Processing by ItemsController#new as HTML
+  Parameters: {"authenticity_token"=>"87llCx7dzOAmtLxgrePPA+jpOLHPZJuSikPYgrKygoWNloUdfIVGAX4njykoxQftGw7I4HO/nwBqzUCcwz3cUg=="}
+  Rendered shared/_error_messages.html.erb (0.7ms)
+  Rendered items/new.html.erb within layouts/application (11.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mRelationship Load (0.2ms)[0m  SELECT  "relationships".* FROM "relationships" WHERE "relationships"."user_id" = ? LIMIT 1  [["user_id", 1]]
+  [1m[36mHouse Load (0.1ms)[0m  [1mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (2.8ms)
+Completed 200 OK in 229ms (Views: 218.9ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/items" for ::1 at 2015-11-13 15:57:44 -0500
+Processing by ItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"42lNaGZnv/NydBjkNpG2DgY555tg5EidU+5oMaiEXlOdRq1+BD81EirnK62zt37g9d4Xytw/TA+zYPAv2QsAhA==", "item"=>{"item_name"=>"Batteries", "item_amount"=>"10", "item_price"=>"5", "visibility"=>"true"}, "commit"=>"Create Item"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+Completed 500 Internal Server Error in 8ms
+
+NoMethodError (undefined method `last_item_amount' for #<Item:0x007fb5b8e7b830>):
+  app/controllers/items_controller.rb:21:in `create'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (14.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (138.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (111.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (245.2ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_items_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_items_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_items_on_house_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_items_on_house_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_notes_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_notes_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_notes_on_user_id_and_created_at' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_notes_on_user_id_and_created_at' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_notes_on_permissions_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_notes_on_permissions_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_permissions_on_permissable_type_and_permissable_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_permissions_on_permissable_type_and_permissable_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_relationships_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_relationships_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_relationships_on_house_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_relationships_on_house_id' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_share_notes_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_share_notes_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_share_notes_on_note_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_share_notes_on_note_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+
+
+Started GET "/" for ::1 at 2015-11-13 15:58:59 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mRelationship Load (0.2ms)[0m  [1mSELECT  "relationships".* FROM "relationships" WHERE "relationships"."user_id" = ? LIMIT 1[0m  [["user_id", 1]]
+  Rendered pages/home.html.erb within layouts/application (71.5ms)
+  [1m[35mHouse Load (0.3ms)[0m  SELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (57.1ms)
+Completed 200 OK in 764ms (Views: 746.5ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/items" for ::1 at 2015-11-13 15:59:02 -0500
+Processing by ItemsController#index as HTML
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT  "items".* FROM "items" LIMIT 30 OFFSET 0[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mRelationship Load (0.1ms)[0m  [1mSELECT  "relationships".* FROM "relationships" WHERE "relationships"."user_id" = ? LIMIT 1[0m  [["user_id", 1]]
+  [1m[35mHouse Load (0.1ms)[0m  SELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."user_id" WHERE "relationships"."house_id" = ?[0m  [["house_id", 1]]
+  [1m[35mItem Load (0.3ms)[0m  SELECT "items".* FROM "items" WHERE "items"."user_id" = ?  [["user_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mItem Load (0.3ms)[0m  SELECT "items".* FROM "items" INNER JOIN "users" ON "items"."user_id" = "users"."id" INNER JOIN "relationships" ON "users"."id" = "relationships"."user_id" WHERE "relationships"."house_id" = ?  [["house_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "items".* FROM "items" INNER JOIN "users" ON "items"."user_id" = "users"."id" INNER JOIN "relationships" ON "users"."id" = "relationships"."user_id" WHERE "relationships"."house_id" = ?  [["house_id", 1]]
+  Rendered items/index.html.erb within layouts/application (67.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (2.5ms)
+Completed 200 OK in 308ms (Views: 294.8ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/items/new" for ::1 at 2015-11-13 15:59:04 -0500
+Processing by ItemsController#new as HTML
+  Parameters: {"authenticity_token"=>"e55OPCVhkz+XorkRnXQtYU9XWDOi4vWBFGC0P4eDsxkFsa4qRzkZ3s8xilgYUuWPvLCoYh458RP07iwh9gztzg=="}
+  Rendered shared/_error_messages.html.erb (3.6ms)
+  Rendered items/new.html.erb within layouts/application (34.1ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mRelationship Load (0.1ms)[0m  [1mSELECT  "relationships".* FROM "relationships" WHERE "relationships"."user_id" = ? LIMIT 1[0m  [["user_id", 1]]
+  [1m[35mHouse Load (0.1ms)[0m  SELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (2.8ms)
+Completed 200 OK in 265ms (Views: 255.1ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/items" for ::1 at 2015-11-13 15:59:11 -0500
+Processing by ItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MfnIdzpHGHvxHpg8qN2nE2Kcz/6zKy7NFDZhXzqodrRP1ihhWB+SmqmNq3Ut+2/9kXs/rw/wKl/0uPlBSycoYw==", "item"=>{"item_name"=>"Batteries", "item_amount"=>"10", "item_price"=>"4", "visibility"=>"true"}, "commit"=>"Create Item"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "items" ("item_amount", "item_price", "item_name", "visibility", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["item_amount", 10], ["item_price", 4.0], ["item_name", "Batteries"], ["visibility", "t"], ["user_id", 1], ["created_at", "2015-11-13 20:59:11.447524"], ["updated_at", "2015-11-13 20:59:11.447524"]]
+  [1m[35m (1.7ms)[0m  commit transaction
+Completed 500 Internal Server Error in 12ms
+
+NoMethodError (undefined method `prev_amount=' for #<Item:0x007fc7fed5c410>):
+  app/controllers/items_controller.rb:22:in `create'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.0ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (135.3ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (123.1ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (267.6ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_items_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_items_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_items_on_house_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_items_on_house_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_notes_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_notes_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_notes_on_user_id_and_created_at' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_notes_on_user_id_and_created_at' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_notes_on_permissions_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_notes_on_permissions_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_permissions_on_permissable_type_and_permissable_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_permissions_on_permissable_type_and_permissable_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_relationships_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_relationships_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_relationships_on_house_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_relationships_on_house_id' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_share_notes_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_share_notes_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_share_notes_on_note_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_share_notes_on_note_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[36m (1.8ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.3ms)[0m  select sqlite_version(*)
+  [1m[36m (1.6ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateUsers (20151004040342)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151004040342"]]
+  [1m[35m (1.8ms)[0m  commit transaction
+Migrating to AddIndexToUsersEmail (20151005005131)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151005005131"]]
+  [1m[35m (1.2ms)[0m  commit transaction
+Migrating to AddPasswordDigestToUsers (20151005020659)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "users" ADD "password_digest" varchar
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151005020659"]]
+  [1m[35m (1.5ms)[0m  commit transaction
+Migrating to CreateHouses (20151009155927)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "houses" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "street" varchar, "city" varchar, "state" varchar, "zip" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151009155927"]]
+  [1m[35m (1.9ms)[0m  commit transaction
+Migrating to AddRememberDigestToUsers (20151012184722)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "users" ADD "remember_digest" varchar
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151012184722"]]
+  [1m[35m (1.5ms)[0m  commit transaction
+Migrating to CreateRelationships (20151014160311)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "relationships" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "house_id" integer, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "index_relationships_on_house_id" ON "relationships" ("house_id")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_relationships_on_house_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_relationships_on_house_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "index_relationships_on_user_id" ON "relationships" ("user_id")[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151014160311"]]
+  [1m[36m (2.0ms)[0m  [1mcommit transaction[0m
+Migrating to CreateItems (20151015020833)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateItems (20151015020833)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mCREATE TABLE "items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "item_price" decimal(8,2), "item_amount" integer, "item_name" varchar, "visibility" boolean, "frequency" integer, "prev_amount" integer, "user_id" integer, "house_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.2ms)[0m  [1mCREATE  INDEX "index_items_on_user_id" ON "items" ("user_id")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_items_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_items_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "index_items_on_house_id" ON "items" ("house_id")[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151015020833"]]
+  [1m[36m (2.4ms)[0m  [1mcommit transaction[0m
+Migrating to CreateNotes (20151015032931)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mCREATE TABLE "notes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "content" text, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  CREATE  INDEX "index_notes_on_user_id" ON "notes" ("user_id")
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_notes_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_notes_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  CREATE  INDEX "index_notes_on_user_id_and_created_at" ON "notes" ("user_id", "created_at")
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151015032931"]]
+  [1m[35m (1.7ms)[0m  commit transaction
+Migrating to CreateShareNotes (20151015233216)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "share_notes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "note_id" integer, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "index_share_notes_on_note_id" ON "share_notes" ("note_id")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_share_notes_on_note_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_share_notes_on_note_id' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1mCREATE  INDEX "index_share_notes_on_user_id" ON "share_notes" ("user_id")[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151015233216"]]
+  [1m[36m (1.6ms)[0m  [1mcommit transaction[0m
+Migrating to CreatePermissions (20151027152805)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mCREATE TABLE "permissions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "level" integer, "permissable_id" integer, "permissable_type" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  CREATE  INDEX "index_permissions_on_permissable_type_and_permissable_id" ON "permissions" ("permissable_type", "permissable_id")
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151027152805"]]
+  [1m[35m (2.4ms)[0m  commit transaction
+Migrating to AddPermissionsToNotes (20151105154537)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "notes" ADD "permissions_id" integer
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_notes_on_user_id_and_created_at' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_notes_on_user_id_and_created_at' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_notes_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_notes_on_user_id' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1mCREATE  INDEX "index_notes_on_permissions_id" ON "notes" ("permissions_id")[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151105154537"]]
+  [1m[36m (1.8ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_items_on_house_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_items_on_house_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_items_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_items_on_user_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_notes_on_permissions_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_notes_on_permissions_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_notes_on_user_id_and_created_at' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_notes_on_user_id_and_created_at' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_notes_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_notes_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_permissions_on_permissable_type_and_permissable_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_permissions_on_permissable_type_and_permissable_id' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_relationships_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_relationships_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_relationships_on_house_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_relationships_on_house_id' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_share_notes_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_share_notes_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_share_notes_on_note_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_share_notes_on_note_id' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+
+
+Started GET "/" for ::1 at 2015-11-13 16:03:34 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered pages/home.html.erb within layouts/application (123.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 1367ms (Views: 1324.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/new" for ::1 at 2015-11-13 16:03:38 -0500
+Processing by UsersController#new as HTML
+  Rendered shared/_error_messages.html.erb (5.7ms)
+  Rendered users/new.html.erb within layouts/application (141.1ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 367ms (Views: 352.3ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/users" for ::1 at 2015-11-13 16:03:45 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+g9UntZnH0f0TgcA+xymdzO6N+GsBu7lZSXBluVP6ruEILSItD+VpqzdNEl+Om6ZwF3HsBDd6neFq1mIlMC0bA==", "user"=>{"name"=>"Duffy", "email"=>"bduff245@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "invite"=>""}, "commit"=>"Create my account"}
+Unpermitted parameter: invite
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('bduff245@gmail.com') LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Duffy"], ["email", "bduff245@gmail.com"], ["password_digest", "$2a$10$KJt.cmULX/bn.QMjGef.P.pPtKTOj4Nyw.eWoLOIK4EmNTZy29VYe"], ["created_at", "2015-11-13 21:03:45.619479"], ["updated_at", "2015-11-13 21:03:45.619479"]]
+  [1m[35m (1.8ms)[0m  commit transaction
+  [1m[36mHouse Load (0.3ms)[0m  [1mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT 1[0m  [["id", nil]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 204ms (ActiveRecord: 3.1ms)
+
+
+Started GET "/" for ::1 at 2015-11-13 16:03:45 -0500
+Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mRelationship Load (0.2ms)[0m  [1mSELECT  "relationships".* FROM "relationships" WHERE "relationships"."user_id" = ? LIMIT 1[0m  [["user_id", 1]]
+  Rendered pages/home.html.erb within layouts/application (22.3ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+Completed 200 OK in 240ms (Views: 239.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/houses/new" for ::1 at 2015-11-13 16:03:47 -0500
+Processing by HousesController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered shared/_error_messages.html.erb (0.2ms)
+  Rendered houses/new.html.erb within layouts/application (11.4ms)
+  [1m[36mRelationship Load (0.1ms)[0m  [1mSELECT  "relationships".* FROM "relationships" WHERE "relationships"."user_id" = ? LIMIT 1[0m  [["user_id", 1]]
+  Rendered layouts/_header.html.erb (2.3ms)
+Completed 200 OK in 248ms (Views: 238.2ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/houses" for ::1 at 2015-11-13 16:04:00 -0500
+Processing by HousesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NZta4ua6Lcje2R6B8+70KtCOVzrdXGn4NLxwvIAmjhBLtLr0hOKnKYZKLch2yDzEI2mna2GHbWrUMuii8anQxw==", "house"=>{"name"=>"Delta Sig", "street"=>"341 Northwestern Ave", "city"=>"West Lafayette", "state"=>"IN", "zip"=>"47906"}, "commit"=>"Create a House"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (27.5ms)[0m  INSERT INTO "relationships" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2015-11-13 21:04:00.359647"], ["updated_at", "2015-11-13 21:04:00.359647"]]
+  [1m[36m (73.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mRelationship Load (0.2ms)[0m  SELECT  "relationships".* FROM "relationships" WHERE "relationships"."user_id" = ? LIMIT 1  [["user_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE "relationships" SET "user_id" = ?, "updated_at" = ? WHERE "relationships"."id" = ?  [["user_id", 1], ["updated_at", "2015-11-13 21:04:00.535436"], ["id", 1]]
+  [1m[36m (43.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (40.3ms)[0m  [1mINSERT INTO "houses" ("name", "street", "city", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Delta Sig"], ["street", "341 Northwestern Ave"], ["city", "West Lafayette"], ["state", "IN"], ["zip", 47906], ["created_at", "2015-11-13 21:04:00.589155"], ["updated_at", "2015-11-13 21:04:00.589155"]]
+  [1m[35mSQL (0.3ms)[0m  UPDATE "relationships" SET "house_id" = ?, "updated_at" = ? WHERE "relationships"."id" = ?  [["house_id", 1], ["updated_at", "2015-11-13 21:04:00.633103"], ["id", 1]]
+  [1m[36mSQL (37.9ms)[0m  [1mINSERT INTO "permissions" ("permissable_type", "permissable_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["permissable_type", "House"], ["permissable_id", 1], ["created_at", "2015-11-13 21:04:00.635368"], ["updated_at", "2015-11-13 21:04:00.635368"]]
+  [1m[35m (37.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "permissions" ("user_id", "level", "permissable_id", "permissable_type", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["user_id", 0], ["level", 1], ["permissable_id", 1], ["permissable_type", "House"], ["created_at", "2015-11-13 21:04:00.715477"], ["updated_at", "2015-11-13 21:04:00.715477"]]
+  [1m[36m (20.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "permissions" ("user_id", "level", "permissable_id", "permissable_type", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["user_id", 1], ["level", 0], ["permissable_id", 1], ["permissable_type", "House"], ["created_at", "2015-11-13 21:04:00.740905"], ["updated_at", "2015-11-13 21:04:00.740905"]]
+  [1m[35m (17.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/houses/1
+Completed 302 Found in 683ms (ActiveRecord: 301.2ms)
+
+
+Started GET "/houses/1" for ::1 at 2015-11-13 16:04:00 -0500
+Processing by HousesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mHouse Load (0.1ms)[0m  SELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mRelationship Load (0.3ms)[0m  [1mSELECT  "relationships".* FROM "relationships" WHERE "relationships"."house_id" = ? AND "relationships"."user_id" = ? LIMIT 1[0m  [["house_id", 1], ["user_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."user_id" WHERE "relationships"."house_id" = ?[0m  [["house_id", 1]]
+  [1m[35mPermission Load (0.2ms)[0m  SELECT  "permissions".* FROM "permissions" WHERE "permissions"."permissable_id" = ? AND "permissions"."permissable_type" = ? AND "permissions"."user_id" = ? LIMIT 1  [["permissable_id", 1], ["permissable_type", "House"], ["user_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "permissions".* FROM "permissions" WHERE "permissions"."permissable_id" = ? AND "permissions"."permissable_type" = ? AND "permissions"."user_id" = ? LIMIT 1[0m  [["permissable_id", 1], ["permissable_type", "House"], ["user_id", 1]]
+  Rendered houses/show.html.erb within layouts/application (31.6ms)
+  [1m[35mRelationship Load (0.1ms)[0m  SELECT  "relationships".* FROM "relationships" WHERE "relationships"."user_id" = ? LIMIT 1  [["user_id", 1]]
+  [1m[36mHouse Load (0.1ms)[0m  [1mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (2.8ms)
+Completed 200 OK in 298ms (Views: 290.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/items" for ::1 at 2015-11-13 16:04:02 -0500
+Processing by ItemsController#index as HTML
+  [1m[35mItem Load (13.5ms)[0m  SELECT  "items".* FROM "items" LIMIT 30 OFFSET 0
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mRelationship Load (0.1ms)[0m  SELECT  "relationships".* FROM "relationships" WHERE "relationships"."user_id" = ? LIMIT 1  [["user_id", 1]]
+  [1m[36mHouse Load (0.1ms)[0m  [1mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."user_id" WHERE "relationships"."house_id" = ?  [["house_id", 1]]
+  [1m[36mItem Load (0.5ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mItem Load (0.3ms)[0m  [1mSELECT "items".* FROM "items" INNER JOIN "users" ON "items"."user_id" = "users"."id" INNER JOIN "relationships" ON "users"."id" = "relationships"."user_id" WHERE "relationships"."house_id" = ?[0m  [["house_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "items".* FROM "items" INNER JOIN "users" ON "items"."user_id" = "users"."id" INNER JOIN "relationships" ON "users"."id" = "relationships"."user_id" WHERE "relationships"."house_id" = ?[0m  [["house_id", 1]]
+  Rendered items/index.html.erb within layouts/application (17.7ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.6ms)
+Completed 200 OK in 273ms (Views: 242.3ms | ActiveRecord: 15.0ms)
+
+
+Started POST "/items/new" for ::1 at 2015-11-13 16:04:04 -0500
+Processing by ItemsController#new as HTML
+  Parameters: {"authenticity_token"=>"LVCD5ZXkaSi3wsSKnDzUtdQEncxRCcTCOz64XRiN9IlTf2Pz97zjye9R98MZGhxbJ+Ntne3SwFDbsCBDaQKqXg=="}
+  Rendered shared/_error_messages.html.erb (0.8ms)
+  Rendered items/new.html.erb within layouts/application (81.3ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mRelationship Load (0.1ms)[0m  SELECT  "relationships".* FROM "relationships" WHERE "relationships"."user_id" = ? LIMIT 1  [["user_id", 1]]
+  [1m[36mHouse Load (0.1ms)[0m  [1mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (2.9ms)
+Completed 200 OK in 354ms (Views: 342.7ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/items" for ::1 at 2015-11-13 16:04:11 -0500
+Processing by ItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XK10Ec/FoidMmIgtUf55xCIQGrO6lAHQhhDKR5PlEjEigpQHrZ0oxhQLu2TU2LEq0ffq4gZPBUJmnlJZ4mpM5g==", "item"=>{"item_name"=>"Batteries", "item_amount"=>"10", "item_price"=>"4", "visibility"=>"true"}, "commit"=>"Create Item"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "items" ("item_amount", "item_price", "item_name", "visibility", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["item_amount", 10], ["item_price", 4.0], ["item_name", "Batteries"], ["visibility", "t"], ["user_id", 1], ["created_at", "2015-11-13 21:04:11.975804"], ["updated_at", "2015-11-13 21:04:11.975804"]]
+  [1m[36m (35.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/items
+Completed 302 Found in 48ms (ActiveRecord: 36.4ms)
+
+
+Started GET "/items" for ::1 at 2015-11-13 16:04:12 -0500
+Processing by ItemsController#index as HTML
+  [1m[35mItem Load (0.2ms)[0m  SELECT  "items".* FROM "items" LIMIT 30 OFFSET 0
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mRelationship Load (0.1ms)[0m  SELECT  "relationships".* FROM "relationships" WHERE "relationships"."user_id" = ? LIMIT 1  [["user_id", 1]]
+  [1m[36mHouse Load (0.1ms)[0m  [1mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."user_id" WHERE "relationships"."house_id" = ?  [["house_id", 1]]
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "items".* FROM "items" WHERE "items"."user_id" = ?  [["user_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mItem Load (0.1ms)[0m  SELECT "items".* FROM "items" INNER JOIN "users" ON "items"."user_id" = "users"."id" INNER JOIN "relationships" ON "users"."id" = "relationships"."user_id" WHERE "relationships"."house_id" = ?  [["house_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "items".* FROM "items" INNER JOIN "users" ON "items"."user_id" = "users"."id" INNER JOIN "relationships" ON "users"."id" = "relationships"."user_id" WHERE "relationships"."house_id" = ?  [["house_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered items/index.html.erb within layouts/application (15.7ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.6ms)
+Completed 200 OK in 219ms (Views: 215.9ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/items/1/edit" for ::1 at 2015-11-13 16:04:14 -0500
+Processing by ItemsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mItem Load (0.3ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered shared/_error_messages.html.erb (0.1ms)
+  Rendered items/edit.html.erb within layouts/application (5.9ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mRelationship Load (0.1ms)[0m  [1mSELECT  "relationships".* FROM "relationships" WHERE "relationships"."user_id" = ? LIMIT 1[0m  [["user_id", 1]]
+  [1m[35mHouse Load (0.1ms)[0m  SELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (3.1ms)
+Completed 200 OK in 252ms (Views: 250.1ms | ActiveRecord: 0.7ms)
+
+
+Started PATCH "/items/1" for ::1 at 2015-11-13 16:04:17 -0500
+Processing by ItemsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"w1KOMrwBds4U0IEGvI5X4rCqUrwPzJPtgtX+7mOd4Ey9fW4k3ln8L0xDsk85qJ8MQ02i7bMXl39iW2bwEhK+mw==", "item"=>{"item_amount"=>"0", "item_price"=>"4"}, "commit"=>"Save changes", "id"=>"1"}
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mUPDATE "items" SET "prev_amount" = ?, "item_amount" = ?, "updated_at" = ? WHERE "items"."id" = ?[0m  [["prev_amount", 10], ["item_amount", 0], ["updated_at", "2015-11-13 21:04:17.924860"], ["id", 1]]
+  [1m[35m (2.2ms)[0m  commit transaction
+Redirected to http://localhost:3000/items
+Completed 302 Found in 9ms (ActiveRecord: 3.2ms)
+
+
+Started GET "/items" for ::1 at 2015-11-13 16:04:17 -0500
+Processing by ItemsController#index as HTML
+  [1m[36mItem Load (0.3ms)[0m  [1mSELECT  "items".* FROM "items" LIMIT 30 OFFSET 0[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mRelationship Load (0.1ms)[0m  [1mSELECT  "relationships".* FROM "relationships" WHERE "relationships"."user_id" = ? LIMIT 1[0m  [["user_id", 1]]
+  [1m[35mHouse Load (0.7ms)[0m  SELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."user_id" WHERE "relationships"."house_id" = ?[0m  [["house_id", 1]]
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items" WHERE "items"."user_id" = ?  [["user_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT "items".* FROM "items" INNER JOIN "users" ON "items"."user_id" = "users"."id" INNER JOIN "relationships" ON "users"."id" = "relationships"."user_id" WHERE "relationships"."house_id" = ?[0m  [["house_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "items".* FROM "items" INNER JOIN "users" ON "items"."user_id" = "users"."id" INNER JOIN "relationships" ON "users"."id" = "relationships"."user_id" WHERE "relationships"."house_id" = ?[0m  [["house_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered items/index.html.erb within layouts/application (13.9ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.6ms)
+Completed 200 OK in 226ms (Views: 222.8ms | ActiveRecord: 2.0ms)

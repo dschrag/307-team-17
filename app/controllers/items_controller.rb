@@ -19,7 +19,8 @@ class ItemsController < ApplicationController
     def create
         @item = current_user.items.build(item_params)
         if @item.save
-            @item.frequency += @item.item_amount
+            @item.prev_amount = @item.item_amount
+            @item.frequency = 1
             flash[:success] = "Item Created."
             redirect_to items_path
         else
@@ -39,8 +40,11 @@ class ItemsController < ApplicationController
 
     def update
          @item = Item.find(params[:id])
+         @item.prev_amount = @item.item_amount
          if @item.update_attributes(item_params)
-            @item.frequency += 1
+            if @item.prev_amount < @item.item_amount
+                @item.frequency += 1
+            end
             flash[:success] = "Item successfully updated"
             redirect_to items_path
          else
