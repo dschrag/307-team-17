@@ -11,8 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD:roomedy/db/schema.rb
-ActiveRecord::Schema.define(version: 20151111030226) do
+ActiveRecord::Schema.define(version: 20151112021331) do
 
   create_table "events", force: :cascade do |t|
     t.string   "name"
@@ -25,9 +24,6 @@ ActiveRecord::Schema.define(version: 20151111030226) do
   end
 
   add_index "events", ["user_id"], name: "index_events_on_user_id"
-=======
-ActiveRecord::Schema.define(version: 20151112021331) do
->>>>>>> 83bef01006ffa87b403a4ce3f46b3acb72fd922f:db/schema.rb
 
   create_table "houses", force: :cascade do |t|
     t.string   "name"
