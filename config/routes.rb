@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   get 'sessions/new'
 
+  get       'activities' => 'activities#index'
+  resources :activities
   post      'items/new' => 'items#new'
   resources :items
 
@@ -18,6 +20,7 @@ Rails.application.routes.draw do
 	get				'login' => 'sessions#new'
 	post			'login' => 'sessions#create'
 	delete		'logout' => 'sessions#destroy'
+  get       'logout' => 'sessions#destroy'
 
   post  'events/new' => 'events#new'
   resources :events
