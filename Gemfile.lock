@@ -186,11 +186,8 @@ DEPENDENCIES
   datetimepicker-rails!
   jbuilder (~> 2.0)
   jquery-rails
-<<<<<<< HEAD:roomedy/Gemfile.lock
   momentjs-rails
-=======
   money-rails
->>>>>>> 83bef01006ffa87b403a4ce3f46b3acb72fd922f:Gemfile.lock
   pg
   rails (= 4.2.0)
   rails_12factor
