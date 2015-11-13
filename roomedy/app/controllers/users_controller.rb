@@ -16,6 +16,8 @@ class UsersController < ApplicationController
       log_in @user
 	    flash[:success] = "Welcome!"
 	    
+      default_notificaiton()
+
 	    unless params[:user][:invite].nil?
         @house = House.find_by_id(params[:user][:invite])
         unless @house.nil? 
@@ -76,14 +78,14 @@ class UsersController < ApplicationController
       @user.notification.create(user: @user.id, type: "house_user_leave", web: false, mobile: false, email:true)
       @user.notification.create(user: @user.id, type: "house_new_admin", web: false, mobile: false, email:true)
 
-      @user.notification.create(user: @user.id, type: "user_update_details", web: false, mobile: true, email:false)
-      @user.notification.create(user: @user.id, type: "user_update_password", web: false, mobile: true, email:false)
+      @user.notification.create(user: @user.id, type: "user_update_details", web: false, mobile: false, email:true)
+      @user.notification.create(user: @user.id, type: "user_update_password", web: false, mobile: false, email:true)
 
-      @user.notification.create(user: @user.id, type: "house_update_admin", web: false, mobile: true, email:false)
-      @user.notification.create(user: @user.id, type: "house_update_name", web: false, mobile: true, email:false)
+      @user.notification.create(user: @user.id, type: "house_update_admin", web: true, mobile: false, email:false)
+      @user.notification.create(user: @user.id, type: "house_update_name", web: true, mobile: false, email:false)
 
-      @user.notification.create(user: @user.id, type: "event_reminder", web: false, mobile: true, email:false)
-      @user.notification.create(user: @user.id, type: "event_created", web: false, mobile: true, email:false)
-      @user.notification.create(user: @user.id, type: "event_invite", web: false, mobile: true, email:false)
+      @user.notification.create(user: @user.id, type: "event_reminder", web: true, mobile: true, email:true)
+      @user.notification.create(user: @user.id, type: "event_created", web: true, mobile: false, email:true)
+      @user.notification.create(user: @user.id, type: "event_invite", web: true, mobile: true, email:true)
     end
 end
