@@ -2,6 +2,13 @@
 
 <%= will_paginate %>
 	<ul class="items">
+		<% @top5.each do |item| %>
+	  	  <% if item.item_amount == 0 %>
+	  	  	<li>
+			      You are low on your commmonly purchased item: <%= item.item_name %>
+		    </li>
+	    <% end %>
+	  <% end %>
 	  <h1>Public Inventory</h1>
 	  <% House.find(current_user.relationship.house_id).items.each do |item| %>
 	  	  <% if item.visibility == true %>

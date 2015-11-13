@@ -6058,3 +6058,364 @@ Processing by UsersController#show as HTML
   [1m[36mHouse Load (0.1ms)[0m  [1mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT 1[0m  [["id", 1]]
   Rendered layouts/_header.html.erb (1.7ms)
 Completed 200 OK in 205ms (Views: 200.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2015-11-13 15:17:56 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mRelationship Load (15.1ms)[0m  [1mSELECT  "relationships".* FROM "relationships" WHERE "relationships"."user_id" = ? LIMIT 1[0m  [["user_id", 1]]
+  Rendered pages/home.html.erb within layouts/application (218.7ms)
+  [1m[35mHouse Load (16.8ms)[0m  SELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (73.4ms)
+Completed 200 OK in 1454ms (Views: 1376.7ms | ActiveRecord: 34.8ms)
+
+
+Started GET "/" for ::1 at 2015-11-13 15:17:59 -0500
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mRelationship Load (0.1ms)[0m  SELECT  "relationships".* FROM "relationships" WHERE "relationships"."user_id" = ? LIMIT 1  [["user_id", 1]]
+  Rendered pages/home.html.erb within layouts/application (2.8ms)
+  [1m[36mHouse Load (0.1ms)[0m  [1mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.8ms)
+Completed 200 OK in 268ms (Views: 266.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/houses.self-914c8a07ca6dd7d62c9dbe06298ab534228f7dc1ce543aba3d20fb66a5e55a4d.css?body=1" for ::1 at 2015-11-13 15:18:00 -0500
+
+
+Started GET "/assets/items.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-13 15:18:00 -0500
+
+
+Started GET "/assets/bootstrap_and_customization.self-4e65a684ce3d650bfa8ae11552aef982c3a7d552b52b9b54d90edf9180fd69ca.css?body=1" for ::1 at 2015-11-13 15:18:00 -0500
+
+
+Started GET "/assets/notes.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-13 15:18:00 -0500
+
+
+Started GET "/assets/pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-13 15:18:00 -0500
+
+
+Started GET "/assets/permissions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-13 15:18:00 -0500
+
+
+Started GET "/assets/sessions.self-b1f9030bf2c6fc1caff90240dca649dc9c64e97d30a7f2f6102846241d6be2c3.css?body=1" for ::1 at 2015-11-13 15:18:00 -0500
+
+
+Started GET "/assets/users.self-a1059d29cadd09c8f2b50db9acd93b6bae211a76bfcdad5a9c9f580d48d1df18.css?body=1" for ::1 at 2015-11-13 15:18:00 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-11-13 15:18:00 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-11-13 15:18:00 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-11-13 15:18:00 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-11-13 15:18:00 -0500
+
+
+Started GET "/assets/houses.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-13 15:18:00 -0500
+
+
+Started GET "/assets/items.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-13 15:18:00 -0500
+
+
+Started GET "/assets/notes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-13 15:18:00 -0500
+
+
+Started GET "/assets/pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-13 15:18:00 -0500
+
+
+Started GET "/assets/permissions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-13 15:18:00 -0500
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-13 15:18:00 -0500
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-13 15:18:00 -0500
+
+
+Started GET "/assets/bootstrap.self-6c92f650931beefe48977f272b7015d6b9b45da8b09831ebf88e05193c12d355.js?body=1" for ::1 at 2015-11-13 15:18:00 -0500
+
+
+Started GET "/assets/application.self-f98a0dd27ad1c55b2b9cfe97296d4887e5d4a4535b3bbbf9130c1050771738b2.js?body=1" for ::1 at 2015-11-13 15:18:00 -0500
+
+
+Started GET "/items" for ::1 at 2015-11-13 15:18:03 -0500
+Processing by ItemsController#index as HTML
+  [1m[35mItem Load (0.7ms)[0m  SELECT  "items".* FROM "items" LIMIT 30 OFFSET 0
+  Rendered items/index.html.erb within layouts/application (2.8ms)
+Completed 500 Internal Server Error in 40ms
+
+SyntaxError (/Users/srypher/Desktop/307-team-17/app/views/items/index.html.erb:8: syntax error, unexpected tIDENTIFIER, expecting ')'
+...ommmonly purchased item: " item.item_name );@output_buffer.s...
+...                               ^):
+  app/views/items/index.html.erb:8: syntax error, unexpected tIDENTIFIER, expecting ')'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (14.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.8ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (138.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (1.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (108.9ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (246.8ms)
+
+
+Started GET "/items" for ::1 at 2015-11-13 15:18:04 -0500
+Processing by ItemsController#index as HTML
+  [1m[36mItem Load (0.3ms)[0m  [1mSELECT  "items".* FROM "items" LIMIT 30 OFFSET 0[0m
+  Rendered items/index.html.erb within layouts/application (3.2ms)
+Completed 500 Internal Server Error in 10ms
+
+SyntaxError (/Users/srypher/Desktop/307-team-17/app/views/items/index.html.erb:8: syntax error, unexpected tIDENTIFIER, expecting ')'
+...ommmonly purchased item: " item.item_name );@output_buffer.s...
+...                               ^):
+  app/views/items/index.html.erb:8: syntax error, unexpected tIDENTIFIER, expecting ')'
+
+
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (13.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (10.2ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (135.9ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (106.4ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /usr/local/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (233.1ms)
+
+
+Started GET "/items" for ::1 at 2015-11-13 15:18:49 -0500
+Processing by ItemsController#index as HTML
+  [1m[35mItem Load (0.2ms)[0m  SELECT  "items".* FROM "items" LIMIT 30 OFFSET 0
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mRelationship Load (0.1ms)[0m  SELECT  "relationships".* FROM "relationships" WHERE "relationships"."user_id" = ? LIMIT 1  [["user_id", 1]]
+  [1m[36mHouse Load (0.1ms)[0m  [1mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mItem Load (23.3ms)[0m  SELECT "items".* FROM "items" INNER JOIN "users" ON "items"."user_id" = "users"."id" INNER JOIN "relationships" ON "users"."id" = "relationships"."user_id" WHERE "relationships"."house_id" = ?  [["house_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "items".* FROM "items" INNER JOIN "users" ON "items"."user_id" = "users"."id" INNER JOIN "relationships" ON "users"."id" = "relationships"."user_id" WHERE "relationships"."house_id" = ?  [["house_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered items/index.html.erb within layouts/application (99.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.6ms)
+Completed 200 OK in 330ms (Views: 303.5ms | ActiveRecord: 24.2ms)
+
+
+Started GET "/assets/bootstrap_and_customization.self-4e65a684ce3d650bfa8ae11552aef982c3a7d552b52b9b54d90edf9180fd69ca.css?body=1" for ::1 at 2015-11-13 15:18:49 -0500
+
+
+Started GET "/assets/items.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-13 15:18:49 -0500
+
+
+Started GET "/assets/notes.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-13 15:18:49 -0500
+
+
+Started GET "/assets/houses.self-914c8a07ca6dd7d62c9dbe06298ab534228f7dc1ce543aba3d20fb66a5e55a4d.css?body=1" for ::1 at 2015-11-13 15:18:49 -0500
+
+
+Started GET "/assets/pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-13 15:18:49 -0500
+
+
+Started GET "/assets/permissions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-13 15:18:49 -0500
+
+
+Started GET "/assets/users.self-a1059d29cadd09c8f2b50db9acd93b6bae211a76bfcdad5a9c9f580d48d1df18.css?body=1" for ::1 at 2015-11-13 15:18:49 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-11-13 15:18:49 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-11-13 15:18:49 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-11-13 15:18:49 -0500
+
+
+Started GET "/assets/items.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-13 15:18:49 -0500
+
+
+Started GET "/assets/sessions.self-b1f9030bf2c6fc1caff90240dca649dc9c64e97d30a7f2f6102846241d6be2c3.css?body=1" for ::1 at 2015-11-13 15:18:49 -0500
+
+
+Started GET "/assets/pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-13 15:18:50 -0500
+
+
+Started GET "/assets/permissions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-13 15:18:50 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-11-13 15:18:50 -0500
+
+
+Started GET "/assets/houses.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-13 15:18:50 -0500
+
+
+Started GET "/assets/notes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-13 15:18:50 -0500
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-13 15:18:50 -0500
+
+
+Started GET "/assets/bootstrap.self-6c92f650931beefe48977f272b7015d6b9b45da8b09831ebf88e05193c12d355.js?body=1" for ::1 at 2015-11-13 15:18:50 -0500
+
+
+Started GET "/assets/application.self-f98a0dd27ad1c55b2b9cfe97296d4887e5d4a4535b3bbbf9130c1050771738b2.js?body=1" for ::1 at 2015-11-13 15:18:50 -0500
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-13 15:18:50 -0500
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-fe185d11a49676890d47bb783312a0cda5a44c4039214094e7957b4c040ef11c.woff2" for ::1 at 2015-11-13 15:18:50 -0500
+
+
+Started GET "/items/6/edit" for ::1 at 2015-11-13 15:18:55 -0500
+Processing by ItemsController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mItem Load (0.3ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT 1  [["id", 6]]
+  Rendered shared/_error_messages.html.erb (18.9ms)
+  Rendered items/edit.html.erb within layouts/application (113.1ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mRelationship Load (0.2ms)[0m  SELECT  "relationships".* FROM "relationships" WHERE "relationships"."user_id" = ? LIMIT 1  [["user_id", 1]]
+  [1m[36mHouse Load (0.1ms)[0m  [1mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (5.1ms)
+Completed 200 OK in 359ms (Views: 355.8ms | ActiveRecord: 0.7ms)
+
+
+Started PATCH "/items/6" for ::1 at 2015-11-13 15:18:58 -0500
+Processing by ItemsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ck/x6AcVj9lm0h8f2XqFiBl0Lr2NRCepUzlJSyvA9VV0YBH+ZU0FOD5BLFZcXE1m6pPe7DGfIzuzt9FVWk+rgg==", "item"=>{"item_amount"=>"0", "item_price"=>"8"}, "commit"=>"Save changes", "id"=>"6"}
+  [1m[35mItem Load (0.2ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  UPDATE "items" SET "item_amount" = ?, "updated_at" = ? WHERE "items"."id" = ?  [["item_amount", 0], ["updated_at", "2015-11-13 20:18:58.534624"], ["id", 6]]
+  [1m[36m (1.8ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/items
+Completed 302 Found in 10ms (ActiveRecord: 2.7ms)
+
+
+Started GET "/items" for ::1 at 2015-11-13 15:18:58 -0500
+Processing by ItemsController#index as HTML
+  [1m[35mItem Load (0.3ms)[0m  SELECT  "items".* FROM "items" LIMIT 30 OFFSET 0
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mRelationship Load (0.2ms)[0m  SELECT  "relationships".* FROM "relationships" WHERE "relationships"."user_id" = ? LIMIT 1  [["user_id", 1]]
+  [1m[36mHouse Load (0.2ms)[0m  [1mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items" INNER JOIN "users" ON "items"."user_id" = "users"."id" INNER JOIN "relationships" ON "users"."id" = "relationships"."user_id" WHERE "relationships"."house_id" = ?  [["house_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "items".* FROM "items" INNER JOIN "users" ON "items"."user_id" = "users"."id" INNER JOIN "relationships" ON "users"."id" = "relationships"."user_id" WHERE "relationships"."house_id" = ?  [["house_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered items/index.html.erb within layouts/application (15.7ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (2.0ms)
+Completed 200 OK in 227ms (Views: 223.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/items" for ::1 at 2015-11-13 15:23:53 -0500
+Processing by ItemsController#index as HTML
+  [1m[35mItem Load (0.6ms)[0m  SELECT  "items".* FROM "items" LIMIT 30 OFFSET 0
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mRelationship Load (0.3ms)[0m  SELECT  "relationships".* FROM "relationships" WHERE "relationships"."user_id" = ? LIMIT 1  [["user_id", 1]]
+  [1m[36mHouse Load (0.6ms)[0m  [1mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mItem Load (0.3ms)[0m  SELECT "items".* FROM "items" INNER JOIN "users" ON "items"."user_id" = "users"."id" INNER JOIN "relationships" ON "users"."id" = "relationships"."user_id" WHERE "relationships"."house_id" = ?  [["house_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT "items".* FROM "items" INNER JOIN "users" ON "items"."user_id" = "users"."id" INNER JOIN "relationships" ON "users"."id" = "relationships"."user_id" WHERE "relationships"."house_id" = ?  [["house_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered items/index.html.erb within layouts/application (92.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (2.5ms)
+Completed 200 OK in 432ms (Views: 409.4ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/assets/houses.self-914c8a07ca6dd7d62c9dbe06298ab534228f7dc1ce543aba3d20fb66a5e55a4d.css?body=1" for ::1 at 2015-11-13 15:23:54 -0500
+
+
+Started GET "/assets/pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-13 15:23:54 -0500
+
+
+Started GET "/assets/items.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-13 15:23:54 -0500
+
+
+Started GET "/assets/users.self-a1059d29cadd09c8f2b50db9acd93b6bae211a76bfcdad5a9c9f580d48d1df18.css?body=1" for ::1 at 2015-11-13 15:23:54 -0500
+
+
+Started GET "/assets/sessions.self-b1f9030bf2c6fc1caff90240dca649dc9c64e97d30a7f2f6102846241d6be2c3.css?body=1" for ::1 at 2015-11-13 15:23:54 -0500
+
+
+Started GET "/assets/permissions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-13 15:23:54 -0500
+
+
+Started GET "/assets/notes.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-13 15:23:54 -0500
+
+
+Started GET "/assets/bootstrap_and_customization.self-4e65a684ce3d650bfa8ae11552aef982c3a7d552b52b9b54d90edf9180fd69ca.css?body=1" for ::1 at 2015-11-13 15:23:54 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-11-13 15:23:54 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-11-13 15:23:54 -0500
+
+
+Started GET "/assets/notes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-13 15:23:54 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-11-13 15:23:54 -0500
+
+
+Started GET "/assets/houses.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-13 15:23:54 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-11-13 15:23:54 -0500
+
+
+Started GET "/assets/pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-13 15:23:54 -0500
+
+
+Started GET "/assets/items.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-13 15:23:54 -0500
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-13 15:23:54 -0500
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-13 15:23:54 -0500
+
+
+Started GET "/assets/permissions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-13 15:23:54 -0500
+
+
+Started GET "/assets/application.self-f98a0dd27ad1c55b2b9cfe97296d4887e5d4a4535b3bbbf9130c1050771738b2.js?body=1" for ::1 at 2015-11-13 15:23:54 -0500
+
+
+Started GET "/assets/bootstrap.self-6c92f650931beefe48977f272b7015d6b9b45da8b09831ebf88e05193c12d355.js?body=1" for ::1 at 2015-11-13 15:23:54 -0500
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-fe185d11a49676890d47bb783312a0cda5a44c4039214094e7957b4c040ef11c.woff2" for ::1 at 2015-11-13 15:23:54 -0500

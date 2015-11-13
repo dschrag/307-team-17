@@ -19,6 +19,7 @@ class ItemsController < ApplicationController
     def create
         @item = current_user.items.build(item_params)
         if @item.save
+            @item.frequency += @item.item_amount
             flash[:success] = "Item Created."
             redirect_to items_path
         else
@@ -28,6 +29,8 @@ class ItemsController < ApplicationController
 
     def index
         @items = Item.paginate(page: params[:page])
+        @sorteditems = @items.sort_by { |i| i.frequency }
+        @top5 = @sorteditems.first(5)
     end
     
     def edit
@@ -37,6 +40,7 @@ class ItemsController < ApplicationController
     def update
          @item = Item.find(params[:id])
          if @item.update_attributes(item_params)
+            @item.frequency += 1
             flash[:success] = "Item successfully updated"
             redirect_to items_path
          else
