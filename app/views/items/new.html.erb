@@ -15,6 +15,12 @@
       <%= f.label :item_price %>
       <%= f.number_field :item_price, class: 'form-control' %>
 
+      <%= label :visibility, "Public" %>
+      <%= f.radio_button :visibility, true, :checked => true, :value => true %>
+      <br>
+      <%= label :visibility, "Private" %>
+      <%= f.radio_button :visibility, false, :checked => true, :value => false %>
+
       <%= f.submit "Create Item", class: "btn btn-primary" %>
     <% end %>
   </div>

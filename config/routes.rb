@@ -15,6 +15,7 @@ Rails.application.routes.draw do
 	post			'login' => 'sessions#create'
 	delete		'logout' => 'sessions#destroy'
 
+
   post  'notes/new' => 'notes#new'
   resources :notes
   resources :permissions
