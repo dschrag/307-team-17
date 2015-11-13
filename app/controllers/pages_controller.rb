@@ -2,7 +2,7 @@ class PagesController < ApplicationController
   def home
   end
 
-  def financial
+  def transactions
   end
 
   def inventory
@@ -13,7 +13,7 @@ class PagesController < ApplicationController
 
   def schedule
   end
-  
+
   def account
   end
 end

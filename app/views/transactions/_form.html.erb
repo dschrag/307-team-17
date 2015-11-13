@@ -1,0 +1,48 @@
+<%= form_for(@transaction) do |f| %>
+  <% if @transaction.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@transaction.errors.count, "error") %> prohibited this transaction from being saved:</h2>
+
+      <ul>
+      <% @transaction.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    If you are receiving money, use a negative number. Otherwise, use a positive number.
+    <%= f.label :price_cents %><br>
+    <%= f.text_field :price %>
+  </div>
+  <div class="field">
+    The person buying the goods or service
+    <%= f.label :buyer %><br>
+    <%= f.text_field :buyer %>
+  </div>
+  <div class="field">
+    The person receiving payment
+    <%= f.label :seller %><br>
+    <%= f.text_field :seller %>
+  </div>
+  <div class="field">
+    <%= f.label :recurring %><br>
+    <%= f.check_box :recurring %>
+  </div>
+  <div class="field">
+    <%= f.label :reason %><br>
+    <%= f.text_area :reason %>
+  </div>
+  <div class="field">
+    <%= f.label :date_due %><br>
+    <%= f.date_select :date_due %>
+  </div>
+  <div class="field">
+    <%= f.label :date_paid %><br>
+    <%= f.date_select :date_paid %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
