@@ -62,4 +62,28 @@ class UsersController < ApplicationController
       @user = User.find(params[:id])
       redirect_to(root_path) unless current_user?(@user)
     end
+
+    def default_notifications
+      @user.notification.create(user: @user.id, type: "note_created", web: true, mobile: true, email:false)
+
+      @user.notification.create(user: @user.id, type: "inventory_item_created", web: true, mobile: false, email:false)
+
+      @user.notification.create(user: @user.id, type: "financial_transaction_created", web: true, mobile: false, email:true)
+      @user.notification.create(user: @user.id, type: "financial_transaction_edited", web: true, mobile: false, email:false)
+      @user.notification.create(user: @user.id, type: "financial_transaction_resolved", web: true, mobile: false, email:true)
+
+      @user.notification.create(user: @user.id, type: "house_new_user", web: true, mobile: false, email:true)
+      @user.notification.create(user: @user.id, type: "house_user_leave", web: false, mobile: false, email:true)
+      @user.notification.create(user: @user.id, type: "house_new_admin", web: false, mobile: false, email:true)
+
+      @user.notification.create(user: @user.id, type: "user_update_details", web: false, mobile: true, email:false)
+      @user.notification.create(user: @user.id, type: "user_update_password", web: false, mobile: true, email:false)
+
+      @user.notification.create(user: @user.id, type: "house_update_admin", web: false, mobile: true, email:false)
+      @user.notification.create(user: @user.id, type: "house_update_name", web: false, mobile: true, email:false)
+
+      @user.notification.create(user: @user.id, type: "event_reminder", web: false, mobile: true, email:false)
+      @user.notification.create(user: @user.id, type: "event_created", web: false, mobile: true, email:false)
+      @user.notification.create(user: @user.id, type: "event_invite", web: false, mobile: true, email:false)
+    end
 end

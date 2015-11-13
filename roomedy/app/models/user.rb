@@ -15,6 +15,8 @@ class User < ActiveRecord::Base
   has_many :items
   has_many :permissions
 
+  has_many :notifications, allow_nil: true
+
   def User.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST : BCrypt::Engine.cost
     BCrypt::Password.create(String, cost: cost)
