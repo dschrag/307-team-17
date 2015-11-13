@@ -14,6 +14,9 @@ class NotesController < ApplicationController
       @perm_user = @note.permissions.create(user_id: current_user.id, level: 0)
   	  flash[:success] = "Note Created"
       redirect_to notes_path
+
+
+      
   	else
   	  render 'new'
   	 end

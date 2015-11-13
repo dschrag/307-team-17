@@ -7,4 +7,5 @@ class Notification < ActiveRecord::Base
 	validates :web, presence: true
 	validates :mobile, presence: true
 	validates :email, presence: true
+
 end
