@@ -1475,3 +1475,260 @@ Migrating to AddPermissionsToNotes (20151105154537)
             FROM sqlite_temp_master
             WHERE name='index_users_on_email' AND type='index'
 
+
+
+Started GET "/" for 127.0.0.1 at 2015-11-12 22:00:24 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PagesController#home as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered pages/home.html.erb within layouts/application (16.7ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 1784ms (Views: 1776.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/bootstrap_and_customization.self-2e733ec80d53506560a89e95b4bd4d3e69343e980855a20e4a08d2c9b77e5ed0.css?body=1" for 127.0.0.1 at 2015-11-12 22:00:26 -0500
+
+
+Started GET "/assets/houses.self-49b14e4123c1fab0e3cd8b4391044d44f917d28141f36657dd8fde586c73cba8.css?body=1" for 127.0.0.1 at 2015-11-12 22:00:26 -0500
+
+
+Started GET "/assets/items.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-12 22:00:26 -0500
+
+
+Started GET "/assets/notes.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-12 22:00:26 -0500
+
+
+Started GET "/assets/permissions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-12 22:00:26 -0500
+
+
+Started GET "/assets/pages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-11-12 22:00:26 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2015-11-12 22:00:26 -0500
+
+
+Started GET "/assets/users.self-3ec3d4e8f12c56b16746eeb09110d02280b65ac322b5d5c10077aa3e06341d28.css?body=1" for 127.0.0.1 at 2015-11-12 22:00:26 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-11-12 22:00:26 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-11-12 22:00:26 -0500
+
+
+Started GET "/assets/sessions.self-ac6b96b1f7dc431af6c0507daa6c212c837d08705585ef066bfcbfc0b4f81819.css?body=1" for 127.0.0.1 at 2015-11-12 22:00:26 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-11-12 22:00:26 -0500
+
+
+Started GET "/assets/houses.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-12 22:00:26 -0500
+
+
+Started GET "/assets/permissions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-12 22:00:26 -0500
+
+
+Started GET "/assets/notes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-12 22:00:26 -0500
+
+
+Started GET "/assets/items.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-12 22:00:26 -0500
+
+
+Started GET "/assets/pages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-12 22:00:26 -0500
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-12 22:00:26 -0500
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2015-11-12 22:00:26 -0500
+
+
+Started GET "/assets/bootstrap.self-6c92f650931beefe48977f272b7015d6b9b45da8b09831ebf88e05193c12d355.js?body=1" for 127.0.0.1 at 2015-11-12 22:00:26 -0500
+
+
+Started GET "/assets/application.self-f98a0dd27ad1c55b2b9cfe97296d4887e5d4a4535b3bbbf9130c1050771738b2.js?body=1" for 127.0.0.1 at 2015-11-12 22:00:26 -0500
+
+
+Started GET "/assets/logo-891ff48d7b3802ad3c04ed65b89b97e43b2455d2cc8f052a95b3dcfd99fbc6aa.gif" for 127.0.0.1 at 2015-11-12 22:00:26 -0500
+
+
+Started GET "/login" for 127.0.0.1 at 2015-11-12 22:00:33 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (12.6ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 144ms (Views: 143.5ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2015-11-12 22:00:38 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sl46UBY/6LnLtx+UCFSuBckLBzz+Jkd+JJuc8HiM2Bm/n/vvR84Wwk1+N88c2uYiK2kTDlSOVm0O6as4l/c8Aw==", "session"=>{"email"=>"d@p.e", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "d@p.e"]]
+  Rendered sessions/new.html.erb within layouts/application (2.4ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 140ms (Views: 138.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-11-12 22:00:43 -0500
+Processing by UsersController#new as HTML
+  Rendered shared/_error_messages.html.erb (4.8ms)
+  Rendered users/new.html.erb within layouts/application (12.3ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 165ms (Views: 159.6ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2015-11-12 22:00:56 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AiVP3vfu7/Qta+6/J4X+dTKGkoT04xcWJKdMybBecLMP5I5hph8Rj6uixuQzC7ZS0OSGtl5LBgUO1XsBXyWUqQ==", "user"=>{"name"=>"Derek Schrag", "email"=>"d@p.e", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "invite"=>""}, "commit"=>"Create my account"}
+Unpermitted parameter: invite
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('d@p.e') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "Derek Schrag"], ["email", "d@p.e"], ["password_digest", "$2a$10$sZggKlYjt1zzhMZnTRtysuAHVM8.8sDk5QRJj3xCdAmcnTzULCeYW"], ["created_at", "2015-11-13 03:00:56.821740"], ["updated_at", "2015-11-13 03:00:56.821740"]]
+  [1m[36m (5.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mHouse Load (0.2ms)[0m  SELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT 1  [["id", nil]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 107ms (ActiveRecord: 6.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-11-12 22:00:56 -0500
+Processing by PagesController#home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mRelationship Load (0.2ms)[0m  SELECT  "relationships".* FROM "relationships" WHERE "relationships"."user_id" = ? LIMIT 1  [["user_id", 1]]
+  Rendered pages/home.html.erb within layouts/application (11.8ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+Completed 200 OK in 133ms (Views: 131.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/houses/new" for 127.0.0.1 at 2015-11-12 22:00:59 -0500
+Processing by HousesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered shared/_error_messages.html.erb (0.6ms)
+  Rendered houses/new.html.erb within layouts/application (8.0ms)
+  [1m[35mRelationship Load (0.1ms)[0m  SELECT  "relationships".* FROM "relationships" WHERE "relationships"."user_id" = ? LIMIT 1  [["user_id", 1]]
+  Rendered layouts/_header.html.erb (1.4ms)
+Completed 200 OK in 137ms (Views: 132.3ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/houses" for 127.0.0.1 at 2015-11-12 22:01:03 -0500
+Processing by HousesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gsBwbEth6H2muIXzc77aflQ+wtLyMAqnCQpAadKTiPCPAbHTGpAWBiBxrahnMJJZtlzW4FiYG7QjeHehPehs6g==", "house"=>{"name"=>"1", "street"=>"1", "city"=>"1", "state"=>"1", "zip"=>"1"}, "commit"=>"Create a House"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "relationships" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2015-11-13 03:01:03.320979"], ["updated_at", "2015-11-13 03:01:03.320979"]]
+  [1m[35m (12.0ms)[0m  commit transaction
+  [1m[36mRelationship Load (0.1ms)[0m  [1mSELECT  "relationships".* FROM "relationships" WHERE "relationships"."user_id" = ? LIMIT 1[0m  [["user_id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (7.6ms)[0m  [1mUPDATE "relationships" SET "user_id" = ?, "updated_at" = ? WHERE "relationships"."id" = ?[0m  [["user_id", 1], ["updated_at", "2015-11-13 03:01:03.341094"], ["id", 1]]
+  [1m[35m (3.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "houses" ("name", "street", "city", "state", "zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["name", "1"], ["street", "1"], ["city", "1"], ["state", "1"], ["zip", 1], ["created_at", "2015-11-13 03:01:03.360085"], ["updated_at", "2015-11-13 03:01:03.360085"]]
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "relationships" SET "house_id" = ?, "updated_at" = ? WHERE "relationships"."id" = ?[0m  [["house_id", 1], ["updated_at", "2015-11-13 03:01:03.361866"], ["id", 1]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "permissions" ("permissable_type", "permissable_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["permissable_type", "House"], ["permissable_id", 1], ["created_at", "2015-11-13 03:01:03.375356"], ["updated_at", "2015-11-13 03:01:03.375356"]]
+  [1m[36m (2.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "permissions" ("user_id", "level", "permissable_id", "permissable_type", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["user_id", 0], ["level", 1], ["permissable_id", 1], ["permissable_type", "House"], ["created_at", "2015-11-13 03:01:03.381165"], ["updated_at", "2015-11-13 03:01:03.381165"]]
+  [1m[35m (4.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "permissions" ("user_id", "level", "permissable_id", "permissable_type", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["user_id", 1], ["level", 0], ["permissable_id", 1], ["permissable_type", "House"], ["created_at", "2015-11-13 03:01:03.387602"], ["updated_at", "2015-11-13 03:01:03.387602"]]
+  [1m[36m (3.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/houses/1
+Completed 302 Found in 97ms (ActiveRecord: 35.6ms)
+
+
+Started GET "/houses/1" for 127.0.0.1 at 2015-11-12 22:01:03 -0500
+Processing by HousesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mHouse Load (0.1ms)[0m  [1mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mRelationship Load (0.2ms)[0m  SELECT  "relationships".* FROM "relationships" WHERE "relationships"."house_id" = ? AND "relationships"."user_id" = ? LIMIT 1  [["house_id", 1], ["user_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."user_id" WHERE "relationships"."house_id" = ?  [["house_id", 1]]
+  [1m[36mPermission Load (0.1ms)[0m  [1mSELECT  "permissions".* FROM "permissions" WHERE "permissions"."permissable_id" = ? AND "permissions"."permissable_type" = ? AND "permissions"."user_id" = ? LIMIT 1[0m  [["permissable_id", 1], ["permissable_type", "House"], ["user_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "permissions".* FROM "permissions" WHERE "permissions"."permissable_id" = ? AND "permissions"."permissable_type" = ? AND "permissions"."user_id" = ? LIMIT 1  [["permissable_id", 1], ["permissable_type", "House"], ["user_id", 1]]
+  Rendered houses/show.html.erb within layouts/application (10.3ms)
+  [1m[36mRelationship Load (0.1ms)[0m  [1mSELECT  "relationships".* FROM "relationships" WHERE "relationships"."user_id" = ? LIMIT 1[0m  [["user_id", 1]]
+  [1m[35mHouse Load (0.1ms)[0m  SELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.7ms)
+Completed 200 OK in 90ms (Views: 83.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2015-11-12 22:01:06 -0500
+Processing by ItemsController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "items"[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mRelationship Load (0.1ms)[0m  [1mSELECT  "relationships".* FROM "relationships" WHERE "relationships"."user_id" = ? LIMIT 1[0m  [["user_id", 1]]
+  [1m[35mHouse Load (0.0ms)[0m  SELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT "items".* FROM "items" INNER JOIN "users" ON "items"."user_id" = "users"."id" INNER JOIN "relationships" ON "users"."id" = "relationships"."user_id" WHERE "relationships"."house_id" = ?[0m  [["house_id", 1]]
+  Rendered items/index.html.erb within layouts/application (5.9ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.1ms)
+Completed 200 OK in 166ms (Views: 163.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/financial" for 127.0.0.1 at 2015-11-12 22:01:07 -0500
+Processing by PagesController#financial as HTML
+  Rendered pages/financial.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mRelationship Load (0.1ms)[0m  SELECT  "relationships".* FROM "relationships" WHERE "relationships"."user_id" = ? LIMIT 1  [["user_id", 1]]
+  [1m[36mHouse Load (0.1ms)[0m  [1mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.5ms)
+Completed 200 OK in 99ms (Views: 98.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/notes" for 127.0.0.1 at 2015-11-12 22:01:08 -0500
+Processing by NotesController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "notes"
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mRelationship Load (0.1ms)[0m  SELECT  "relationships".* FROM "relationships" WHERE "relationships"."user_id" = ? LIMIT 1  [["user_id", 1]]
+  [1m[36mHouse Load (0.1ms)[0m  [1mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mNote Load (0.2ms)[0m  SELECT "notes".* FROM "notes" INNER JOIN "users" ON "notes"."user_id" = "users"."id" INNER JOIN "relationships" ON "users"."id" = "relationships"."user_id" WHERE "relationships"."house_id" = ?  ORDER BY "notes"."created_at" DESC  [["house_id", 1]]
+  Rendered notes/index.html.erb within layouts/application (7.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (0.9ms)
+Completed 200 OK in 98ms (Views: 93.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/schedule" for 127.0.0.1 at 2015-11-12 22:01:09 -0500
+Processing by PagesController#schedule as HTML
+  Rendered pages/schedule.html.erb within layouts/application (0.3ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mRelationship Load (0.1ms)[0m  [1mSELECT  "relationships".* FROM "relationships" WHERE "relationships"."user_id" = ? LIMIT 1[0m  [["user_id", 1]]
+  [1m[35mHouse Load (0.0ms)[0m  SELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.3ms)
+Completed 200 OK in 90ms (Views: 89.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2015-11-12 22:01:10 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mRelationship Load (0.1ms)[0m  [1mSELECT  "relationships".* FROM "relationships" WHERE "relationships"."user_id" = ? LIMIT 1[0m  [["user_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "relationships".* FROM "relationships" WHERE "relationships"."user_id" = ? LIMIT 1[0m  [["user_id", 1]]
+  [1m[35mHouse Load (0.1ms)[0m  SELECT  "houses".* FROM "houses" WHERE (1) LIMIT 1
+  Rendered users/show.html.erb within layouts/application (1.8ms)
+  [1m[36mHouse Load (0.1ms)[0m  [1mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_header.html.erb (1.1ms)
+Completed 200 OK in 98ms (Views: 93.6ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2015-11-12 22:01:11 -0500
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"V1f60VnbNhF3EYtfFDJG3Ed09/2dP9SPNf0fI/Sk4a1aljtuCCrIavHYowQAvA77pRbjzzeXxZwfjyjrG98Ftw=="}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-11-12 22:01:11 -0500
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 115ms (Views: 115.0ms | ActiveRecord: 0.0ms)
