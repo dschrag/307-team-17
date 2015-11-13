@@ -15,6 +15,7 @@ class User < ActiveRecord::Base
   has_many :activities
   has_many :notes, dependent: :destroy
   has_many :items
+  has_many :events
   has_many :permissions
   has_many :transactions
   

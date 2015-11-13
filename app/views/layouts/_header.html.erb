@@ -27,7 +27,7 @@
             <!--<%= link_to "Log out", logout_path, class: "btn btn-sigout", method: "delete" %>-->
           <% else %>
             <%= link_to "Create a House", new_house_path, class: "btn btn-profile" %>
-            
+
             <button class="btn btn-profile dropdown-toggle" type="button" data-toggle="dropdown"><%= link_to current_user.name, current_user, class: "dropdown-font"%>
               <%= image_tag current_user.avatar.url(:medium), class: "round-image-50" %>
               <span class="caret"></span></button>
