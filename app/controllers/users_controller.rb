@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :logged_in_user, except: [:new, :create]
   before_action :correct_user, except: [:new, :create]
-  before_action :has_house, except: [:new, :create]
+  #before_action :has_house, except: [:new, :create]
 
   def show
   	@user = User.find(params[:id])
@@ -45,9 +45,16 @@ class UsersController < ApplicationController
     end
   end
 
+  def destroy
+    # use either/or depending on your usecase
+    @user.avatar = nil #Will remove the attachment and save the model
+    @user.save #Will queue the attachment to be deleted
+    redirect_to edit_user_path
+  end
+
   private
   	def user_params
-  	  params.require(:user).permit(:name, :email, :password, :password_confirmation)
+  	  params.require(:user).permit(:name, :email, :password, :password_confirmation, :avatar, :number, :bornon)
   	end
 
     def logged_in_user

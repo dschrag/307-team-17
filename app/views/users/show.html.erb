@@ -1,5 +1,9 @@
 <h1 class="center"><%= @user.name %></h1>
 <div class="center"><%= @user.email %></div>
+<div class="center"><%= @user.number %></div>
+<div class="center"><%= @user.bornon %></div>
+    <strong>Avatar:</strong>
+    <%= image_tag @user.avatar.url(:medium) %>
 <% if !@user.relationship.nil? %>
 	<div class="center"><%= House.find_by(@user.relationship.house_id).name %></div>
 <% end %>

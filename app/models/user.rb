@@ -8,12 +8,21 @@ class User < ActiveRecord::Base
                 uniqueness: { case_sensitive: false } #database max string size
   has_secure_password
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
+  scope :all_except_current, ->(user) { where.not(id: user) }
   has_one :relationship
+
   has_one :house, :through => :relationship
+  has_many :activities
   has_many :notes, dependent: :destroy
   has_many :items
   has_many :permissions
   has_many :transactions
+  
+  has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>", large: "480x480>" }, default_url: "missing.jpg"
+  validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
+  validates_attachment :avatar,
+    :size => { :in => 0..10.megabytes },
+    :content_type => { :content_type => /^image\/(jpeg|png|gif|tiff)$/ }
 
   def User.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST : BCrypt::Engine.cost

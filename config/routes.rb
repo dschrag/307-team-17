@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   get 'sessions/new'
 
+  get       'activities' => 'activities#index'
+  resources :activities
   post      'items/new' => 'items#new'
   resources :items
   post      'houses/:id/edit' => 'houses#edit'
