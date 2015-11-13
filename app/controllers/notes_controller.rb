@@ -1,6 +1,6 @@
 class NotesController < ApplicationController
-  #before_action :logged_in_user
-  #before_action :correct_user
+  before_action :logged_in_user
+  before_action :correct_user, only: [:edit, :update, :destroy]
 
 
   def new
@@ -30,6 +30,7 @@ class NotesController < ApplicationController
 
   def index
   	@notes = Note.paginate(page: params[:page])
+    @activities = PublicActivity::Activity.order("created_at desc")
   end
 
   def edit

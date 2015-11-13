@@ -1,7 +1,7 @@
 class NotificationHelper
 	def self.notify(id, user, notification_header, notification_body)
 		if user.phone_number != nil
-			send_sms_message(user.phone_number, notification_body)
+			send_sms_message(user.number, notification_body)
 		end
 		if user.email != nil
 			notification_email(user, notification_header, notification_body, "roomedy.com/notify")
