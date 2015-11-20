@@ -44,7 +44,11 @@ class ItemsController < ApplicationController
          @item.prev_amount = @item.item_amount
          if @item.update_attributes(item_params)
             if @item.prev_amount < @item.item_amount
+              if @item.frequency.nil?
+                @item.frequency = 1
+              else
                 @item.frequency += 1
+              end
             end
             flash[:success] = "Item successfully updated"
             redirect_to items_path
