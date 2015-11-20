@@ -58,7 +58,6 @@ ActiveRecord::Schema.define(version: 20151113185047) do
     t.string   "item_name"
     t.boolean  "visibility"
     t.integer  "frequency"
-    t.integer  "prev_amount"
     t.integer  "user_id"
     t.integer  "house_id"
     t.datetime "created_at",                          null: false

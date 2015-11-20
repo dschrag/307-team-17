@@ -7,6 +7,7 @@ class TransactionsController < ApplicationController
   def index
     @transactions = current_user.transactions
     update_balance
+    @activities = PublicActivity::Activity.order("created_at desc")
   end
 
   # GET /transactions/1
