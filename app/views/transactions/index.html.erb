@@ -34,5 +34,5 @@
   </tbody>
 </table>
 <br>
-Balance (Negative means you have made more money than you have spent): <%= @balance %> <br>
+Balance (Negative means you have made more money than you have spent): <%= current_user.finance.net_balance %> <br>
 <%= link_to 'New Transaction', new_transaction_path, class: "btn btn-primary" %>

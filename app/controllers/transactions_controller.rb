@@ -1,12 +1,11 @@
 class TransactionsController < ApplicationController
   before_action :set_transaction, only: [:show, :edit, :update, :destroy]
-  after_action :update_balance
+  after_action :update_finances
 
   # GET /transactions
   # GET /transactions.json
   def index
     @transactions = current_user.transactions
-    update_balance
     @activities = PublicActivity::Activity.order("created_at desc")
   end
 
@@ -85,11 +84,9 @@ class TransactionsController < ApplicationController
     end
   end
 
-  def update_balance
-    @balance = 0
-    current_user.transactions.each do |b|
-      @balance += b.price
-    end
+  def update_finances
+    Finance.update_finances(current_user)
+    puts current_user.finance.net_balance_cents
   end
 
   private

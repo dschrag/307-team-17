@@ -7,12 +7,17 @@ class UsersController < ApplicationController
   	@user = User.find(params[:id])
     @notes = @user.notes.paginate(page: params[:page])
   end
+
   def new
   	@user = User.new
   end
+
   def create
     @user = User.new(user_params)
+
+    puts "Creating finance"
 	  if @user.save
+      @user.finance = Finance.create(user_id: @user.id)
       log_in @user
 	    flash[:success] = "Welcome!"
 

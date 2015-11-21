@@ -18,7 +18,8 @@ class User < ActiveRecord::Base
   has_many :events
   has_many :permissions
   has_many :transactions
-  
+  has_one :finance
+
   has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>", large: "480x480>" }, default_url: "missing.jpg"
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
   validates_attachment :avatar,
