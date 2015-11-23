@@ -1,0 +1,22 @@
+<% provide(:title, 'Schedule') %>
+<h1>Schedule</h1>
+
+<div id="events">
+	<h2 id="month">
+		<%= link_to "<", date: @date.prev_month %>
+		<%= @date.strftime("%B %Y") %>
+		<%= link_to ">", date: @date.next_month %>
+	</h2>
+	<%= calendar @date do |date| %>
+		<%= date.day %>
+		<ul>
+			<% @events.find_all{|event| event.start_time.to_date == date}.each do |event| %>
+				<li>
+					<%= link_to event.name, edit_event_path(event) %>
+				</li>
+			<% end %>
+		</ul>
+	<% end %>
+</div>
+
+<%= button_to "Create an Event", new_event_path, class: "btn btn-primary" %>

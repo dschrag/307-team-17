@@ -1,0 +1,10 @@
+<% House.find(current_user.relationship.house_id).users.each do |user| %>
+  <%= f.fields_for :permissions do |perm| %>
+    <%= render 'permission', :f => perm, user: user %>
+  <% end %>
+<% end %>
+<% User.new(id: 0) do |user| %>
+  <%= f.fields_for :permissions do |perm| %>
+    <%= render 'permission', :f => perm, user: user %>
+  <% end %>
+<% end %>

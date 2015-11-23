@@ -1,0 +1,26 @@
+<% provide(:title, "Edit house") %>
+<h1>Update your house info</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+  	<%= form_for(@house) do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+
+      <%= f.label :name %>
+      <%= f.text_field :name, class: 'form-control' %>
+
+      <%= f.submit "Save changes", class: "btn btn-primary" %>
+    <% end %>
+    <ul>  
+      <% @house.users.each do |user| %>
+	      <% if user.id != current_user.id %>
+	        <li>  
+	          <%= user.name %>
+	          <%= link_to "Remove", remove_house_path(:user_id => user.id), method: :post, data: {confirm: "Are you sure?"} %>
+	          <%= link_to "Make Admin", promote_house_path(:user_id => user.id), method: :post, data: {confirm: "This will remove your admin priveleges. Are you sure?"} %>
+	        </li>
+	      <% end %>
+      <% end %>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,36 @@
+<% provide(:title, 'Create a User') %>
+<h1>Create a User</h1>
+<div class="row">
+	<div class="col-md-6 col-md-offset-3">
+		<%= form_for(@user) do |f| %>
+			<%= render 'shared/error_messages', object: f.object %>
+
+			<%= f.label :name %>
+			<%= f.text_field :name, class: 'form-control' %>
+
+			<%= f.label :email %>
+			<%= f.email_field :email, class: 'form-control' %>
+
+			<%= f.label :number, "Phone Number" %>
+			<%= f.text_field :number, class: 'form-control' %>
+
+    		<%= f.label :bornon , "Date of Birth"%><br />
+    		<%= f.date_field :bornon, class: 'form-control' %>
+
+			<%= f.label :password %>
+			<%= f.password_field :password, class: 'form-control' %>
+
+			<%= f.label :password_confirmation, "Confirmation" %>
+			<%= f.password_field :password_confirmation, class: 'form-control' %>
+
+			<div class="field">
+				<%= f.label :avatar %><br>
+				<%= f.file_field :avatar, html: { class: 'form-control'} %>
+			</div>
+
+			<%= f.hidden_field :invite, :value => params[:invite] %>
+
+			<%= f.submit "Create my account", class: "btn btn-primary" %>
+		<% end %>
+	</div>
+</div>
