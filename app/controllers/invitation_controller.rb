@@ -2,11 +2,6 @@ class InvitationController < ApplicationController
   def create
     if logged_in?
       @invitation = Invitation.create(:user => current_user, :house => current_user.house)
-      if @invitation.save
-        puts "SAVED"
-      else
-        puts "NOT SAVED :("
-      end
     end
   end
 

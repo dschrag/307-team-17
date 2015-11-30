@@ -6,6 +6,10 @@ class Invitation < ActiveRecord::Base
 
 end
 
+public
+def url
+  '/i/' + self.token
+end
 
 private
 def add_token
@@ -13,3 +17,5 @@ def add_token
     self.token = SecureRandom.hex[0,8].downcase
   end while self.class.exists?(token: token)
 end
+
+

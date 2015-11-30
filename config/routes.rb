@@ -49,6 +49,7 @@ Rails.application.routes.draw do
 
   get 'invitation/create' => 'invitation#create'
   get 'invitation/:token' => 'invitation#show'
+  get 'i/:token' => 'invitation#show'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
