@@ -4,7 +4,6 @@ class InvitationController < ApplicationController
 
   def create
     Invitation.destroy_all(:user => current_user)
-
     @invitation = Invitation.create(:user => current_user, :house => current_user.house)
 
     redirect_to :action => 'get'
@@ -30,6 +29,8 @@ class InvitationController < ApplicationController
 
     # If that partictular user does not belong to that house anymore.
     if @invitation.user.house != @house
+      # We also delete this old invite.
+      @invitation.destroy
       render 'error'
     end
 
