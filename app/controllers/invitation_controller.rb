@@ -14,6 +14,12 @@ class InvitationController < ApplicationController
     @invitation = Invitation.where(:user => current_user).first
   end
 
+  def delete
+    Invitation.destroy_all(:user => current_user)
+
+    redirect_to :action => 'get'
+  end
+
   def view
     @invitation = Invitation.where(:token => params[:token]).first
     if !@invitation

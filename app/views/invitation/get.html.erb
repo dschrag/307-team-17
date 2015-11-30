@@ -4,15 +4,15 @@
 <span class="glyphicon glyphicon-menu-left" style="font-size: .8em;" aria-hidden="true"></span> 
 <%= link_to "Back to House", House.find(current_user.relationship.house_id)%>
   
-<% if @invitation.nil %>
+<% if !@invitation.nil? %>
   <h4> Your invitation link: </h4>
   <input type="text" onClick="this.select();" style="background-color:white;" class="form-control" value="<%= request.base_url + @invitation.url %>" readonly/>
-  <%= button_to "Generate New Invite Link", "/invitation/create", :method => :post, class: "btn btn-primary" %>
+  <%= button_to "Generate New Invitation Link", "/invitation/create", :method => :post, class: "btn btn-primary" %>
+  <%= button_to "Delete Your Invitation Link", "/invitation/delete", :method => :post, class: "btn btn-danger" %>
 
 <% else %>
   <h4> You do not have any invitation links at the moment.</h4>
-  <input type="text" onClick="this.select();" style="background-color:white;" class="form-control" value="<%= request.base_url + @invitation.url %>" readonly/>
-  <%= button_to "Generate A Invite Link", "/invitation/create", :method => :post, class: "btn btn-primary" %>
+  <%= button_to "Generate A Invitation Link", "/invitation/create", :method => :post, class: "btn btn-primary" %>
 
 <% end %>
 
