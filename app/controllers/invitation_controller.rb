@@ -1,14 +1,24 @@
 class InvitationController < ApplicationController
+  before_action :logged_in_user
+  before_action :member_of_house, except: [:view]
+
   def create
-    if logged_in? && user.house?
-      @invitation = Invitation.create(:user => current_user, :house => current_user.house)
-    end
+    Invitation.destroy_all(:user => current_user)
+
+    @invitation = Invitation.create(:user => current_user, :house => current_user.house)
+
+    redirect_to :action => 'get'
   end
 
-  def show
+  def get
+    @invitation = Invitation.where(:user => current_user).first
+  end
+
+  def view
     @invitation = Invitation.where(:token => params[:token]).first
-    if @invitation.nil?
+    if !@invitation
       render 'error'
+      return
     end
     @house = @invitation.house
 
@@ -21,6 +31,14 @@ class InvitationController < ApplicationController
         @house.add_user(current_user)
     
         redirect_to @house
+    end
+  end
+
+  private
+  def member_of_house
+    unless current_user.house
+      flash[:danger] = "You cannot preform that method as you are not a member of a house."
+      redirect_to root_path
     end
   end
 end

@@ -11,6 +11,7 @@ class House < ActiveRecord::Base
 	has_many :permissions, as: :permissable, dependent: :destroy
 end
 
+public
 def add_user(user)
 	unless user.relationship.nil?
     user.relationship.destroy
@@ -18,5 +19,5 @@ def add_user(user)
         
   @relationship = Relationship.create()
   user.relationship = @relationship
-  this.relationships << @relationship
+  self.relationships << @relationship
 end
