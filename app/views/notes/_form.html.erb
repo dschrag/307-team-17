@@ -8,6 +8,7 @@
   <% else %>
     Edit User Permissions
     <%= render 'permission_edit', f: f, note: @note %>
+    <%= f.hidden_field :lastEditedBy, value: current_user.id %>
   <% end %>
   <%= f.submit "Post", class: "btn btn-primary" %>
 <% end %>
