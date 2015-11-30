@@ -1,0 +1,15 @@
+<title>Roomedy Invitation!</title>
+
+<div class="jumbotron">
+<% if logged_in? %>
+  <h4> Your invitation link: </h4>
+  <div class="highlight">
+    <pre>
+      <%= request.base_url + '/invitation/' + @invitation.token %>
+    </pre>
+  </div>
+    
+<% else %>
+    You must be logged in to create an invitation.
+<% end %>
+</div>

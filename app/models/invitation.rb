@@ -2,12 +2,14 @@ class Invitation < ActiveRecord::Base
   belongs_to :user
   belongs_to :house
 
+  before_create :add_token
+
 end
 
-before_create :add_token
+
 private
 def add_token
   begin
-    self.token = SecureRandom.hex[0,8].lowercase
+    self.token = SecureRandom.hex[0,8].downcase
   end while self.class.exists?(token: token)
 end

@@ -47,7 +47,8 @@ Rails.application.routes.draw do
   get "account" => 'pages#account'
   get "register" => 'pages#signup'
 
-  get 'invitation/:id' => 'invitation#show'
+  get 'invitation/create' => 'invitation#create'
+  get 'invitation/:token' => 'invitation#show'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

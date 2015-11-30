@@ -1,9 +1,22 @@
 class InvitationController < ApplicationController
+  def create
+    if logged_in?
+      @invitation = Invitation.create(:user => current_user, :house => current_user.house)
+      if @invitation.save
+        puts "SAVED"
+      else
+        puts "NOT SAVED :("
+      end
+    end
+  end
+
   def show
-    @house = House.find_by_id(params[:id])
-    if @house.nil?
+    @invitation = Invitation.where(:token => params[:token]).first
+    if @invitation.nil?
       render 'error'
     end
+    @house = @invitation.house
+
     if logged_in? && params[:accept] == "true"
         unless current_user.relationship.nil?
           current_user.relationship.destroy
