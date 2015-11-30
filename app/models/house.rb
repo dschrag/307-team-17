@@ -10,3 +10,13 @@ class House < ActiveRecord::Base
 	has_many :notes, :through => :users
 	has_many :permissions, as: :permissable, dependent: :destroy
 end
+
+def add_user(user)
+	unless user.relationship.nil?
+    user.relationship.destroy
+  end
+        
+  @relationship = Relationship.create()
+  user.relationship = @relationship
+  this.relationships << @relationship
+end

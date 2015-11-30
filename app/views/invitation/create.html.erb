@@ -7,10 +7,6 @@
 <% if logged_in? %>
   <h4> Your invitation link: </h4>
   <input type="text" onClick="this.select();" style="background-color:white;" class="form-control" value="<%= request.base_url + @invitation.url %>" readonly>
-      
-
-    </pre>
-  </div>
     
 <% else %>
     You must be logged in to create an invitation.

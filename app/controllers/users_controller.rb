@@ -22,11 +22,9 @@ class UsersController < ApplicationController
 	    flash[:success] = "Welcome!"
 
 	    unless params[:user][:invite].nil?
-        @house = House.find_by_id(params[:user][:invite])
-        unless @house.nil?
-          @relationship = Relationship.create()
-          @user.relationship = @relationship
-          @house.relationships << @relationship
+        @invitation = Invitation.where(:token => params[:token]).first
+        unless @invitation.nil? && @invitation.user.house == @house
+          @invitation.house.add_user(@user)
         end
       end
 
