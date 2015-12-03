@@ -27,7 +27,9 @@ Rails.application.routes.draw do
 
 
   post  'notes/new' => 'notes#new'
-  resources :notes
+  resources :notes do
+    resources :comments
+  end
 
   resources :permissions
   resources :transactions
