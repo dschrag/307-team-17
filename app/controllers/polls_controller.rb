@@ -1,6 +1,6 @@
 class PollsController < ApplicationController
   def index
-    @polls = Poll.all
+    @polls = House.find(current_user.relationship.house_id).polls
   end
 
   def new
@@ -9,9 +9,10 @@ class PollsController < ApplicationController
 
   def create
     @poll = Poll.new(poll_params)
+    @poll.house_id = current_user.relationship.house_id
     if @poll.save
       flash[:success] = 'Poll was created!'
-      redirect_to polls_path
+      redirect_to notes_path
     else
       render 'new'
     end
@@ -25,7 +26,7 @@ class PollsController < ApplicationController
     @poll = Poll.find_by_id(params[:id])
     if @poll.update_attributes(poll_params)
       flash[:success] = 'Poll was updated!'
-      redirect_to polls_path
+      redirect_to notes_path
     else
       render 'edit'
     end
@@ -42,7 +43,7 @@ class PollsController < ApplicationController
     else
       flash[:warning] = 'Error destroying poll...'
     end
-    redirect_to polls_path
+    redirect_to notes_path
   end
 
   private

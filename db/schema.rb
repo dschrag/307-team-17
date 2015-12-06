@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151206011148) do
+ActiveRecord::Schema.define(version: 20151206230225) do
 
   create_table "activities", force: :cascade do |t|
     t.integer  "trackable_id"
@@ -79,7 +79,10 @@ ActiveRecord::Schema.define(version: 20151206011148) do
     t.integer  "zip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "polls_id"
   end
+
+  add_index "houses", ["polls_id"], name: "index_houses_on_polls_id"
 
   create_table "items", force: :cascade do |t|
     t.decimal  "item_price",  precision: 8, scale: 2
@@ -105,8 +108,10 @@ ActiveRecord::Schema.define(version: 20151206011148) do
     t.integer  "permissions_id"
     t.integer  "lastEditedBy"
     t.string   "title"
+    t.integer  "house_id"
   end
 
+  add_index "notes", ["house_id"], name: "index_notes_on_house_id"
   add_index "notes", ["permissions_id"], name: "index_notes_on_permissions_id"
   add_index "notes", ["user_id", "created_at"], name: "index_notes_on_user_id_and_created_at"
   add_index "notes", ["user_id"], name: "index_notes_on_user_id"
@@ -126,7 +131,10 @@ ActiveRecord::Schema.define(version: 20151206011148) do
     t.text     "topic"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "house_id"
   end
+
+  add_index "polls", ["house_id"], name: "index_polls_on_house_id"
 
   create_table "relationships", force: :cascade do |t|
     t.integer  "house_id"

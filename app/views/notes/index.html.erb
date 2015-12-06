@@ -3,25 +3,54 @@
 <h1>Noteboard</h1>
 
 	<%= will_paginate %>
-	  	<% House.find(current_user.relationship.house_id).notes.each do |note| %>
-				<% if note.permissions.find_by user_id: current_user.id %>
-					<% perm = note.permissions.find_by user_id: current_user.id %>
+			<% @collect.each do |obj| %>
+			 	<% if obj.has_attribute?(:title) %>
+					<% note = obj %>
+
+						<% if note.permissions.find_by user_id: current_user.id %>
+							<% perm = note.permissions.find_by user_id: current_user.id %>
+						<% else %>
+							<% perm = note.permissions.first %>
+						<% end %>
+
+						<% if perm.level < 4 %>
+							<div class="col-md-4">
+								<div class="message">
+									<h3 class="message-title"><%= note.title %></h3>
+									<%= link_to "view Note", note_path(note), class: "btn btn-custom" %>
+
+								</div>
+							</div>
+						<% end %>
+
 				<% else %>
-					<% perm = note.permissions.first %>
-				<% end %>
 
-				<% if perm.level < 4 %>
-					<div class="col-md-4">
-						<div class="message">
-							<h3 class="message-title"><%= note.title %></h3>
-							<%= link_to "view Note", note_path(note), class: "btn btn-custom" %>
+					<% poll = obj %>
+					  <div class="col-md-4">
+							<div class="message">
+					    <h3 class="message-title"><%= poll.topic %> <small>(voted: <%= poll.votes_summary %>)</small></h3>
+							<p style="color:WhiteSmoke;">
+							<% if poll.top_voted != nil %>
+								Currently Winning: <%= poll.top_voted.title %> with <%= poll.top_voted.votes.count %> votes!</h4>
+							</p>
+							<% end %>
+							<div class="btn-group">
+							<% unless current_user.voted_for?(poll) %>
+					    	<%= link_to 'Vote', poll_path(poll), class: 'btn btn-primary btn block' %>
+							<% else %>
+								<%= link_to 'View', poll_path(poll), class: 'btn btn-primary btn block' %>
+							<% end %>
 
-						</div>
-					</div>
+					      <%= link_to 'Edit', edit_poll_path(poll), class: 'btn btn-default' %>
+					      <%= link_to 'Delete', poll_path(poll),
+					                  method: :delete,
+					                  class: 'btn btn-danger', data: {confirm: 'Are you sure?'} %>
+													</div>
+					    </div>
+					  </div>
+
 				<% end %>
 			<% end %>
-
-	<%= will_paginate %>
-
 </br>
 <%= button_to "Create a Note", new_note_path, class: "btn btn-primary" %>
+<%= button_to "Create a Poll", new_poll_path, class: "btn btn-primary" %>
