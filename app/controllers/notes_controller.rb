@@ -2,7 +2,6 @@ class NotesController < ApplicationController
   before_action :logged_in_user
   before_action :correct_user, only: [:edit, :update, :destroy]
 
-
   def new
   	@note = Note.new
     @note.permissions.build
@@ -10,6 +9,7 @@ class NotesController < ApplicationController
 
   def create
   	@note = current_user.notes.build(note_params)
+    @note.house_id = current_user.relationship.house_id
   	if @note.save
       @perm_user = @note.permissions.create(user_id: current_user.id, level: 0)
   	  flash[:success] = "Note Created"
@@ -26,7 +26,14 @@ class NotesController < ApplicationController
   end
 
   def index
-  	@notes = Note.paginate(page: params[:page])
+    h = House.find(current_user.relationship.house_id)
+  	@notes = h.notes.paginate(page: params[:page])
+    @polls = h.polls
+
+    @collect = @notes + @polls
+    puts @collect
+    @collect = (@collect.sort_by &:created_at).reverse
+    puts @collect
     @activities = PublicActivity::Activity.order("created_at desc")
   end
 

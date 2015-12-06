@@ -33,6 +33,8 @@ Rails.application.routes.draw do
 
   resources :permissions
   resources :transactions
+
+  post 'polls/new' => 'polls#new'
   resources :polls
   resources :votes, only: [:create]
 

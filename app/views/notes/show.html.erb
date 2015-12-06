@@ -1,6 +1,5 @@
 <div class="col-md-8 col-md-offset-2">
   <div class="message-show">
-    <%= render partial: 'polls/_form.html.erb' %>
     <% if @note.permissions.find_by user_id: current_user.id %>
       <% perm = @note.permissions.find_by user_id: current_user.id %>
     <% else %>
