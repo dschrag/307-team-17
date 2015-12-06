@@ -1,0 +1,14 @@
+<p>Comments: </p>
+<div class="comment">
+  <p class="comment-content"><%= comment.reply %></p>
+  <p class="comment-posted-by">Created by <%= comment.user.name %> <%= time_ago_in_words(comment.created_at) %> ago</p>
+
+  <div class="links">
+    <% if logged_in? %>
+      <% if comment.user_id == current_user.id %>
+        <%= link_to "Edit", edit_note_comment_path(comment.note, comment) %>
+        <%= link_to "Delete", note_comment_path(comment.note, comment), method: :delete, data: {confirm: "Are you sure?"}  %>
+      <% end %>
+    <% end %>
+  </div>
+</div>

@@ -32,7 +32,11 @@ class NotesController < ApplicationController
 
   def edit
     @note = Note.find(params[:id])
+  end
 
+  def show
+    @notes = Note.paginate(page: params[:page])
+    @note = Note.find(params[:id])
   end
 
   def update
@@ -55,7 +59,7 @@ class NotesController < ApplicationController
   private
 
     def note_params
-      params.require(:note).permit(:id, :content,
+      params.require(:note).permit(:id, :content, :lastEditedBy, :title,
       permissions_attributes: [:id, :user_id, :level])
     end
 
@@ -66,6 +70,5 @@ class NotesController < ApplicationController
         redirect_to notes_path
       end
     end
-
 
 end

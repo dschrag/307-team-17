@@ -14,11 +14,14 @@ class User < ActiveRecord::Base
   has_one :house, :through => :relationship
   has_many :activities
   has_many :notes, dependent: :destroy
+  has_many :comments
   has_many :items
   has_many :events
   has_many :permissions
   has_many :transactions
   has_one :finance
+  has_many :votes, dependent: :destroy
+  has_many :vote_options, through: :votes
 
   has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>", large: "480x480>" }, default_url: "missing.jpg"
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
@@ -52,5 +55,9 @@ class User < ActiveRecord::Base
 
   def forget
     update_attribute(:remember_digest, nil)
+  end
+
+  def voted_for?(poll)
+    vote_options.any? {|v| v.vote_option.poll == poll }
   end
 end
