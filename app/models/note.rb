@@ -3,6 +3,7 @@ class Note < ActiveRecord::Base
 	include PublicActivity::Model
 	tracked owner: ->(controller, model) { controller && controller.current_user }
 
+	has_one :poll
   belongs_to :user
   has_many :users
 	has_many :comments

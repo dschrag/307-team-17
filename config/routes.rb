@@ -33,6 +33,9 @@ Rails.application.routes.draw do
 
   resources :permissions
   resources :transactions
+  resources :polls
+  resources :votes, only: [:create]
+
 
   # get 'notes/new'
 
