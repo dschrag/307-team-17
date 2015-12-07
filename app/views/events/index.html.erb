@@ -10,7 +10,7 @@
 	<%= calendar @date do |date| %>
 		<%= date.day %>
 		<ul>
-			<% @events.find_all{|event| event.start_time.to_date == date}.each do |event| %>
+			<% @events.find_all{|event| event.start_time.to_date <= date && event.end_time.to_date >= date}.each do |event| %>
 				<li>
 					<%= link_to event.name, edit_event_path(event) %>
 				</li>
