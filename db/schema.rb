@@ -42,6 +42,24 @@ ActiveRecord::Schema.define(version: 20151129221911) do
 
   add_index "events", ["user_id"], name: "index_events_on_user_id"
 
+  create_table "finances", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "net_balance_cents",            default: 0,     null: false
+    t.string   "net_balance_currency",         default: "USD", null: false
+    t.integer  "net_income_cents",             default: 0,     null: false
+    t.string   "net_income_currency",          default: "USD", null: false
+    t.integer  "net_expenses_cents",           default: 0,     null: false
+    t.string   "net_expenses_currency",        default: "USD", null: false
+    t.integer  "expenses_last_month_cents",    default: 0,     null: false
+    t.string   "expenses_last_month_currency", default: "USD", null: false
+    t.integer  "income_last_month_cents",      default: 0,     null: false
+    t.string   "income_last_month_currency",   default: "USD", null: false
+    t.datetime "created_at",                                   null: false
+    t.datetime "updated_at",                                   null: false
+  end
+
+  add_index "finances", ["user_id"], name: "index_finances_on_user_id"
+
   create_table "houses", force: :cascade do |t|
     t.string   "name"
     t.string   "street"
