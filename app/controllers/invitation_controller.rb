@@ -1,5 +1,5 @@
 class InvitationController < ApplicationController
-  before_action :logged_in_user
+  before_action :logged_in_user, except: [:view]
   before_action :member_of_house, except: [:view]
 
   def create

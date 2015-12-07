@@ -4,11 +4,10 @@
   <h1>Roomedy</h1>
   <h2>You've been invited to join a house!</h2>
   <h3>Name: <%= @house.name%> <br/>
-    Owned by: 
+    Invited by: 
     <%=
       begin
-        @user = User.find_by_id(@house.relationships.first.user_id)
-        @user.name
+        @invitation.user.name
       rescue => ex
         "House is not currently owned."
       end
@@ -22,11 +21,14 @@
       <%= submit_tag("Accept Invitation",  class: "btn btn-primary")%>
     <% end %>
 <% else %>
+    <br/><p>
     Create a account! You'll automatically be added to your invitee's house 
-    using the link below.
+    using the link below.</p>
+    <div class="btn-group">
     <%= form_tag("/users/new", method: "get") do %>
       <%= hidden_field_tag(:invite, @invitation.token) %>
       <%= submit_tag("Create Account and Accept Invitation",  class: "btn btn-primary") %>
     <% end %>
+    </div>
 <% end %>
 </div>
