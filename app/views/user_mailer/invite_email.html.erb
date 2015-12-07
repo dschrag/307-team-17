@@ -5,9 +5,15 @@
   </head>
   <body>
     <h2><%= @user.name %>, has invited you to Roomedy!</h2>
+    <% if @optional_message.length > 0 %>
+    <p>
+      <%= @optional_message %>
+    </p>
+    <% end %>
+
     <p>
       To accept this invitation and create an account on Roomedy, 
-      click <a href="<%= @invitation_url %>">here!</a>
+      click <a href="<%= @invite_url %>">here!</a>
     </p>
   </body>
 </html>

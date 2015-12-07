@@ -10,8 +10,8 @@
 <% end %>
 
 <br/>
-<h2>Invite other users!</h2>
-<h3><%= request.base_url + "/invitation/"+ @house.id.to_s %></div></h3>
+<h4>Invite other users!</h4>
+<h4>Manage your invites <a href="<%= request.base_url + "/invitation/" %>">here.</a></div></h4>
 
 <% if @house.permissions.find_by user_id: current_user.id %>
 	<% perm = @house.permissions.find_by user_id: current_user.id %>
