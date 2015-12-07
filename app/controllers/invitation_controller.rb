@@ -15,7 +15,23 @@ class InvitationController < ApplicationController
 
   def delete
     Invitation.destroy_all(:user => current_user)
+    redirect_to :action => 'get'
+  end
 
+  def email
+    email = params[:email][:address]
+    optional_message = params[:email][:message]
+
+    if not email =~ /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
+      flash[:danger] = "Invalid email."
+    end
+
+    if not invite = Invitation.where(:user => current_user).first
+      invite = Invitation.create(:user => current_user, :house => current_user.house)
+    end
+    invite_url = request.base_url + invite.url
+
+    UserMailer.invite_email(current_user, email, invite_url, optional_message).deliver
     redirect_to :action => 'get'
   end
 

@@ -50,6 +50,7 @@ Rails.application.routes.draw do
   get 'invitation' => 'invitation#get'
   post 'invitation/create' => 'invitation#create'
   post 'invitation/delete' => 'invitation#delete'
+  post 'invitation/email' => 'invitation#email'
   get 'invitation/:token' => 'invitation#view'
   get 'i/:token' => 'invitation#view'
 
