@@ -1,0 +1,41 @@
+<div class="col-md-8 col-md-offset-2">
+  <div class="message-show">
+    <% if @note.permissions.find_by user_id: current_user.id %>
+      <% perm = @note.permissions.find_by user_id: current_user.id %>
+    <% else %>
+      <% perm = @note.permissions.first %>
+    <% end %>
+
+    <% if perm.level < 4 %>
+
+      <h2 class="message-title"><%= @note.title %></h2>
+      <% if @note.lastEditedBy == nil %>
+      <p class="message-posted-by">Posted by <%= @note.user.name %> <%= time_ago_in_words(@note.created_at) %> ago</p>
+      <% else %>
+      <p class="message-posted-by">Last edited by: <%= User.find(@note.lastEditedBy).name %> <%= time_ago_in_words(@note.updated_at) %> ago</p>
+      <% end %>
+
+      <p class="message-desc"><%= @note.content %></p>
+
+    <% end %>
+
+    <%= render @note.comments %>
+
+    <h3 class="reply-to-msg">Comment on notes:</h3>
+    <%= render 'comments/form' %>
+
+    <br>
+
+    <div class="links btn-group">
+      <div align="right">
+        <%= link_to "Back", notes_path, class: "btn btn-default" %>
+        <% if perm.level < 3 %>
+          <%= link_to "Edit", edit_note_path(@note), class: "btn btn-default" %>
+        <% end %>
+        <% if perm.level < 2 %>
+          <%= link_to "Delete", @note, method: :delete, data: { confirm: "You sure?" }, class: "btn btn-default" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

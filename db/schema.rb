@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151129221911) do
+ActiveRecord::Schema.define(version: 20151206230225) do
 
   create_table "activities", force: :cascade do |t|
     t.integer  "trackable_id"
@@ -30,6 +30,17 @@ ActiveRecord::Schema.define(version: 20151129221911) do
   add_index "activities", ["recipient_id", "recipient_type"], name: "index_activities_on_recipient_id_and_recipient_type"
   add_index "activities", ["trackable_id", "trackable_type"], name: "index_activities_on_trackable_id_and_trackable_type"
 
+  create_table "comments", force: :cascade do |t|
+    t.text     "reply"
+    t.integer  "note_id"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "comments", ["note_id"], name: "index_comments_on_note_id"
+  add_index "comments", ["user_id"], name: "index_comments_on_user_id"
+
   create_table "events", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
@@ -42,6 +53,24 @@ ActiveRecord::Schema.define(version: 20151129221911) do
 
   add_index "events", ["user_id"], name: "index_events_on_user_id"
 
+  create_table "finances", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "net_balance_cents",            default: 0,     null: false
+    t.string   "net_balance_currency",         default: "USD", null: false
+    t.integer  "net_income_cents",             default: 0,     null: false
+    t.string   "net_income_currency",          default: "USD", null: false
+    t.integer  "net_expenses_cents",           default: 0,     null: false
+    t.string   "net_expenses_currency",        default: "USD", null: false
+    t.integer  "expenses_last_month_cents",    default: 0,     null: false
+    t.string   "expenses_last_month_currency", default: "USD", null: false
+    t.integer  "income_last_month_cents",      default: 0,     null: false
+    t.string   "income_last_month_currency",   default: "USD", null: false
+    t.datetime "created_at",                                   null: false
+    t.datetime "updated_at",                                   null: false
+  end
+
+  add_index "finances", ["user_id"], name: "index_finances_on_user_id"
+
   create_table "houses", force: :cascade do |t|
     t.string   "name"
     t.string   "street"
@@ -50,7 +79,10 @@ ActiveRecord::Schema.define(version: 20151129221911) do
     t.integer  "zip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "polls_id"
   end
+
+  add_index "houses", ["polls_id"], name: "index_houses_on_polls_id"
 
   create_table "invitations", force: :cascade do |t|
     t.string   "token"
@@ -84,8 +116,12 @@ ActiveRecord::Schema.define(version: 20151129221911) do
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
     t.integer  "permissions_id"
+    t.integer  "lastEditedBy"
+    t.string   "title"
+    t.integer  "house_id"
   end
 
+  add_index "notes", ["house_id"], name: "index_notes_on_house_id"
   add_index "notes", ["permissions_id"], name: "index_notes_on_permissions_id"
   add_index "notes", ["user_id", "created_at"], name: "index_notes_on_user_id_and_created_at"
   add_index "notes", ["user_id"], name: "index_notes_on_user_id"
@@ -100,6 +136,15 @@ ActiveRecord::Schema.define(version: 20151129221911) do
   end
 
   add_index "permissions", ["permissable_type", "permissable_id"], name: "index_permissions_on_permissable_type_and_permissable_id"
+
+  create_table "polls", force: :cascade do |t|
+    t.text     "topic"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "house_id"
+  end
+
+  add_index "polls", ["house_id"], name: "index_polls_on_house_id"
 
   create_table "relationships", force: :cascade do |t|
     t.integer  "house_id"
@@ -143,5 +188,25 @@ ActiveRecord::Schema.define(version: 20151129221911) do
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
+
+  create_table "vote_options", force: :cascade do |t|
+    t.string   "title"
+    t.integer  "poll_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "vote_options", ["poll_id"], name: "index_vote_options_on_poll_id"
+
+  create_table "votes", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "vote_option_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  add_index "votes", ["user_id"], name: "index_votes_on_user_id"
+  add_index "votes", ["vote_option_id", "user_id"], name: "index_votes_on_vote_option_id_and_user_id", unique: true
+  add_index "votes", ["vote_option_id"], name: "index_votes_on_vote_option_id"
 
 end

@@ -1,6 +1,7 @@
 <%= form_for(@note) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
   <div class="field">
+    <%= f.text_area :title, placeholder: "Note Title..." %>
     <%= f.text_area :content, placeholder: "Compose new Note..." %>
   </div>
   <% if u == 0 %>
@@ -8,6 +9,7 @@
   <% else %>
     Edit User Permissions
     <%= render 'permission_edit', f: f, note: @note %>
+    <%= f.hidden_field :lastEditedBy, value: current_user.id %>
   <% end %>
   <%= f.submit "Post", class: "btn btn-primary" %>
 <% end %>
