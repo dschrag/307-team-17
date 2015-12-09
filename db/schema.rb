@@ -95,7 +95,8 @@ ActiveRecord::Schema.define(version: 20151206230225) do
   add_index "invitations", ["token"], name: "index_invitations_on_token"
 
   create_table "items", force: :cascade do |t|
-    t.decimal  "item_price",  precision: 8, scale: 2
+    t.integer  "item_price_cents",    default: 0,     null: false
+    t.string   "item_price_currency", default: "USD", null: false
     t.integer  "item_amount"
     t.string   "item_name"
     t.boolean  "visibility"
