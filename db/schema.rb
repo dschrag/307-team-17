@@ -84,8 +84,19 @@ ActiveRecord::Schema.define(version: 20151206230225) do
 
   add_index "houses", ["polls_id"], name: "index_houses_on_polls_id"
 
+  create_table "invitations", force: :cascade do |t|
+    t.string   "token"
+    t.integer  "user_id"
+    t.integer  "house_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "invitations", ["token"], name: "index_invitations_on_token"
+
   create_table "items", force: :cascade do |t|
-    t.decimal  "item_price",  precision: 8, scale: 2
+    t.integer  "item_price_cents",    default: 0,     null: false
+    t.string   "item_price_currency", default: "USD", null: false
     t.integer  "item_amount"
     t.string   "item_name"
     t.boolean  "visibility"

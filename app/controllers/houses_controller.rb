@@ -12,9 +12,9 @@ class HousesController < ApplicationController
 	def create
 		@house = House.new(house_params)
 		@house.permissions.build
-		@relationship = Relationship.create()
-		current_user.relationship = @relationship
-		@house.relationships << @relationship
+
+		@house.add_user(current_user)
+		
 		if @house.save
 			@house.permissions.create(user_id: 0, level: 1)
 			@house.permissions.create(user_id: current_user.id, level: 0)
