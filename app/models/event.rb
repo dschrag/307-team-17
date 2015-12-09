@@ -5,4 +5,6 @@ class Event < ActiveRecord::Base
 	validates :description, presence: true
 	validates :start_time, presence: true
 	validates :end_time, presence: true
+	has_many :permissions, as: :permissable, dependent: :destroy
+	accepts_nested_attributes_for :permissions
 end

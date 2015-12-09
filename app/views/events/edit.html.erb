@@ -14,7 +14,13 @@
 
       <%= f.input :end_time, :as => :datetime_picker %>
 
-      <%= f.submit "Create Event", class: "btn btn-primary" %>
+      Edit User Permissions
+      <%= render 'permission_edit', f: f, obj: @event, :type => 1 %>
+
+      <%= f.submit "Update Event", class: "btn btn-primary" %>
     <% end %>
+    <div class="center">
+      <%= link_to "Delete", @event, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-primary" %>
+    </div>
   </div>
 </div>
