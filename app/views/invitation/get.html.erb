@@ -1,0 +1,37 @@
+<title>Roomedy - Invitation</title>
+
+<div>
+    <span class="glyphicon glyphicon-menu-left" style="font-size: .8em;" aria-hidden="true"></span> 
+    <%= link_to "Back to House", House.find(current_user.relationship.house_id)%>
+     <br/> 
+
+    <% if !@invitation.nil? %>
+    <div class="col-md-6" style="padding:1%; padding-right:5%">
+        <h4> Your invitation link: </h4>
+        <input type="text" onClick="this.select();" style="background-color:white; padding-right:1em" class="form-control" value="<%= request.base_url + @invitation.url %>" readonly/>
+        <div class="btn-group">
+            <%= button_to "Generate a New Invitation Link", "/invitation/create", :method => :post, class: "btn btn-primary", style: "margin: 0.2em" %>
+        </div>
+    </div>
+    <div class="col-md-6" style="padding:1%">
+        <h4>Send Email Invitations:</h4>
+
+        <%= form_for :email, url: '/invitation/email' do |f| %>
+          <%= f.label :address, "Email" %>:
+          <%= f.email_field :address, class: 'form-control' %>
+
+          <%= f.label "Optional Message" %>:
+          <%= f.text_area :message, class: 'form-control'%>
+
+          <%= f.submit "Send Invitation", class: "btn btn-primary"%>
+        <% end %>
+    </div>
+
+    <% else %>
+      <h4> You do not have any invitation links at the moment.</h4>
+      <div class="btn-group">
+            <%= button_to "Generate New Invitation Link", "/invitation/create", :method => :post, class: "btn btn-primary", style: "margin: 0.2em" %>
+      </div>
+    <% end %>
+
+</div>
