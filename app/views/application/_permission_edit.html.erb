@@ -3,7 +3,11 @@
   <%= f.fields_for perm, index: perm.id do |perm_form| %>
     <% if perm.user_id != 0 %>
       <% @permuser = User.find(perm.user_id)   %>
-      <%= render 'permission', f: perm_form, user: @permuser, type: type %>
+      <% if type != 1 || perm.level != 3 %>
+        <%= render 'permission', f: perm_form, user: @permuser, type: type %>
+      <% else %>
+        <p><br\><%= @permuser.name %> is attending<br\></p>
+      <% end %>
     <% else %>
     <% User.new(id: 0) do |user| %>
       <%= render 'permission', f: perm_form, user: user, type: type %>

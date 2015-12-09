@@ -9,6 +9,7 @@ class EventsController < ApplicationController
 	def create
 		@event = current_user.events.build(event_params)
 		if @event.save
+			@event.permissions.create(user_id: 0, level: 2)
 			@perm_user = @event.permissions.create(user_id: current_user.id, level: 0)
 			flash[:success] = "Event created"
 			redirect_to events_path
@@ -18,7 +19,7 @@ class EventsController < ApplicationController
 	end
 
 	def index
-		@events = current_user.events
+		@events = House.find(current_user.relationship.house_id).events
 		@date = params[:date] ? Date.parse(params[:date]) : Date.today
 	end
 
