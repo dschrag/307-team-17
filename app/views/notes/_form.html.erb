@@ -5,10 +5,10 @@
     <%= f.text_area :content, placeholder: "Compose new Note..." %>
   </div>
   <% if u == 0 %>
-    <%= render 'permission_new', f: f %>
+    <%= render 'permission_new', f: f, :type => 0 %>
   <% else %>
     Edit User Permissions
-    <%= render 'permission_edit', f: f, note: @note %>
+    <%= render 'permission_edit', f: f, obj: @note, :type => 0 %>
     <%= f.hidden_field :lastEditedBy, value: current_user.id %>
   <% end %>
   <%= f.submit "Post", class: "btn btn-primary" %>
