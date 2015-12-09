@@ -1,24 +1,26 @@
 <h1 class="center"><%= @house.name %></h1>
-<div class="center"><%= @house.street %></div>
-<div class="center"><%= @house.city %></div>
-<div class="center"><%= @house.state %></div>
-<div class="center"><%= @house.zip %></div>
-<!-- Only shows the first user of the house using this syntax -->
-<br/>
-<% @house.users.each do |user| %>
-    <div class="center"><%= user.name %></div>
-<% end %>
+<div class="center">
+	<%= @house.street %><br/>
+	<%= @house.city %><br/>
+	<%= @house.state %><br/>
+	<%= @house.zip %><br/
+	<!-- Only shows the first user of the house using this syntax -->
+	<br/>
+	<% @house.users.each do |user| %>
+	    <div class="center"><%= user.name %></div>
+	<% end %>
 
 <br/>
 <h4>Invite other users!</h4>
 <h4>Manage your invites <a href="<%= request.base_url + "/invitation/" %>">here.</a></div></h4>
 
-<% if @house.permissions.find_by user_id: current_user.id %>
-	<% perm = @house.permissions.find_by user_id: current_user.id %>
-<% else %>
-	<% perm = @house.permissions.first %>
-<% end %>
+	<% if @house.permissions.find_by user_id: current_user.id %>
+		<% perm = @house.permissions.find_by user_id: current_user.id %>
+	<% else %>
+		<% perm = @house.permissions.first %>
+	<% end %>
 
-<% if perm.level == 0 %>
-	<%= button_to "Edit House Info", edit_house_path(@house) %>
-<% end %>
+	<% if perm.level == 0 %>
+		<%= button_to "Edit House Info", edit_house_path(@house), class: "btn btn-primary" %>
+	<% end %>
+</div>
