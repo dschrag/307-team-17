@@ -53,6 +53,24 @@ class EventsController < ApplicationController
 		redirect_to events_path
 	end
 
+	def export
+		@events = House.find(current_user.relationship.house_id).events
+		file = ''
+		file << "BEGIN:VCALENDAR\n"
+		@events.each do |event|
+			if event.permissions.find_by user_id: current_user.id
+				perm = event.permissions.find_by user_id: current_user.id
+			else
+				perm = event.permissions.find_by user_id: 0
+			end
+			if perm.level == 0 || perm.level == 3
+				file << "BEGIN:VEVENT\nDTSTART:" + event.start_time.strftime("%Y%m%dT%H%M%S") + "\nDTEND:" + event.end_time.strftime("%Y%m%dT%H%M%S") + "\nDESCRIPTION:" + event.description + "\nSUMMARY:" + event.name + "\nEND:VEVENT\n"
+			end
+		end
+		file << "END:VCALENDAR"
+		send_data file, :filename => current_user.name + 'Schedule.ics', :type => 'text/calendar'
+	end
+
 	private
 		def event_params
 			params.require(:event).permit(:name, :description, :start_time, :end_time, permissions_attributes: [:id, :user_id, :level])
