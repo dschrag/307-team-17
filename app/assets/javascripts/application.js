@@ -11,10 +11,21 @@
 // about supported directives.
 //
 //= require turbolinks
-//= require_tree .
 //= require jquery
 //= require jquery_ujs
+//= require bxslider
+//= require_tree .
 //= require bootstrap
 //= require moment
 //= require bootstrap-datetimepicker
 //= require pickers
+//= require cocoon
+//= require owl.carousel
+
+
+$(document).ready(function(){
+  $('.bxslider').bxSlider({
+  auto: true,
+  autoControls: false
+});
+});

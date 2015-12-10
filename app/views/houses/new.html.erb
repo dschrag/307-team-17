@@ -1,26 +1,64 @@
-<% provide(:title, 'Create a House') %>
-<h1>Create a House</h1>
-<div class="row">
-	<div class="col-md-6 col-md-offset-3">
-		<%= form_for(@house) do |f| %>
-			<%= render 'shared/error_messages', object: f.object %>
+<header class="house-header" style="background-position: 50% -125px;width: 1290px;height: 830px;">
+	<div class="section_overlay-notrans" style="width: 1290px; height: 830px;">
+		<nav class="navbar navbar-default navbar-fixed-top">
+			<div class="container">
+							<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a><%= link_to "Roomedy", root_path, class: "navbar_brand" %></a>
+				</div>
 
-			<%= f.label :name %>
-			<%= f.text_field :name, class: 'form-control' %>
+							<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="login_links">
+					<%= link_to "Create a House", new_house_path, class: "btn btn-primary" %>
 
-  			<%= f.label :street %>
-			<%= f.text_field :street,  class: 'form-control' %>
+					<button class="btn btn-profile dropdown-toggle" type="button" data-toggle="dropdown"><%= link_to current_user.name, current_user, class: "dropdown-font"%>
+						<%= image_tag current_user.avatar.url(:medium), class: "round-image-50" %>
+						<span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu">
+						<li><%= link_to "Profile", current_user %></li>
+						<li><%= link_to "Log out", logout_path, method: "delete" %></li>
+					</ul>
+				</div><!-- /.navbar-collapse -->
+			</div><!-- /.container -->
+		</nav>
 
-			<%= f.label :city %>
-			<%= f.text_field :city, class: 'form-control' %>
+		<div class="container" style="width:1295px; padding-left:0px; padding-top:50px; padding-right:0px; margin-left:0px; margin-right:0px;">
+				<%= image_tag "logo.gif", :class => "login-logo" %>
+		</div>
 
-			<%= f.label :state %>
-			<%= f.text_field :state, class: 'form-control' %>
+		<% provide(:title, 'Create a House') %>
+		<h1>Create a House</h1>
+		<div class="row">
+			<div class="col-md-4 col-md-offset-3 jumbotron" align="center" style="margin-left:444px; border-radius:25px; background-color:#F6F6F6;">
+				<%= form_for(@house) do |f| %>
+					<%= render 'shared/error_messages', object: f.object %>
 
-			<%= f.label :zip %>
-			<%= f.text_field :zip, class: 'form-control' %>
+					<%= f.label :name %>
+					<%= f.text_field :name, class: 'form-control' %>
 
-			<%= f.submit "Create a House", class: "btn btn-primary" %>
-		<% end %>
-	</div>
-</div>
+		  			<%= f.label :street %>
+					<%= f.text_field :street,  class: 'form-control' %>
+
+					<%= f.label :city %>
+					<%= f.text_field :city, class: 'form-control' %>
+
+					<%= f.label :state %>
+					<%= f.text_field :state, class: 'form-control' %>
+
+					<%= f.label :zip %>
+					<%= f.text_field :zip, class: 'form-control' %>
+
+					<%= f.submit "Create a House", class: "btn btn-primary" %>
+				<% end %>
+			</div>
+		</div>
+
+
+	</header>

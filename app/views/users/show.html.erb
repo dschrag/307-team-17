@@ -1,10 +1,57 @@
-<h1 class="center"><%= @user.name %></h1>
-<div class="center"><%= @user.email %></div>
-<div class="center"><%= @user.number %></div>
-<div class="center"><%= @user.bornon %></div>
-    <strong>Avatar:</strong>
-    <%= image_tag @user.avatar.url(:medium) %>
-<% if !@user.relationship.nil? %>
-	<div class="center"><%= House.find_by(@user.relationship.house_id).name %></div>
-<% end %>
-<%= button_to "Edit Profile", edit_user_path(current_user) %>
+<body style="background-color: rgb(56, 50, 49);">
+  <div id="wraper">
+    <section class="border-bottom padding-block">
+      <div class="container" style="width:1170px;">
+        <div class="row">
+          <div class="col-xs-12 col-sm-5 col-lg-5" style="text-align:right;">
+            <div class="foto">
+              <%= image_tag @user.avatar.url(:large) %>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-7 col-lg-7">
+            <h1 class="title" style="text-align:left;"><%= @user.name %></h1>
+            <% if !@user.relationship.nil? %>
+            	<div style="text-align:left;"><h2>House : <%= House.find_by(@user.relationship.house_id).name %></h2></div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="border-bottom padding-block">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-lg-5" style="margin-left:335px;">
+            <div class="block-grey">
+              <table style="width:408px; height:204px;">
+                <tbody>
+                  <tr style="width:408px; height:34px;">
+                    <td class="font-weight-m">Name</td>
+                    <td style="text-align:right;"><%= @user.name %></td>
+                  </tr>
+                  <tr style="width:408px; height:34px;">
+                    <td class="font-weight-m">Date of birth</td>
+                    <td style="text-align:right;"><%= @user.bornon %></td>
+                  </tr>
+                  <tr style="width:408px; height:34px;">
+                    <td class="font-weight-m">E-mail</td>
+                    <td style="text-align:right;"><%= @user.email %></td>
+                  </tr>
+                  <tr style="width:408px; height:34px;">
+                    <td class="font-weight-m">Phone</td>
+                    <td style="text-align:right;"><%= @user.number %></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="center">
+        <br>
+        <%= link_to "Edit Profile", edit_user_path(current_user), class: "btn btn-primary" %>
+      </div>
+    </section>
+  </div>
+</body>

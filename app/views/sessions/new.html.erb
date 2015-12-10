@@ -1,24 +1,59 @@
-<% provide(:title, "Log in") %>
-<h1>Log in</h1>
+<header class="home-header" style="background-position: 50% -125px;width: 1290px;height: 600px;">
+        <div class="section_overlay" style="width: 1290px;
+        height: 594px;">
+          <nav class="navbar navbar-default navbar-fixed-top">
+              <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                  <a><%= link_to "Roomedy", root_path, class: "navbar_brand" %></a>
+                </div>
 
-<div class="row">
-	<div class="col-md-6 col-md-offset-3">
-		<%= form_for(:session, url: login_path) do |f| %>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                  <ul class="nav navbar-nav navbar-right">
+                    <li><%= link_to "Home", root_path %></li>
+                    <li><a href="/login"><i class="fa fa-sign-in"></i> Login</a></li>
+                    <li><%= link_to "Sign up!", new_user_path %></li>
+                  </ul>
+                </div><!-- /.navbar-collapse -->
+              </div><!-- /.container -->
+            </nav>
 
-			<%= f.label :email %>
-			<%= f.email_field :email, class: 'form-control' %>
+						<div class="container" style="width:1295px; padding-left:0px; padding-top:50px; padding-right:0px; margin-left:0px; margin-right:0px;">
+								<%= image_tag "logo.gif", :class => "login-logo" %>
+						</div>
 
-			<%= f.label :password %>
-			<%= f.password_field :password, class: 'form-control' %>
+						<% provide(:title, "Log in") %>
 
-			<%= f.label :remember_me, class: "checkbox inline" do %>
-				<%= f.check_box :remember_me %>
-				<span>Remember me on this computer</span>
-			<% end %>
+						<div class="row">
+							<div class="col-md-3 col-md-offset-3 jumbotron" style="border-radius: 25px; margin-left:495px; background: linear-gradient(to bottom, #1D77EF 0%, #81F3FD 100%); ", align="center">
 
-			<%= f.submit "Log in", class: "btn btn-primary" %>
-		<% end %>
+								<h1 style="font-size:3em;">Log in</h1>
+								<%= form_for(:session, url: login_path) do |f| %>
 
-		<p>New user? <%= link_to "Sign up now!", new_user_path %></p>
-	</div>
-</div>
+									<%= f.label :email %>
+									<%= f.email_field :email, placeholder: "Enter email...", class: 'form-control' %>
+
+									<%= f.label :password %>
+									<%= f.password_field :password, placeholder: "Enter Password...", class: 'form-control' %>
+
+									<%= f.label :remember_me, class: "checkbox inline" do %>
+										<%= f.check_box :remember_me %>
+										<span>Remember me on this computer</span>
+									<% end %>
+
+									<%= f.submit "Log in", class: "btn btn-login" %>
+								<% end %>
+								<br>
+
+								<p>New user? <%= link_to "Sign up!", new_user_path, :class=>"btn btn-sigout" %></p>
+							</div>
+						</div>
+
+</header>

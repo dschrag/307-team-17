@@ -1,0 +1,8 @@
+<%= form_for([@note, @note.comments.build]) do |f| %>
+
+  <div class="field">
+    <%= f.text_area :reply, placeholder: "Comment on this Note..." %>
+  </div>
+
+  <%= f.button "Create Comment", class: "btn-custom" %>
+<% end %>

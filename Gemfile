@@ -27,11 +27,23 @@ gem 'bootstrap-sass'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
+gem 'cocoon'
+
+gem 'faye'
+gem 'thin', require: false
+gem 'sync'
+
+gem 'pusher'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+
+gem 'owlcarousel-rails'
+gem 'rambling-slider-rails'
+gem 'bxslider-rails'
 
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'

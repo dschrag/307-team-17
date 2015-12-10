@@ -1,36 +1,70 @@
-<% provide(:title, 'Create a User') %>
-<h1>Create a User</h1>
-<div class="row">
-	<div class="col-md-6 col-md-offset-3">
-		<%= form_for(@user) do |f| %>
-			<%= render 'shared/error_messages', object: f.object %>
+<header class="signup-header" style="background-position: 50% -125px;width: 1290px;height: 950px;">
+        <div class="section_overlay" style="width: 1290px;
+        height: 950px;">
+          <nav class="navbar navbar-default navbar-fixed-top">
+              <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                  <a><%= link_to "Roomedy", root_path, class: "navbar_brand" %></a>
+                </div>
 
-			<%= f.label :name %>
-			<%= f.text_field :name, class: 'form-control' %>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                  <ul class="nav navbar-nav navbar-right">
+                    <li><%= link_to "Home", root_path %></li>
+                    <li><a href="/login"><i class="fa fa-sign-in"></i> Login</a></li>
+                    <li><%= link_to "Sign up!", new_user_path %></li>
+                  </ul>
+                </div><!-- /.navbar-collapse -->
+              </div><!-- /.container -->
+            </nav>
 
-			<%= f.label :email %>
-			<%= f.email_field :email, class: 'form-control' %>
+						<div class="container" style="width:1295px; padding-left:0px; padding-top:50px; padding-right:0px; margin-left:0px; margin-right:0px;">
+								<%= image_tag "logo.gif", :class => "login-logo" %>
+						</div>
 
-			<%= f.label :number, "Phone Number" %>
-			<%= f.text_field :number, class: 'form-control' %>
+						<% provide(:title, 'Create a User') %>
+						<h1>Create a User</h1>
+						<div class="row">
+							<div class="col-md-4 col-md-offset-3 jumbotron" align="left" style="margin-left:444px; border-radius:25px; background-color:#FF5E3A;">
+								<%= form_for(@user) do |f| %>
+									<%= render 'shared/error_messages', object: f.object %>
 
-    		<%= f.label :bornon , "Date of Birth"%><br />
-    		<%= f.date_field :bornon, class: 'form-control' %>
+									<%= f.label :name %>
+									<%= f.text_field :name, placeholder: "Enter Name...", class: 'form-control' %>
 
-			<%= f.label :password %>
-			<%= f.password_field :password, class: 'form-control' %>
+									<%= f.label :email %>
+									<%= f.email_field :email, placeholder: "Enter email...", class: 'form-control' %>
 
-			<%= f.label :password_confirmation, "Confirmation" %>
-			<%= f.password_field :password_confirmation, class: 'form-control' %>
+									<%= f.label :number, "Phone Number" %>
+									<%= f.text_field :number, placeholder: "Enter Number...", class: 'form-control' %>
 
-			<div class="field">
-				<%= f.label :avatar %><br>
-				<%= f.file_field :avatar, html: { class: 'form-control'} %>
-			</div>
+						    		<%= f.label :bornon , "Date of Birth"%><br />
+						    		<%= f.date_field :bornon, placeholder: "Enter Date of Birth...", class: 'form-control' %>
 
-			<%= f.hidden_field :invite, :value => params[:invite] %>
+									<%= f.label :password %>
+									<%= f.password_field :password, placeholder: "Enter Password...", class: 'form-control' %>
 
-			<%= f.submit "Create my account", class: "btn btn-primary" %>
-		<% end %>
-	</div>
-</div>
+									<%= f.label :password_confirmation, "Confirmation" %>
+									<%= f.password_field :password_confirmation, placeholder: "Enter same Password...", class: 'form-control' %>
+
+									<div class="field">
+										<%= f.label :avatar %><br>
+										<%= f.file_field :avatar, placeholder: "Upload Picture...", html: { class: 'form-control'} %>
+									</div>
+
+									<%= f.hidden_field :invite, :value => params[:invite] %>
+
+									<%= f.submit "Create my account", class: "btn btn-primary" %>
+								<% end %>
+							</div>
+						</div>
+
+
+</header>
