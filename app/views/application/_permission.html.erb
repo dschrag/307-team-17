@@ -1,12 +1,27 @@
-<% if current_user.id != user.id %>
-<div class="permission">
-  <% if user.id == 0 %>
-  Default Permission
-  <% else %>
-<%= user.name %>
-<% end %>
-<%= f.hidden_field :user_id, value: user.id %><br />
-<%= f.select :level, [["Read Only", 3], ["Read, Edit, and Delete", 1],
-  ["Read and Edit", 2], ["Can't Read", 4]] %>
-</div>
+<% if type == 0 %>
+	<% if current_user.id != user.id %>
+	<div class="permission">
+	  <% if user.id == 0 %>
+	  	Default Permission
+	  <% else %>
+			<%= user.name %>
+		<% end %>
+		<%= f.hidden_field :user_id, value: user.id %><br />
+		<%= f.select :level, [["Read Only", 3], ["Read, Edit, and Delete", 1],
+		  ["Read and Edit", 2], ["Can't Read", 4]] %>
+	</div>
+	<% end %>
+<% elsif type == 1 %>
+	<% if current_user.id != user.id %>
+		<div class="permission">
+			<% if user.id == 0 %>
+				<%= f.hidden_field :user_id, value: user.id%><br />
+				<%= f.hidden_field :level, value: 2 %>
+			<% else %>
+				<%= user.name %>
+				<%= f.hidden_field :user_id, value: user.id %><br />
+				<%= f.select :level, [["Invite", 1], ["Don't Invite", 2]] %>
+			<% end %>
+		</div>
+	<% end %>
 <% end %>

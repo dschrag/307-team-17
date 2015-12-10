@@ -1,20 +1,55 @@
 <% provide(:title, 'Edit Event') %>
-<h1>Edit Event</h1>
-<h2><%= @event.name %></h2>
+<h1><%= @event.name %></h1>
 
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <%= simple_form_for(@event) do |f| %>
-      <%= render 'shared/error_messages', object: f.object %>
-      
-      <%= f.label :description %>
-      <%= f.text_area :description, class: 'form-control' %>
+<% if @event.permissions.find_by user_id: current_user.id %>
+  <% perm = @event.permissions.find_by user_id: current_user.id %>
+<% else %>
+  <% perm = @event.permissions.find_by user_id: 0 %>
+<% end %>
 
-      <%= f.input :start_time, :as => :datetime_picker %>
+<% if perm.level == 0 %>
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <%= simple_form_for(@event) do |f| %>
+        <%= render 'shared/error_messages', object: f.object %>
+        
+        <%= f.label :description %>
+        <%= f.text_area :description, class: 'form-control' %>
 
-      <%= f.input :end_time, :as => :datetime_picker %>
+        <%= f.input :start_time, :as => :datetime_picker %>
 
-      <%= f.submit "Create Event", class: "btn btn-primary" %>
-    <% end %>
+        <%= f.input :end_time, :as => :datetime_picker %>
+
+        <%= render 'permission_edit', f: f, obj: @event, :type => 1 %>
+
+        <%= f.submit "Update Event", class: "btn btn-primary" %>
+      <% end %>
+      <div class="center">
+        <%= link_to "Delete", @event, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-primary" %>
+      </div>
+    </div>
   </div>
-</div>
+<% elsif perm.level == 1 %>
+  <h2>Do you accept this invitation?</h2>
+  <%= simple_form_for(@event) do |f| %>
+    <%= f.fields_for perm, index: perm.id do |perm_form| %>
+      <%= perm_form.hidden_field :user_id, value: current_user.id %>
+      <%= perm_form.select :level, [["Accept", 3], ["Decline", 2]] %>
+    <% end %>
+    <%= f.submit "Submit", class: "btn btn-primary" %>
+  <% end %>
+<% elsif perm.level == 3 %>
+  <div class="row">
+    <div class="center">
+      <%= @event.description %><br/>
+      <%= @event.start_time %><br/>
+      <%= @event.end_time %><br/>
+      <%= simple_form_for(@event) do |f| %>
+        <%= f.fields_for perm, index: perm.id do |perm_form| %>
+          <%= perm_form.hidden_field :level, value: 2 %>
+        <% end %>
+        <%= f.submit "Remove", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+<% end %>
