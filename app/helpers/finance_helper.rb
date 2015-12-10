@@ -7,9 +7,9 @@ module FinanceHelper
 			end
 
 			url = "http://venmo.com/?"
-			url << "&txn=" + type
+			url << "txn=" + type
 			url << "&recipients=" + recipients
-			url << "&amount=" + amount
+			url << "&amount=" + amount.to_s
 			url << "&note=" + CGI.escape(note)
 
 			url << "&audience=private"
