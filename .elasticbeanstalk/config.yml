@@ -1,0 +1,11 @@
+branch-defaults:
+  master:
+    environment: 307-team-17-env
+    group_suffix: null
+global:
+  application_name: 307-team-17
+  default_ec2_keyname: null
+  default_platform: Ruby 2.2 (Puma)
+  default_region: us-east-1
+  profile: eb-cli
+  sc: git
