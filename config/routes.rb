@@ -25,6 +25,10 @@ Rails.application.routes.draw do
   post  'events/new' => 'events#new'
   resources :events
 
+  get      'items/:id/increase' => 'items#increase', as: :increase_item
+  get      'items/:id/decrease' => 'items#decrease', as: :decrease_item
+
+
 
   post  'notes/new' => 'notes#new'
   resources :notes do

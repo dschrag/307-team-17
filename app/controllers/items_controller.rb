@@ -28,8 +28,27 @@ class ItemsController < ApplicationController
         end
     end
 
+    def increase
+        @item = Item.find(params[:id])
+        if @item.frequency.nil?
+            @item.frequency = 1
+        end
+        @item.frequency += 1
+        @item.update_attribute("item_amount", @item.item_amount + 1)
+        redirect_to items_path
+    end
+
+    def decrease
+        @item = Item.find(params[:id])
+        @item.update_attribute("item_amount", @item.item_amount - 1)
+        redirect_to items_path
+    end
     def index
         @items = Item.paginate(page: params[:page])
+        @items.each { |i| 
+            if i.frequency.nil?
+             i.frequency = 1
+            end}
         @sorteditems = @items.sort_by { |i| i.frequency }
         @top5 = @sorteditems.first(5)
         @activities = PublicActivity::Activity.order("created_at desc")
