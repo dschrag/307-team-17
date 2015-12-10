@@ -20,7 +20,6 @@
 
         <%= f.input :end_time, :as => :datetime_picker %>
 
-        Edit User Permissions
         <%= render 'permission_edit', f: f, obj: @event, :type => 1 %>
 
         <%= f.submit "Update Event", class: "btn btn-primary" %>

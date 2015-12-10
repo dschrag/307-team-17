@@ -7,6 +7,8 @@ class EventsController < ApplicationController
 	end
 
 	def create
+		# data = "event created"
+		# send_data(data, :filename => "event.txt")
 		@event = current_user.events.build(event_params)
 		if @event.save
 			@event.permissions.create(user_id: 0, level: 2)
