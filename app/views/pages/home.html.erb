@@ -365,7 +365,7 @@
                   Plan adventures, split costs, ask and offer help, and much more. So what are you waiting for?
                   Sign Up today and start using the App.
             </p>
-            <%= link_to "Create a House", new_house_path, class: "btn btn-primary" %>
+            <%= link_to "House", House.find(current_user.relationship.house_id), class: "btn btn-primary" %>
           </div>
         </div>
       </div>
