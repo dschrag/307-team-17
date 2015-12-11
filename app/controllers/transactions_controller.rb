@@ -12,6 +12,8 @@ class TransactionsController < ApplicationController
   # GET /transactions/1
   # GET /transactions/1.json
   def show
+    @seller = House.find(current_user.relationship.house_id).users.where(name: @transaction.seller).first
+    @buyer = House.find(current_user.relationship.house_id).users.where(name: @transaction.buyer).first
   end
 
   # GET /transactions/new
