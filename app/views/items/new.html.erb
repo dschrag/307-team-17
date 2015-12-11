@@ -1,4 +1,5 @@
 <% provide(:title, 'Create Item') %>
+<div class="jumbotron", style="padding-right:20%;padding-left:20%;width:80%;margin-left:10%; margin-right:10%; background-color:#3B5998; color:white">
 <h1>Create Item</h1>
 
 <div class="row">
@@ -14,14 +15,24 @@
 
       <%= f.label :item_price_cents %>
       <%= f.text_field :item_price, class: 'form-control' %>
-
-      <%= label :visibility, "Public" %>
+      <div class="col-md-5">
+      <%= label :visibility, "House" %>
       <%= f.radio_button :visibility, true, :checked => true, :value => true %>
       <br>
-      <%= label :visibility, "Private" %>
-      <%= f.radio_button :visibility, false, :checked => true, :value => false %>
-
-      <%= f.submit "Create Item", class: "btn btn-primary" %>
+      <%= label :visibility, "Personal" %>
+      <%= f.radio_button :visibility, false, :checked => false, :value => false %>
+      <br>
+      <br>
+    </div>
+      <div class="col-md-7">
+      <%= f.label "Inventory List" %>
+      <%= f.radio_button :owned, true, :checked => true, :value =>true %>
+      <%= f.label "Shopping List" %>
+      <%= f.radio_button :owned, false, :checked => false, :value =>false %>
+      <br>
+    </div>
+      <%= f.submit "Create Item", class: "btn btn-default" %>
     <% end %>
   </div>
+</div>
 </div>

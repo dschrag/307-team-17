@@ -5,7 +5,7 @@
 	  <% @top5.each do |item| %>
   	    <% if item.item_amount == 0 %>
   	    	<li>
-		        You are low on your commmonly purchased item: <%= item.item_name %>
+		        <div class="alert alert-warning" role="alert"> You are low on your commmonly purchased item: <%= item.item_name %></div>
 	        </li>
         <% end %>
       <% end %>
@@ -14,20 +14,24 @@
       	<% user.items.each do |compare_item| %>
       		<% current_user.items.each do |user_item| %>
       			<% if compare_item.item_name == user_item.item_name && compare_item.frequency == user_item.frequency && user.name != current_user.name %>
-      					You and <%= user.name %> both buy <%= user_item.item_name %>, you should buy these together in the future <br>
+      					<div class="alert alert-success" role="alert"> You and <%= user.name %> both buy <%= user_item.item_name %>, you should buy these together in the future</div> <br>
       			<% end %>
       		<% end %>
       	<% end %>
       <% end %>
-	  <h1>Public Inventory</h1>
+	  <div class="jumbotron" style="padding:10px;background-color:#3B5998;"><h1 style="color:white;">House Inventory</h1></div>
+	  <ul class="list-group">
 	  <% House.find(current_user.relationship.house_id).items.each do |item| %>
-	  	  <% if item.visibility == true %>
-	  	  	<li>
+	  	  <% if item.visibility == true && item.owned == true%>
+	  	  	<li class="list-group-item">
 			      <%= item.item_name %>
 			      Price: $<%= item.item_price %>
 			      Amount <%= item.item_amount %>
 			      <div align="right">
 			      	<% if item.user.id == current_user.id %>
+			      		<%= link_to shop_item_path(item) do %>
+					      	<span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+				      	<% end %>
 			      		<%= link_to increase_item_path(item) do %>
 					      	<span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span>
 				      	<% end %>
@@ -43,15 +47,20 @@
 		    </li>
 	    <% end %>
 	  <% end %>
-	  <h1>Private Inventory</h1>
+	</ul>
+	  <div class="jumbotron" style="padding:10px;background-color:#3B5998;"><h1 style="color:white;">Personal Inventory</h1></div>
+	  <ul class="list-group">
 	  <% House.find(current_user.relationship.house_id).items.each do |item| %>
-		    <% if item.user.id == current_user.id && item.visibility == false %>
-		    	<li>
+		    <% if item.user.id == current_user.id && item.visibility == false && item.owned == true%>
+		    	<li class="list-group-item">
 			      <%= item.item_name %>
 			      Price: $<%= item.item_price %>
 			      Amount <%= item.item_amount %>
 			      <div align="right">
 			      	<% if item.user.id == current_user.id %>
+			      		<%= link_to shop_item_path(item) do %>
+					      	<span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+				      	<% end %>
 			      		<%= link_to increase_item_path(item) do %>
 					      	<span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span>
 				      	<% end %>
@@ -62,11 +71,68 @@
 					      	<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
 				      	<% end %>
 			      	<% end %>
-			      	Created by: <%= User.find(item.user_id).name %>
 			      </div>
 			    </li>
 			<% end %>
 	  <% end %>
+	 </ul>
+	 <div class="jumbotron" style="padding:10px;background-color:#3B5998;"><h1 style="color:white;">House Shopping List</h1></div>
+	  <ul class="list-group">
+	  <% House.find(current_user.relationship.house_id).items.each do |item| %>
+		    <% if item.visibility == true && item.owned == false%>
+		    	<li class="list-group-item">
+			      <%= item.item_name %>
+			      Price: $<%= item.item_price %>
+			      Amount <%= item.item_amount %>
+			      <div align="right">
+			      	<% if item.user.id == current_user.id %>
+			      		<%= link_to inv_item_path(item) do %>
+					      	<span class="glyphicon glyphicon-tag" aria-hidden="true"></span>
+				      	<% end %>
+			      		<%= link_to increase_item_path(item) do %>
+					      	<span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span>
+				      	<% end %>
+				      	<%= link_to decrease_item_path(item) do %>
+					      	<span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>
+				      	<% end %>
+				      	<%= link_to edit_item_path(item) do %>
+					      	<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+				      	<% end %>
+			      	<% end %>
+			      	Added by: <%= User.find(item.user_id).name %>
+			      </div>
+			    </li>
+			<% end %>
+	  <% end %>
+	 </ul>
+	 <div class="jumbotron" style="padding:10px;background-color:#3B5998;"><h1 style="color:white;">Personal Shopping List</h1></div>
+	  <ul class="list-group">
+	  <% House.find(current_user.relationship.house_id).items.each do |item| %>
+		    <% if item.user.id == current_user.id && item.visibility == false && item.owned == false%>
+		    	<li class="list-group-item">
+			      <%= item.item_name %>
+			      Price: $<%= item.item_price %>
+			      Amount <%= item.item_amount %>
+			      <div align="right">
+			      	<% if item.user.id == current_user.id %>
+			      		<%= link_to inv_item_path(item) do %>
+					      	<span class="glyphicon glyphicon-tag" aria-hidden="true"></span>
+				      	<% end %>
+			      		<%= link_to increase_item_path(item) do %>
+					      	<span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span>
+				      	<% end %>
+				      	<%= link_to decrease_item_path(item) do %>
+					      	<span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>
+				      	<% end %>
+				      	<%= link_to edit_item_path(item) do %>
+					      	<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+				      	<% end %>
+			      	<% end %>
+			      </div>
+			    </li>
+			<% end %>
+	  <% end %>
+	 </ul>
 	</ul>
 <%= will_paginate %>
 

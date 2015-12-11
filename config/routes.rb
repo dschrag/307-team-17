@@ -27,7 +27,8 @@ Rails.application.routes.draw do
 
   get      'items/:id/increase' => 'items#increase', as: :increase_item
   get      'items/:id/decrease' => 'items#decrease', as: :decrease_item
-
+  get       'items/:id/movetoshop' => 'items#addtoshop', as: :shop_item
+  get       'items/:id/movetoinventory' => 'items#addtoinventory', as: :inv_item
 
 
   post  'notes/new' => 'notes#new'

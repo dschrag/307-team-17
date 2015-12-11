@@ -5,6 +5,7 @@ class CreateItems < ActiveRecord::Migration
       t.integer :item_amount
       t.string  :item_name
       t.boolean :visibility
+      t.boolean :owned
       t.integer :frequency
       t.integer :prev_amount
 

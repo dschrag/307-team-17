@@ -43,6 +43,19 @@ class ItemsController < ApplicationController
         @item.update_attribute("item_amount", @item.item_amount - 1)
         redirect_to items_path
     end
+
+    def addtoshop
+        @item = Item.find(params[:id])
+        @item.update_attribute("owned", false)
+        redirect_to items_path
+    end
+
+    def addtoinventory
+        @item = Item.find(params[:id])
+        @item.update_attribute("owned", true)
+        redirect_to items_path
+    end
+
     def index
         @items = Item.paginate(page: params[:page])
         @items.each { |i| 
@@ -85,7 +98,7 @@ class ItemsController < ApplicationController
 
     private
     	def item_params
-		  params.require(:item).permit(:item_amount, :item_price, :item_name, :visibility)
+		  params.require(:item).permit(:item_amount, :item_price, :item_name, :visibility, :owned)
 		end
 
 		def correct_user

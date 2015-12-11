@@ -100,6 +100,7 @@ ActiveRecord::Schema.define(version: 20151206230225) do
     t.integer  "item_amount"
     t.string   "item_name"
     t.boolean  "visibility"
+    t.boolean  "owned"
     t.integer  "frequency"
     t.integer  "prev_amount"
     t.integer  "user_id"
