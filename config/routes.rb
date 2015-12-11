@@ -23,7 +23,9 @@ Rails.application.routes.draw do
   get       'logout' => 'sessions#destroy'
 
   post  'events/new' => 'events#new'
-  post   'events/export' => 'events#export', as: :export_event
+  post  'events/export' => 'events#export', as: :export_event
+  post  'events/store' => 'events#store', as: :store_event
+  post   'events/import' =>  'events#import', as: :import_event
   resources :events
 
 
