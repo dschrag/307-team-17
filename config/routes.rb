@@ -28,6 +28,10 @@ Rails.application.routes.draw do
   post   'events/import' =>  'events#import', as: :import_event
   resources :events
 
+  get      'items/:id/increase' => 'items#increase', as: :increase_item
+  get      'items/:id/decrease' => 'items#decrease', as: :decrease_item
+
+
 
   post  'notes/new' => 'notes#new'
   resources :notes do
