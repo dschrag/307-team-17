@@ -1,0 +1,4 @@
+<%= form_tag store_event_path, :multipart => true do %>
+	<br /><div class="center"><label for="file">Import Calendar File</label></div><%= file_field_tag "file", accept: 'text/calendar' %>
+	<%= submit_tag "Import", class: "btn btn-primary" %>
+<% end %>
