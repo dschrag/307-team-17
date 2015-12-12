@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   #before_action :has_house, except: [:new, :create]
 
   def show
-  	@user = User.find(params[:id])
+  	@user = User.find_by(id: params[:id])
     @notes = @user.notes.paginate(page: params[:page])
   end
 

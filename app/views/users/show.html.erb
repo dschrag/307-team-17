@@ -5,6 +5,6 @@
     <strong>Avatar:</strong>
     <%= image_tag @user.avatar.url(:medium) %>
 <% if !@user.relationship.nil? %>
-	<div class="center"><%= House.find_by(@user.relationship.house_id).name %></div>
+	<div class="center"><%= House.find_by(id: @user.relationship.house_id).name %></div>
 <% end %>
 <%= button_to "Edit Profile", edit_user_path(current_user) %>
