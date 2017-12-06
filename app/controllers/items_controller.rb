@@ -58,7 +58,7 @@ class ItemsController < ApplicationController
 
     def index
         @items = Item.paginate(page: params[:page])
-        @items.each { |i| 
+        @items.each { |i|
             if i.frequency.nil?
              i.frequency = 1
             end}
